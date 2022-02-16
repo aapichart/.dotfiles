@@ -5,7 +5,7 @@ source $HOME/.config/nvim/lua/plugins.lua
 " Setup key mapping for .vim plugins "
 source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
-"source $HOME/.config/nvim/plug-config/vimwiki.vim
+source $HOME/.config/nvim/plug-config/vimwiki.vim
 
 lua << EOF
 require('plugins')
@@ -29,6 +29,13 @@ require('plugins')
 EOF
 
 " set colors theme
-set background=dark
-set termguicolors
 colorscheme gruvbox-material
+set termguicolors
+highlight Normal ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight Folded ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight SpecialKey ctermbg=NONE guibg=NONE
+highlight VertSplit ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
