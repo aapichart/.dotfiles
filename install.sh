@@ -36,6 +36,9 @@ stow nvim
 stow deskpi
 stow gtk-3.0
 stow terminator
+stow tmux
+stow conky
+stow selected_editor
 
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
