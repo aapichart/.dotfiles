@@ -14,6 +14,7 @@ nix-env -iA \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.yarn \
+	nixpkgs.xclip \
 	nixpkgs.fzf \
 	nixpkgs.ripgrep \
 	nixpkgs.bat \

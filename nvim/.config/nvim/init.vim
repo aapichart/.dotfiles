@@ -1,5 +1,5 @@
 " Setting global
-source $HOME/.config/nvim/var/setvar.vim
+"source $HOME/.config/nvim/var/setvar.vim
 " Install .vim  plugins
 source $HOME/.config/nvim/lua/plugins.lua
 " Setup key mapping for .vim plugins "
@@ -7,9 +7,9 @@ source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
 "source $HOME/.config/nvim/plug-config/vimwiki.vim
 
-"lua << EOF
-"require('plugins')
-"require('options')
+lua << EOF
+require('plugins')
+require('options')
 "require('keysbinding')
 "require('treesitter-config')
 "-- decorate status line or (lualine)
@@ -26,4 +26,4 @@ source $HOME/.config/nvim/keys/mappings.vim
 "require('lsp')
 "require('lspsaga-config')
 "vim.cmd('colorscheme nord')
-"EOF
+EOF
