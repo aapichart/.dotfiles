@@ -19,13 +19,14 @@ nix-env -iA \
 	nixpkgs.ripgrep \
 	nixpkgs.bat \
 	nixpkgs.direnv \
-    	nixpkgs.compton \
-    	nixpkgs.gtop \
-    	nixpkgs.gping \
+    nixpkgs.compton \
+    nixpkgs.gtop \
+    nixpkgs.gping \
 	nixpkgs.neofetch \
 	nixpkgs.conky \
-    	nixpkgs.terminator \
-    	nixpkgs.tree \
+    nixpkgs.terminator \
+    nixpkgs.tree \
+    nixpkgs.cmatrix \
 
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
