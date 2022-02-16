@@ -10,6 +10,6 @@ romkatv/powerlevel10k
 
 rupa/z
 
-zsh-user/zsh-autosuggestions
-zsh-user/zsh-completions
-zsh-user/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting

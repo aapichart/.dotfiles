@@ -29,6 +29,13 @@ nix-env -iA \
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 
+# stow any dot config modules
+stow git
+stow zsh
+stow nvim
+stow deskpi
+stow gtk-3.0
+
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 
