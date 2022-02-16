@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
