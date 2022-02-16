@@ -1,0 +1,264 @@
+[global_config]
+  borderless = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.74
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
+  [[runGtop]]
+    allow_bold = False
+    background_darkness = 0.78
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    exit_action = hold
+    use_custom_command = True
+    custom_command = gtop
+    use_system_font = False
+  [[runGping]]
+    allow_bold = False
+    background_darkness = 0.78
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_custom_command = True
+    custom_command = gping 10.135.70.133
+    use_system_font = False
+  [[runDeskpiFan]]
+    allow_bold = False
+    background_darkness = 0.78
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 12
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_custom_command = True
+    custom_command = bash ~/.startupDeskpiFan.sh
+    use_system_font = False
+  [[runNeofetch]]
+    allow_bold = False
+    background_darkness = 0.78
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 6
+    show_titlebar = False
+    scrollbar_position = hidden
+    exit_action = hold
+    use_custom_command = True
+    custom_command = neofetch
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+  [[workWithMon]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 20:60
+      maximised = False
+      fullscreen = False
+      size = 1690, 1290
+      title = /home/apichart/.nix-profile/bin/zsh
+      last_active_term = 83c847d9-e552-4fa4-8c21-e985ca72c412
+      last_active_window = False
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 842
+      ratio = 0.49970326409495547
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = runGtop
+      uuid = 83c847d9-e552-4fa4-8c21-e985ca72c412
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 642
+      ratio = 0.49961089494163424
+    [[[child4]]]
+      type = VPaned
+      parent = child3
+      order = 0
+      position = 319
+      ratio = 0.5007849293563579
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      profile = runNeofetch
+      uuid = c0d90083-66de-464c-b5ac-e313da2d848c
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      profile = runGping
+      uuid = c7bbb8be-02ec-43cb-a6ff-3d5857bfa48d
+    [[[child7]]]
+      type = VPaned
+      parent = child3
+      order = 1
+      position = 318
+      ratio = 0.49843260188087773
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = default
+      uuid = 4d321278-3b59-491e-87b1-0a78449ce49d
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      profile = default
+      uuid = 1573b270-2efc-4318-abb7-1772ebcf21c8
+    [[[child10]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1730:60
+      maximised = False
+      fullscreen = False
+      size = 835, 1290
+      title = /home/apichart/.nix-profile/bin/zsh
+      last_active_term = 0c551eea-8419-4ab7-89a7-357824c137da
+      last_active_window = True
+    [[[terminal11]]]
+      type = Terminal
+      parent = child10
+      order = 0
+      profile = runDeskpiFan
+      uuid = 0c551eea-8419-4ab7-89a7-357824c137da
+  [[workWithMonx]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 20:60
+      maximised = False
+      fullscreen = False
+      size = 1063, 1290
+      title = /home/apichart/.nix-profile/bin/zsh
+      last_active_term = 4d321278-3b59-491e-87b1-0a78449ce49d
+      last_active_window = False
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 529
+      ratio = 0.5
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = runGtop
+      uuid = 83c847d9-e552-4fa4-8c21-e985ca72c412
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 642
+      ratio = 0.49961089494163424
+    [[[child4]]]
+      type = VPaned
+      parent = child3
+      order = 0
+      position = 282
+      ratio = 0.4427001569858713
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      profile = runNeofetch
+      uuid = c0d90083-66de-464c-b5ac-e313da2d848c
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      profile = runGping
+      uuid = c7bbb8be-02ec-43cb-a6ff-3d5857bfa48d
+    [[[child7]]]
+      type = VPaned
+      parent = child3
+      order = 1
+      position = 318
+      ratio = 0.49843260188087773
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = default
+      uuid = 4d321278-3b59-491e-87b1-0a78449ce49d
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      profile = default
+      uuid = 1573b270-2efc-4318-abb7-1772ebcf21c8
+    [[[child10]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 2186:60
+      maximised = False
+      fullscreen = False
+      size = 1234, 1290
+      title = /home/apichart/.nix-profile/bin/zsh
+      last_active_term = 2d4c8f1e-f792-4f8a-b421-9ba7e8f12978
+      last_active_window = False
+    [[[terminal11]]]
+      type = Terminal
+      parent = child10
+      order = 0
+      profile = default
+      uuid = 2d4c8f1e-f792-4f8a-b421-9ba7e8f12978
+    [[[child12]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1103:60
+      maximised = False
+      fullscreen = False
+      size = 1063, 635
+      title = /home/apichart/.nix-profile/bin/zsh
+      last_active_term = ae6f88c8-859d-4732-a63a-1d3338872e11
+      last_active_window = True
+    [[[child13]]]
+      type = VPaned
+      parent = child12
+      order = 0
+      position = 315
+      ratio = 0.5
+    [[[terminal14]]]
+      type = Terminal
+      parent = child13
+      order = 0
+      profile = runDeskpiFan
+      uuid = ae6f88c8-859d-4732-a63a-1d3338872e11
+    [[[terminal15]]]
+      type = Terminal
+      parent = child13
+      order = 1
+      profile = default
+      uuid = b2e427e0-05bb-4ec4-a3bd-f48623eefbbf
+[plugins]

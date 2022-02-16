@@ -35,6 +35,7 @@ stow zsh
 stow nvim
 stow deskpi
 stow gtk-3.0
+stow terminator
 
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
