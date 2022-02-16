@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=sh /home/apichart/.mystartup.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[C]=runmonitor
+Name=runmonitor
+Comment[C]=my own startup command
+Comment=my own startup command

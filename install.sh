@@ -41,6 +41,8 @@ stow terminator
 stow tmux
 stow conky
 stow selected_editor
+stow autostart
+stow startupScript
 
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
