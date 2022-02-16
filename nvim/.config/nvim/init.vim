@@ -1,5 +1,5 @@
 " Setting global
-
+source $HOME/.config/nvim/var/setvar.vim
 " Install .vim  plugins
 source $HOME/.config/nvim/lua/plugins.lua
 " Setup key mapping for .vim plugins "
