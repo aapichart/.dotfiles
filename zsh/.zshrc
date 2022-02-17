@@ -37,6 +37,19 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -la'
+alias v='nvim'
+alias f='fzf'
+
+#source command for fzf keybinding
+# source ~/.config/nvim/autoload/plugged/fzf/shell/key-bindings.zsh
+# source ~/.config/nvim/autoload/plugged/fzf/shell/completion.zsh 
+#source command for ranger merge with fzf
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 
 # use nix
 if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -27,7 +27,8 @@ nix-env -iA \
     nixpkgs.terminator \
     nixpkgs.tree \
     nixpkgs.cmatrix \
-
+    nixpkgs.python39Packages.pip \
+    nixpkgs.pv \
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 

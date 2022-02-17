@@ -11,7 +11,7 @@ lua << EOF
 require('plugins')
 -- require('options')
 -- require('keysbinding')
--- require('treesitter-config')
+require('treesitter-config')
 -- decorate status line or (lualine)
 -- "require('lualine-config')
 -- "require('bufferline-config')
@@ -19,9 +19,9 @@ require('plugins')
 -- "require('nvim-tree-config')
 -- "require('nvim-autopairs-config')
 -- help show detail of mapping keys
--- "require('whichkey-config')
+require('whichkey-config')
 -- This is a good utilities like fzf
--- require('telescope-config')
+require('telescope-config')
 --  Code Completion 
 -- "require('lsp')
 -- require('lspsaga-config')
