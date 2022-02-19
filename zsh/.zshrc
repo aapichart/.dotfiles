@@ -32,14 +32,33 @@ export NVM_COMPLETION=true
 # source plugins
 source ~/.zsh_plugins.sh
 
-# some more ls aliases
+# Alias, some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -la'
-alias v='nvim'
 alias f='fzf'
+alias zr='source ~/.zshrc'
+alias py='python3'
+alias v='nvim'
+alias ga='git add .'
+alias gs='git status'
 
+# Global alias
+alias -g F=' | fzf'
+alias -g L=' | less'
+alias -g J=' | jq'
+
+# suffix alias
+alias -s py='nvim'
+alias -s js='nvim'
+alias -s sql='nvim'
+
+# function alias
+gcom() {
+    git commit -m $1
+}
+ 
 #source command for fzf keybinding
 # source ~/.config/nvim/autoload/plugged/fzf/shell/key-bindings.zsh
 # source ~/.config/nvim/autoload/plugged/fzf/shell/completion.zsh 

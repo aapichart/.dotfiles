@@ -29,6 +29,8 @@ nix-env -iA \
     nixpkgs.cmatrix \
     nixpkgs.python39Packages.pip \
     nixpkgs.pv \
+    nixpkgs.fd \
+    nixpkgs.jq \
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 
