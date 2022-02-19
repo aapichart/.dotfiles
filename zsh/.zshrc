@@ -39,10 +39,12 @@ alias l='ls -CF'
 alias ls='ls -la'
 alias f='fzf'
 alias zr='source ~/.zshrc'
+alias sv='source ~/.config/nvim/init.vim'
 alias py='python3'
 alias v='nvim'
 alias ga='git add .'
 alias gs='git status'
+alias gp='git push -u origin main'
 
 # Global alias
 alias -g F=' | fzf'

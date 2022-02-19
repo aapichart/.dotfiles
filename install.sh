@@ -31,6 +31,7 @@ nix-env -iA \
     nixpkgs.pv \
     nixpkgs.fd \
     nixpkgs.jq \
+    nixpkgs.nfsUtils \
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 
