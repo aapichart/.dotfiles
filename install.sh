@@ -1,7 +1,6 @@
 # install nix
 curl -L https://nixos.org/nix/install | sh
 
-
 # source nix
 . ~/.nix-profile/etc/profile.d/nix.sh
 
@@ -32,7 +31,8 @@ nix-env -iA \
     nixpkgs.fd \
     nixpkgs.jq \
     nixpkgs.nfsUtils \
-    nixpkgs.figlet \ 
+    nixpkgs.figlet
+
 # add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
 
@@ -50,10 +50,9 @@ stow autostart
 stow startupScript
 
 # use zsh as default shell
-sudo chsh -s $(which zsh) $USER
+chsh -s $(which zsh) $USER
 
 # bundle zsh plugins
-cp .zsh_plugins.txt ~/.zsh_plugins.txt
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 
