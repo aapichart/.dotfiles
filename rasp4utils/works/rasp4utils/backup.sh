@@ -145,7 +145,7 @@ startbackup() {
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" 
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" > $DEST_FOLDER/backup_log
         # sudo tar -cvzf $DEST_FOLDER/$DEST_FILE --exclude-from=$my_dir/excfile.txt --absolute-names / >> $DEST_FOLDER/backup_log 2>/dev/null 
-        sudo tar -cvzf - --exclude-from=$my_dir/excfile.txt --absolute-names --one-file-system / 2>/dev/null | pv > $DEST_FOLDER/$DEST_FILE 
+        sudo tar -czpf - --exclude-from=$DEST_FOLDER --absolute-names --one-file-system / 2>/dev/null | pv > $DEST_FOLDER/$DEST_FILE 
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
         tar -tf $DEST_FOLDER/$DEST_FILE 1>>$DEST_FOLDER/backup_log
@@ -163,7 +163,7 @@ startbackup() {
         genlog "$DEST_FOLDER/backup_log"
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" 
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" > $DEST_FOLDER/backup_log
-        sudo tar -cf - --exclude-from=$my_dir/excfile.txt --absolute-names --one-file-system / 2>/dev/null | pv -s $(du -sb --exclude-from=$my_dir/excfile.txt / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
+        sudo tar -cpf - --exclude-from=$DEST_FOLDER --absolute-names --one-file-system / 2>/dev/null | pv -s $(du -sb --exclude-from=$DEST_FOLDER / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
         tar -tf $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED 1>>$DEST_FOLDER/backup_log
