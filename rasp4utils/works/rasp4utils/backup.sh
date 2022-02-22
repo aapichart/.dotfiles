@@ -34,7 +34,7 @@ checkexistbackupfile() {
             if [ $# -eq 1 ]; then
                 # Pass only one argument
                 reply=$(askforreply "Would you like a backup file compressed? :")
-                if [ $reply = y ]; then
+                if [ "$reply" = y ]; then
                     checkfile=$1/$DEST_FILE
                 else
                     checkfile=$1/$DEST_FILE_UNCOMPRESSED
@@ -52,7 +52,7 @@ checkexistbackupfile() {
             echo "Backing up to this file => $checkfile " 
             if [ -f $checkfile ]; then
                 reply=$(askforreply "Today, Backup file has already existed.  Replaced it? :")
-                if [ $reply = y ]; then
+                if [ "$reply" = y ]; then
                     read -p "Confirm deleting old backup file (y/n)" confirmdel
                     if [ $confirmdel = y ]; then
                         echo "Deleting begin ........!!"
@@ -88,9 +88,7 @@ askdestfolder() {
         else
             # $DEST_FOLDER doesn't exist.
             reply=$(askforreply "The Folder does not exist, Create it? :")
-            echo "write dest_folder"
-            echo $reply
-            if [ $reply = y ]; then
+            if [ "$reply" = y ]; then
                echo "Creating folder..... : $DEST_FOLDER "
                mkdir -p $DEST_FOLDER
                echo "Done.. "
@@ -129,12 +127,12 @@ asktotr() {
 startbackup() {
     # Make sure user not change any confiuration such as destination folder ...etc
     reply=$(askforreply "***** Would you like to change any config? :")
-    if [ $reply = y ]; then
+    if [ "$reply" = y ]; then
         setnewconfig        
     fi
     # Start Backup Process
     reply=$(askforreply "Would you like a backup file compressed? :")
-    if [ $reply = y ]; then
+    if [ "$reply" = y ]; then
         echo "Preparing for compressing backup file ..... : "
         # Check whethere backup file have already done on the folder or not. if yes, ask permission to delete
         # this function receives two parameter ( 1. destination folder, 2. true - (file compressed), false - (file un-compressed) )
@@ -143,14 +141,14 @@ startbackup() {
         echo "Starting Backup now ....."
         # Not using this command
         # sudo dd bs=4M if=/dev/sda of=/mnt/nasBackup/BackupRasp4/rasp4.img
-        genlog "backup_log"
+        genlog "$DEST_FOLDER/backup_log"
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" 
-        echo "===========> Backup at $(date +'%F %H:%M:%S')......" > backup_log
-        # sudo tar -cvzf $DEST_FOLDER/$DEST_FILE --exclude-from=excfile.txt --absolute-names / >> backup_log 2>/dev/null 
-        sudo tar -cvzf - --exclude-from=excfile.txt --absolute-names / 2>/dev/null | pv > $DEST_FOLDER/$DEST_FILE 
+        echo "===========> Backup at $(date +'%F %H:%M:%S')......" > $DEST_FOLDER/backup_log
+        # sudo tar -cvzf $DEST_FOLDER/$DEST_FILE --exclude-from=$my_dir/excfile.txt --absolute-names / >> $DEST_FOLDER/backup_log 2>/dev/null 
+        sudo tar -cvzf - --exclude-from=$my_dir/excfile.txt --absolute-names --one-file-system / 2>/dev/null | pv > $DEST_FOLDER/$DEST_FILE 
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
-        tar -tf $DEST_FOLDER/$DEST_FILE 1>>backup_log
+        tar -tf $DEST_FOLDER/$DEST_FILE 1>>$DEST_FOLDER/backup_log
         echo "Finished Local backup at " $(date +'%H:%M:%S')
         read -p " Press Enter to Continue ..... " waitkey 
     else 
@@ -162,13 +160,13 @@ startbackup() {
         echo "Starting Backup now ....."
         # Not using this command
         # sudo dd bs=4M if=/dev/sda of=/mnt/nasBackup/BackupRasp4/rasp4.img
-        genlog "backup_log"
+        genlog "$DEST_FOLDER/backup_log"
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" 
-        echo "===========> Backup at $(date +'%F %H:%M:%S')......" > backup_log
-        sudo tar -cf - --exclude-from=excfile.txt --absolute-names / 2>/dev/null | pv -s $(du -sb --exclude-from=excfile.txt / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
+        echo "===========> Backup at $(date +'%F %H:%M:%S')......" > $DEST_FOLDER/backup_log
+        sudo tar -cf - --exclude-from=$my_dir/excfile.txt --absolute-names --one-file-system / 2>/dev/null | pv -s $(du -sb --exclude-from=$my_dir/excfile.txt / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
-        tar -tf $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED 1>>backup_log
+        tar -tf $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED 1>>$DEST_FOLDER/backup_log
         echo "Finished Local backup at " $(date +'%H:%M:%S')
         read -p " Press Enter to Continue ..... " waitkey 
     fi
@@ -180,7 +178,7 @@ showconfig() {
     echo " =====:  Backup Dest: $DEST_FOLDER/$DEST_FILE (for compression) "
     echo " =====:  Backup Dest: $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED (for un-compression) "
     echo " ======> Backup Excluded Folder: /"
-    bat --theme=gruvbox-dark excfile.txt
+    bat --theme=gruvbox-dark $my_dir/excfile.txt
     echo " ======> Backup Configuration for NAS:"
     echo " =====:  IP Address: $ipaddress "
     echo " =====:  NAS Volume: $nasVolume "
@@ -263,7 +261,14 @@ restoreprocess() {
             echo "===: using up, down arrow to select choice, then press enter for selecting"
             restorefile=$(ls -la $restorefrom | fzf --height=30% --layout=reverse-list | awk '{print $9}') 
             echo "===: Your select backup file is : $restorefrom/$restorefile"
-            sudo tar -xzf $restorefrom/$restorefile / -C
+            # check whether backup file is compressed or not (Checking from file extension)
+            if [ "${restorefile: -4}" == ".tar" ]; then
+                # un-compressed backup file
+                sudo tar -xpf $restorefrom/$restorefile -C / --numeric-owner 
+            else
+                # compressed backup file 
+                sudo tar -xzpf $restorefrom/$restorefile -C / --numeric-owner 
+            fi
         else
             echo "===: Please selelct another backup folder, it is empty !!! "
         fi
@@ -403,5 +408,7 @@ DEST_FILE=backup-popos-$(date +'%F').tgz
 DEST_FILE_UNCOMPRESSED=backup-popos-$(date +'%F').tar
 # create local backup copy before copying it to destination on the nas server
 DEST_FOLDER=~/backup
+# current directory
+my_dir=`dirname $0` 
 showmainmenu
 
