@@ -48,6 +48,7 @@ stow conky
 stow selected_editor
 stow autostart
 stow startupScript
+stow rasp4utils
 
 # use zsh as default shell
 chsh -s $(which zsh) $USER

@@ -1,0 +1,7 @@
+/home/apichart/backup
+/mnt
+/media
+/dev
+run
+log
+proc
