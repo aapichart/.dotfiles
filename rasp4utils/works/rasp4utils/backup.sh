@@ -150,6 +150,7 @@ startbackup() {
         echo "Please be patient, system is creating log file content .... " 
         tar -tf $DEST_FOLDER/$DEST_FILE 1>>$DEST_FOLDER/backup_log
         echo "Finished Local backup at " $(date +'%H:%M:%S')
+        echo "Finished Local backup at " $(date +'%H:%M:%S') >> $DEST_FOLDER/backup_log
         read -p " Press Enter to Continue ..... " waitkey 
     else 
         echo "Preparing for un-compressing backup file ......"
@@ -167,7 +168,8 @@ startbackup() {
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
         tar -tf $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED 1>>$DEST_FOLDER/backup_log
-        echo "Finished Local backup at " $(date +'%H:%M:%S')
+        echo "Finished Local backup at " $(date +'%H:%M:%S') >> $DEST_FOLDER/backup_log
+        echo "Finished Local backup at " $(date +'%H:%M:%S') 
         read -p " Press Enter to Continue ..... " waitkey 
     fi
 }
