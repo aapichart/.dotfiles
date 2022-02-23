@@ -1,1 +1,4 @@
 ~/backup
+/mnt
+/dev
+/sys
