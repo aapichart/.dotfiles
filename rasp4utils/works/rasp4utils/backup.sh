@@ -164,7 +164,7 @@ startbackup() {
         genlog "$DEST_FOLDER/backup_log"
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" 
         echo "===========> Backup at $(date +'%F %H:%M:%S')......" > $DEST_FOLDER/backup_log
-        sudo tar -cpf - --exclude-from=$my_dir/excfile.txt --exclude=$DEST_FOLDER --one-file-system / 2>/dev/null | pv -s $(du -sb --exclude-from=$my_dir/excfile.txt --exclude=$DEST_FOLDER / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
+        sudo tar -cpf - --exclude-from=$my_dir/excfile.txt --exclude=$DEST_FOLDER --one-file-system / 2>/dev/null | pv -s $(du -sb --exclude-from=$my_dir/excfile.txt --exclude=$DEST_FOLDER --one-file-system / 2>/dev/null | awk '{print $1}' ) > $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED
         # extract content of file to log
         echo "Please be patient, system is creating log file content .... " 
         tar -tf $DEST_FOLDER/$DEST_FILE_UNCOMPRESSED 1>>$DEST_FOLDER/backup_log
