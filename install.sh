@@ -31,6 +31,7 @@ nix-env -iA \
     nixpkgs.fd \
     nixpkgs.jq \
     nixpkgs.nfsUtils \
+    nixpkgs.pandoc \
     nixpkgs.figlet
 
 # add zsh to valid login shells
