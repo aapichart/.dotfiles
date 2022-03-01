@@ -1,8 +1,8 @@
 " Setting global
 source $HOME/.config/nvim/var/setvar.vim
 " Install .vim  plugins
-source $HOME/.config/nvim/lua/plugins.lua
-source $HOME/.config/nvim/lua/plugins.vim
+source $HOME/.config/nvim/plug-config/plugins.lua
+source $HOME/.config/nvim/plug-config/plugins.vim
 " Setup key mapping for .vim plugins "
 source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
@@ -10,6 +10,8 @@ source $HOME/.config/nvim/plug-config/vimwiki.vim
 
 lua << EOF
 require('plugins')
+-- This is the namespace package, which I collect them into chartasa directory
+require('chartasa')
 -- require('options')
 -- require('keysbinding')
 require('treesitter-config')
@@ -22,7 +24,6 @@ require('treesitter-config')
 -- help show detail of mapping keys
 require('whichkey-config')
 -- This is a good utilities like fzf
-require('telescope-config')
 --  Code Completion 
 -- "require('lsp')
 -- require('lspsaga-config')
