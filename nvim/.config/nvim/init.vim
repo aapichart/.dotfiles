@@ -2,6 +2,7 @@
 source $HOME/.config/nvim/var/setvar.vim
 " Install .vim  plugins
 source $HOME/.config/nvim/lua/plugins.lua
+source $HOME/.config/nvim/lua/plugins.vim
 " Setup key mapping for .vim plugins "
 source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
