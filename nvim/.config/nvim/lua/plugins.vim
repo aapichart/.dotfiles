@@ -9,8 +9,8 @@ endif
 call plug#begin(stdpath('data') . 'vimplug')
     " Auto pairs for '(' '[' '{'
 "    Plug 'jiangmiao/auto-pairs'
+"
     " Sending text as a command to another tmux window
-
     Plug 'jpalardy/vim-slime'
 
     Plug 'justinmk/vim-sneak'    

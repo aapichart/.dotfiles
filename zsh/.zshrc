@@ -64,7 +64,6 @@ gcom() {
 # setting for direnv 
 eval "$(direnv hook zsh)"
 
-
 #source command for fzf keybinding
 # source ~/.config/nvim/autoload/plugged/fzf/shell/key-bindings.zsh
 # source ~/.config/nvim/autoload/plugged/fzf/shell/completion.zsh 
