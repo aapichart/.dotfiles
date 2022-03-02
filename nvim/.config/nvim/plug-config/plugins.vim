@@ -23,9 +23,10 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'tpope/vim-surround'
 
     Plug 'tpope/vim-eunuch'
-    Plug 'tpope/vim-fugitive'
-
     Plug 'tomtom/tcomment_vim'
+    " git plugins
+    Plug 'tpope/vim-fugitive'
+    Plug 'lewis6991/gitsigns.nvim'
     " Plugin for staus line
     Plug 'itchyny/lightline.vim'
 
