@@ -26,6 +26,9 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'tpope/vim-fugitive'
 
     Plug 'tomtom/tcomment_vim'
+    " Plugin for staus line
+    Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
 " Automatically install missing plugins on startup

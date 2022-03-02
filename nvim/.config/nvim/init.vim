@@ -3,8 +3,6 @@ source $HOME/.config/nvim/var/setvar.vim
 " Install .vim  plugins
 source $HOME/.config/nvim/plug-config/plugins.lua
 source $HOME/.config/nvim/plug-config/plugins.vim
-" Setup key mapping for .vim plugins "
-source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 
@@ -28,6 +26,9 @@ require('chartasa')
 -- require('lspsaga-config')
 -- vim.cmd('colorscheme nord')
 EOF
+
+" Setup key mapping for .vim plugins "
+source $HOME/.config/nvim/keys/mappings.vim
 
 " set colors theme
 colorscheme gruvbox-material
