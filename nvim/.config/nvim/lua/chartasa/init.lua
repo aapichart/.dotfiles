@@ -1,4 +1,8 @@
 require('chartasa/telescope')
+require('chartasa/nvim-web-devicons')
+require('chartasa/bufferline-config')
+require('chartasa/nvim-autopairs-config')
+require('chartasa/nvim-tree-config')
 require('chartasa/treesitter')
 require('chartasa/whichkey')
 require('chartasa/lightline')

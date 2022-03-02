@@ -34,9 +34,9 @@ return require('packer').startup(function()
     --requires = {'kyazdani42/nvim-web-devicons', opt = true}
   --}
   -- config bufferline
-  --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- config nvim-tree for file explorer
-  --use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- Use this plugin for helping us know which keys are mapping
   use {'folke/which-key.nvim'}
   -- Telescope is used like an extensible fuzzy finder

@@ -27,6 +27,12 @@ nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 " pick color scheme
 nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
 
+" >> wincmd
+nnoremap <Leader>h :wincmd h<Cr>
+nnoremap <Leader>j :wincmd j<Cr>
+nnoremap <Leader>k :wincmd k<Cr>
+nnoremap <Leader>l :wincmd l<Cr>
+
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
