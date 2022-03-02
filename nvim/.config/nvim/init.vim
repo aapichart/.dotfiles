@@ -8,13 +8,13 @@ source $HOME/.config/nvim/keys/mappings.vim
 " Setup .vim plugins config "
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 
+" This is Config for lua plugins
 lua << EOF
-require('plugins')
+--require('plugins')
 -- This is the namespace package, which I collect them into chartasa directory
 require('chartasa')
 -- require('options')
 -- require('keysbinding')
-require('treesitter-config')
 -- decorate status line or (lualine)
 -- "require('lualine-config')
 -- "require('bufferline-config')
@@ -22,7 +22,6 @@ require('treesitter-config')
 -- "require('nvim-tree-config')
 -- "require('nvim-autopairs-config')
 -- help show detail of mapping keys
-require('whichkey-config')
 -- This is a good utilities like fzf
 --  Code Completion 
 -- "require('lsp')
