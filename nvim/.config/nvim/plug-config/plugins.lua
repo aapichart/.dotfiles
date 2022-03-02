@@ -29,34 +29,37 @@ return require('packer').startup(function()
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-autopairs'}
   -- config lualine (status line)
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  --use {
+    --'hoob3rt/lualine.nvim',
+    --requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  --}
   -- config bufferline
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- config nvim-tree for file explorer
-  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  --use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- Use this plugin for helping us know which keys are mapping
   use {'folke/which-key.nvim'}
   -- Telescope is used like an extensible fuzzy finder
-  use {'nvim-lua/popup.nvim'}
+  --use {'nvim-lua/popup.nvim'}
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
   -- Plugin for code completion and language servers
-  use 'prabirshrestha/vim-lsp'
-  use 'mattn/vim-lsp-settings'
-  -- Plugin for code completion 
+  --use 'prabirshrestha/vim-lsp'
+  --use 'mattn/vim-lsp-settings'
+ 
+  -- Plugin for language server configuration
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
+  -- Plugin for code completion 
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
   use 'onsails/lspkind-nvim'
-  use {'kabouzeid/nvim-lspinstall'}
-  use 'glepnir/lspsaga.nvim'
-  -- Plugin for send mark string between each pane or window
-  use 'jpalardy/vim-slime'
+
+--  use 'hrsh7th/cmp-buffer'
+--  use 'hrsh7th/cmp-vsnip'
+--  use 'hrsh7th/vim-vsnip'
+--  use {'kabouzeid/nvim-lspinstall'}
+--  use 'glepnir/lspsaga.nvim'
   
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

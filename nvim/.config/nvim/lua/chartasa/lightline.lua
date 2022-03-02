@@ -2,7 +2,7 @@ vim.g.lightline = {
     active = {
         left = {
             { 'mode', 'past' },
-            { 'gitbranch', 'filename, 'modified' }
+            { 'gitbranch', 'filename', 'modified' }
         }    
     },
     component_function = {
