@@ -190,6 +190,20 @@ showconfig() {
     echo " =====:  Absolute Local Folder: $localmntpoint/$remoteBackupFolder "
 }
 
+
+# transfer backup file to NAS Server
+trtonaswitharg() {
+    if [ -d "/mnt/nasBackup/BackupRasp4" ]; then
+        echo "Sending backup file to NAS...."
+        echo "transfer ........... $DEST_FOLDER/$1 "
+        pv $DEST_FOLDER/$1 > /mnt/nasBackup/BackupRasp4/$1
+        echo "Backup Done at " $(date +'%H:%M:%S')
+    else
+        echo "No NAS server at /mnt/nasBackup/BackupRasp4"
+        echo "Process stop here ...... Bye"
+    fi
+}
+
 # transfer backup file to NAS Server
 trtonas() {
     if [ -d "/mnt/nasBackup/BackupRasp4" ]; then
@@ -331,6 +345,20 @@ setnewconfig() {
     read -p "(Press Enter Key to Continue.......)" waitkey
 }
 
+# Let user select file to transfer to NAS
+selectfiletoTr() {
+    if [ "$(ls -A "$DEST_FOLDER")" ]; then
+        echo ""
+        echo "====> Please select your backup file to transfer"
+        echo "===: using up, down arrow to select choice, then press enter for selecting"
+        transferfile=$(ls -la $DEST_FOLDER | fzf --height=30% --layout=reverse-list | awk '{print $9}') 
+        echo "===: Your select transfered file is : $DEST_FOLDER/$transferfile"
+        read -p "(Please Enter Key to Continue ... )" waitkey
+    else
+        echo "===: Please selelct another transfered folder, it is not a backup file!!! "
+    fi
+}
+
 # Show main menu
 showmainmenu() {
     while [ true ];
@@ -345,6 +373,7 @@ showmainmenu() {
         echo "=== 3) Show Local Backup Image.                ===="
         echo "=== 4) Show NAS Backup Image.                  ===="
         echo "=== 5) Encrypt Any Backup File.                ===="
+        echo "=== T) Transfer file to NAS.                   ===="
         echo "=== B) Backup our linux system.                ===="
         echo "=== R) Restore linux system from Backup File.  ===="
         echo "=== 0) Exit.                                   ===="
@@ -373,6 +402,17 @@ showmainmenu() {
                 EncryptBackup
                 read -p "(Press Enter Key to Continue.......)" waitkey
                 ;;
+            T)
+                showconfig
+                read -p "(Press Enter Key to Continue.......)" waitkey
+                if [ -d "$DEST_FOLDER" ]; then
+                    selectfiletoTr
+                    trtonaswitharg $transferfile
+                else
+                    echo "No Backup Folder, Please create or set it before using this option"
+                    read -p "(Press Enter Key to Continue.......)" waitkey
+                fi
+                ;;
             B)
                 showconfig
                 read -p "(Press Enter Key to Continue.......)" waitkey
@@ -394,7 +434,7 @@ showmainmenu() {
                 exit 1
                 ;;
             *)
-                echo "Please enter only [0,1,2,3,4,5,B,R] "
+                echo "Please enter only [0,1,2,3,4,5,T,B,R] "
                 read -p "(Press Enter Key to Continue.......)" waitkey
                 ;;
         esac
