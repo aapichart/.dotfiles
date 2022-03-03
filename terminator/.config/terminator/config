@@ -7,7 +7,7 @@
     background_darkness = 0.74
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Noto Sans Mono 12
+    font = MesloLGS NF Bold Italic 12
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
@@ -51,7 +51,7 @@
     background_darkness = 0.78
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Noto Sans Mono 6
+    font = MesloLGS NF 6
     show_titlebar = False
     scrollbar_position = hidden
     exit_action = hold

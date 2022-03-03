@@ -50,6 +50,10 @@ stow selected_editor
 stow autostart
 stow startupScript
 stow rasp4utils
+stow myfonts
+
+# Set up MesloLGS with devicons for vim and many app's glyph
+sudo cp ~/.local/share/fonts/*.ttf /usr/local/share/fonts
 
 # use zsh as default shell
 chsh -s $(which zsh) $USER
