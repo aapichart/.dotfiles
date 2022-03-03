@@ -52,13 +52,13 @@ stow startupScript
 stow rasp4utils
 stow myfonts
 
-# Set up MesloLGS with devicons for vim and many app's glyph
-sudo cp ~/.local/share/fonts/*.ttf /usr/local/share/fonts
-
 # use zsh as default shell
 chsh -s $(which zsh) $USER
 
 # bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
-
+# Set up MesloLGS with devicons for vim and many app's glyph
+sudo cp ~/.local/share/fonts/*.ttf /usr/local/share/fonts
+sudo cd /usr/local/share/fonts
+sudo fc-cache -fv
