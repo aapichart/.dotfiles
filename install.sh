@@ -29,6 +29,8 @@ nix-env -iA \
     nixpkgs.python39Packages.pip \
     nixpkgs.pv \
     nixpkgs.fd \
+    nixpkgs.lf \
+    nixpkgs.ueberzug \
     nixpkgs.jq \
     nixpkgs.nfsUtils \
     nixpkgs.pandoc \
@@ -51,6 +53,7 @@ stow autostart
 stow startupScript
 stow rasp4utils
 stow myfonts
+stow lfconf
 
 # use zsh as default shell
 chsh -s $(which zsh) $USER
