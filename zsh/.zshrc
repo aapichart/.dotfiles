@@ -10,8 +10,14 @@ fi
 export MYVIMRC=$HOME/.config/nvim/init.vim
 export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
+# This is all setting about LF - file manager
 # Source these file for icons on lf
 source ~/.config/lf/icons
+LFCD="~/.config/lf/lfcd.sh"
+if [ -f "$LFCD" ]; then
+   source "$LFCD"
+fi
+bindkey -s '^o' 'lfcd\n'  # zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
