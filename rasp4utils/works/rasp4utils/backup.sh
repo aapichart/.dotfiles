@@ -198,6 +198,7 @@ trtonaswitharg() {
         echo "transfer ........... $DEST_FOLDER/$1 "
         pv $DEST_FOLDER/$1 > /mnt/nasBackup/BackupRasp4/$1
         echo "Backup Done at " $(date +'%H:%M:%S')
+        read -p "Transfer File Process is done .... Press Enter to Continue " waitkey
     else
         echo "No NAS server at /mnt/nasBackup/BackupRasp4"
         echo "Process stop here ...... Bye"
