@@ -31,6 +31,7 @@ nix-env -iA \
     nixpkgs.fd \
     nixpkgs.lf \
     nixpkgs.ueberzug \
+    nixpkgs.ranger \
     nixpkgs.jq \
     nixpkgs.nfsUtils \
     nixpkgs.pandoc \
