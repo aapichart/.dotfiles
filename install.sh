@@ -31,6 +31,9 @@ nix-env -iA \
     nixpkgs.fd \
     nixpkgs.lf \
     nixpkgs.ueberzug \
+    nixpkgs.graphicsmagick \
+    nixpkgs.ffmpeg \
+    nixpkgs.ghostscript \
     nixpkgs.ranger \
     nixpkgs.jq \
     nixpkgs.nfsUtils \
