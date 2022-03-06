@@ -48,6 +48,13 @@ cmd execute ${{
 map au unarchive
 map ae execute
 
+# Map editor to nvim
+map e $nvim "$f"
+
+# open using <enter> key to remap <enter> key, need to remove enter key by map open first
+cmd open $terminator -e "nvim $f" 
+map o $terminator -e "nvim $f"
+
 # Basic Functions
 map . set hidden!
 map DD delete

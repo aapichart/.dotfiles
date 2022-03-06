@@ -1,11 +1,12 @@
 local wk = require("which-key")
 local mappings = {
+  F = {":Lf<cr>", "File Explore"},
   q = {":q<cr>", "Quit"},
   Q = {":q!<cr>", "Quit without Save"},
   x = {":bdelete<cr>", "Close buffer"},
   X = {":bdelete!<cr>", "Close buffer without Save"},
   w = {":w<cr>", "Save"},
-  E = {":e ~/.config/nvim/init.lua<cr>", "Edit Config"},
+  E = {":e ~/.config/nvim/init.vim<cr>", "Edit Config - init.vim"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   l = {

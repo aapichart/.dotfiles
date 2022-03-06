@@ -23,6 +23,7 @@ nix-env -iA \
     nixpkgs.gping \
 	nixpkgs.neofetch \
 	nixpkgs.conky \
+    nixpkgs.conky-all \ 
     nixpkgs.terminator \
     nixpkgs.tree \
     nixpkgs.cmatrix \
@@ -58,6 +59,7 @@ stow startupScript
 stow rasp4utils
 stow myfonts
 stow lfconf
+stow krohnkite
 
 # use zsh as default shell
 chsh -s $(which zsh) $USER

@@ -1,6 +1,9 @@
 vim.opt.termguicolors = true
-require("bufferline").setup{
 
+require("bufferline").setup{
+    options= {
+        numbers = "buffer_id"
+    }
 }
 vim.cmd[[
   nnoremap <silent><TAB> :BufferLineCycleNext<CR>

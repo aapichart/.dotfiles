@@ -6,13 +6,6 @@ source $HOME/.config/nvim/plug-config/plugins.vim
 " Setup .vim plugins config "
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 
-" Setting this part for lf.vim
-let lfvim = "~/.config/lf/lf.vim"
-if filereadable(lfvim)
-    exec "source" . lfvim
-endif
-noremap <leader>t :LF<cr>
-
 " This is Config for lua plugins
 lua << EOF
 --require('plugins')

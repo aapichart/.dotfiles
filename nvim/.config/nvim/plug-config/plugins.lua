@@ -60,7 +60,10 @@ return require('packer').startup(function()
 --  use 'hrsh7th/vim-vsnip'
 --  use {'kabouzeid/nvim-lspinstall'}
 --  use 'glepnir/lspsaga.nvim'
-  
+
+  use 'voldikss/vim-floaterm'
+  use 'ptzz/lf.vim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
