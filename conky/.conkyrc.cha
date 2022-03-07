@@ -84,3 +84,6 @@ Lan Down $alignr ${downspeed eth0} kb/s
 Lan Up $alignr ${upspeed eth0} kb/s
 Lan Downloaded: $alignr ${totaldown eth0}
 Lan Uploaded: $alignr ${totalup eth0}
+TEXT
+
+${font Anurati:size=85}${color #313178}${time %A}#${color yellow}
