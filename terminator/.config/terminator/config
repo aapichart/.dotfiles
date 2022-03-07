@@ -174,6 +174,7 @@
       order = 0
       profile = runGtop
       uuid = 83c847d9-e552-4fa4-8c21-e985ca72c412
+      command = gtop
     [[[child3]]]
       type = VPaned
       parent = child1
@@ -192,12 +193,14 @@
       order = 0
       profile = runNeofetch
       uuid = c0d90083-66de-464c-b5ac-e313da2d848c
+      command = neofetch
     [[[terminal6]]]
       type = Terminal
       parent = child4
       order = 1
       profile = runGping
       uuid = c7bbb8be-02ec-43cb-a6ff-3d5857bfa48d
+      command = gping 10.135.70.133
     [[[child7]]]
       type = VPaned
       parent = child3
@@ -210,6 +213,7 @@
       order = 0
       profile = default
       uuid = 4d321278-3b59-491e-87b1-0a78449ce49d
+      command = ""
     [[[terminal9]]]
       type = Terminal
       parent = child7
@@ -233,6 +237,7 @@
       order = 0
       profile = default
       uuid = 2d4c8f1e-f792-4f8a-b421-9ba7e8f12978
+      command = ""
     [[[child12]]]
       type = Window
       parent = ""
@@ -256,10 +261,12 @@
       order = 0
       profile = runDeskpiFan
       uuid = ae6f88c8-859d-4732-a63a-1d3338872e11
+      command = bash ~/.startupDeskpiFan.sh
     [[[terminal15]]]
       type = Terminal
       parent = child13
       order = 1
       profile = default
       uuid = b2e427e0-05bb-4ec4-a3bd-f48623eefbbf
+      command = ""
 [plugins]
