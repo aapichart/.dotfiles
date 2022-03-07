@@ -9,10 +9,10 @@ temperature_unit celsius
 double_buffer yes
 no_buffers yes
 text_buffer_size 2048
-alignment top_middle
-gap_x 1300
-gap_y 1850
-minimum_size 550 550
+alignment top_left
+gap_x 20
+gap_y 0
+minimum_size 1550 550
 maximum_width 550
 own_window yes 
 own_window_type normal
@@ -43,7 +43,7 @@ own_window_colour 000000
 TEXT
 
 
-${font Anurati:size=150}${color #317873}${time %A}#${color yellow}
+${font Anurati:size=85}${color #00313178}${time %A}#${color yellow}
 
 
 

@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Start terminal for coding and monitor
-terminator -l workWithMonx
+terminator -l workWithMon
