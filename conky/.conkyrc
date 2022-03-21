@@ -4,6 +4,7 @@ background yes
 update_interval 0.5
 total_run_times 0
 
+xinerama_head 2
 cpu_avg_samples 2
 net_avg_samples 2
 temperature_unit celsius
@@ -11,7 +12,7 @@ temperature_unit celsius
 double_buffer yes
 no_buffers yes
 text_buffer_size 2048
-alignment top_right
+alignment top_left
 gap_x 20
 gap_y 0
 minimum_size 500 50
@@ -42,9 +43,9 @@ default_color D6D5D4
 #E87E3C
 own_window_colour 000000
 TEXT
-${font Anurati:size=65}${color #F8F8F8}${time %A}#${color white}
+${font Anurati:size=55}${color #F8F8F8}${time %A}#${color white}
 TEXT
-${font Anurati:size=35}${color #F8F8F8}ChartAsa${color white}
+${font Anurati:size=25}${color #F8F8F8}ChartAsa${color white}
 ${font Arial:size=10}${color red}Raspberry${color Ivory}PI
 ${font Arial:size=10}${color green}    { \ }{ / }
 ${font Arial:size=10}${color red}      ,-${font Arial:size=10}${color green}y${font Arial:size=10}${color red}-.
@@ -63,7 +64,7 @@ Uptime $alignr${uptime}
 File System $alignr${fs_type}
 
 ${font Arial:bold:size=10}${color red}CPU ${color DarkSlateGray}${hr 2}
-$font${color DimGray}Temp: $alignr ${exec /opt/vc/bin/vcgencmd measure_temp | cut -c6-9} C
+# ${font Arial:bold:size=10}${color DimGray}Temp: $alignr ${exec /opt/vc/bin/vcgencmd measure_temp | cut -c6-9} C
 $font${color DimGray}CPU1 ${cpu cpu1}% ${cpubar cpu1}
 CPU2 ${cpu cpu2}% ${cpubar cpu2}
 CPU3 ${cpu cpu3}% ${cpubar cpu3}

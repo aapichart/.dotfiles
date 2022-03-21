@@ -1,11 +1,11 @@
 export TERM="xterm-256color"
 EDITOR='nvim'
 # Preferred editor for local and remote session
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='nvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#	export EDITOR='vim'
+#else
+#	export EDITOR='nvim'
+# fi
 # export variable for nvim
 export MYVIMRC=$HOME/.config/nvim/init.vim
 export XDG_CONFIG_HOME=$HOME/.config
@@ -84,6 +84,10 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # use nix
 if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+# This is set for stopping powerlevel9k warning message
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# This message is confirmed that shell is already sourced this .zshrc file
+echo "This shell source on .zshrc file at home directory"
