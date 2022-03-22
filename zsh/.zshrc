@@ -1,15 +1,13 @@
 export TERM="xterm-256color"
 EDITOR='nvim'
-# Preferred editor for local and remote session
-#if [[ -n $SSH_CONNECTION ]]; then
-#	export EDITOR='vim'
-#else
-#	export EDITOR='nvim'
-# fi
 # export variable for nvim
 export MYVIMRC=$HOME/.config/nvim/init.vim
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
+
+# use nix
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 # This is all setting about LF - file manager
 # Source these file for icons on lf
 source ~/.config/lf/icons
@@ -33,9 +31,6 @@ bindkey -v
 # Note: This must be exported before the plugin is bundled
 export NVM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
-
-# source plugins
-source ~/.zsh_plugins.sh
 
 # Alias, some more ls aliases
 alias ll='ls -alF'
@@ -67,6 +62,13 @@ gcom() {
     git commit -m $1
 }
 
+cdd() {
+    cd $1 && ls
+}
+
+# source plugins
+source .zsh_plugins.sh
+
 # setting for direnv 
 eval "$(direnv hook zsh)"
 
@@ -80,14 +82,10 @@ export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
-# use nix
-if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 # This is set for stopping powerlevel9k warning message
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # This message is confirmed that shell is already sourced this .zshrc file
-echo "This shell source on .zshrc file at home directory"
+# echo "This shell source on .zshrc file at home directory"
