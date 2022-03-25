@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-local servers = { 'tsserver' }
+local servers = { 'tsserver', 'pyright' }
 
 local on_attach = function(client, bufnr)
     -- Do things when language server attaches to

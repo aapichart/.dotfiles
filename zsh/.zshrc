@@ -1,3 +1,4 @@
+#$LANG=en_US.UTF-8 $LC_ALL= $LC_CTYPE=C.UTF-8
 export TERM="xterm-256color"
 EDITOR='nvim'
 # export variable for nvim
@@ -11,6 +12,10 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 # This is all setting about LF - file manager
 # Source these file for icons on lf
 source ~/.config/lf/icons
+if [ -f ~/.local/bin/lfcd.sh ]; then
+    source ~/.local/bin/lfcd.sh 
+fi
+bindkey -s '^o' 'lfcd\n'  # zsh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -67,7 +72,7 @@ cdd() {
 }
 
 # source plugins
-source .zsh_plugins.sh
+source ~/.zsh_plugins.sh
 
 # setting for direnv 
 eval "$(direnv hook zsh)"
