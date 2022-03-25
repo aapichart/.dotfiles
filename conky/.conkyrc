@@ -43,8 +43,7 @@ default_color D6D5D4
 #E87E3C
 own_window_colour 000000
 TEXT
-${font Anurati:size=55}${color #F8F8F8}${time %A}#${color white}
-TEXT
+${font Anurati:size=55}${color #F8F8F8}${time %A}${color white}
 ${font Anurati:size=25}${color #F8F8F8}ChartAsa${color white}
 ${font Arial:size=10}${color red}Raspberry${color Ivory}PI
 ${font Arial:size=10}${color green}    { \ }{ / }
