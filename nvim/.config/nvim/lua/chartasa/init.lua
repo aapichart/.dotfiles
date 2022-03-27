@@ -1,3 +1,4 @@
+require('chartasa/plugins')
 require('chartasa/telescope')
 require('chartasa/lf')
 require('chartasa/nvim-web-devicons')
