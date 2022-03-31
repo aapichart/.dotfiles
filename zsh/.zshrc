@@ -1,5 +1,5 @@
 #$LANG=en_US.UTF-8 $LC_ALL= $LC_CTYPE=C.UTF-8
-export TERM="xterm-256color"
+export TERM="screen-256color"
 EDITOR='nvim'
 # export variable for nvim
 export MYVIMRC=$HOME/.config/nvim/init.lua

@@ -114,6 +114,16 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
+  nerdcommenter = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/nvim-autopairs",

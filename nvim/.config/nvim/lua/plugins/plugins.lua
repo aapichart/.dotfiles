@@ -33,6 +33,7 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
   use 'itchyny/lightline.vim'
+  use 'preservim/nerdcommenter'
 
   -- treesitter for syntax highlighting and some other plugins for treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
@@ -65,12 +66,12 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'onsails/lspkind-nvim'
+  use 'glepnir/lspsaga.nvim'
 
 --  use 'hrsh7th/cmp-buffer'
 --  use 'hrsh7th/cmp-vsnip'
 --  use 'hrsh7th/vim-vsnip'
 --  use {'kabouzeid/nvim-lspinstall'}
---  use 'glepnir/lspsaga.nvim'
 
   use 'voldikss/vim-floaterm'
   use 'ptzz/lf.vim'
