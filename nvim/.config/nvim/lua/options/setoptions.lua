@@ -21,7 +21,7 @@ vim.o.incsearch = true
 vim.o.ignorecase = true
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
-vim.o.undodir = '~/.config/nvim/undodir'
+vim.o.undodir = vim.fn.stdpath('config') .. '/undodir'
 vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.mouse = "a"
@@ -55,3 +55,4 @@ vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
 vim.cmd('highlight vimComment ctermbg=NONE guibg=NONE')
 vim.cmd('highlight vimLineComment ctermbg=NONE guibg=NONE')
 vim.cmd('highlight Comment ctermbg=NONE guibg=NONE')
+

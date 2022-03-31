@@ -25,10 +25,10 @@ return require('packer').startup(function()
   use 'sainnhe/gruvbox-material'
 
   use 'jpalardy/vim-slime'
-  use 'justinmk/vim-gitgutter'
+  use 'airblade/vim-gitgutter'
   use 'vimwiki/vimwiki'
   use 'tbabej/taskwiki'
-  use 'tpope/vim-surroung'
+  use 'tpope/vim-surround'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'

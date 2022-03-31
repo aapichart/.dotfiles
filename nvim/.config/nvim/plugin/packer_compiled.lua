@@ -202,17 +202,17 @@ _G.packer_plugins = {
   ["vim-gitgutter"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/justinmk/vim-gitgutter"
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-slime"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-slime",
     url = "https://github.com/jpalardy/vim-slime"
   },
-  ["vim-surroung"] = {
+  ["vim-surround"] = {
     loaded = true,
-    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-surroung",
-    url = "https://github.com/tpope/vim-surroung"
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   vimwiki = {
     loaded = true,
