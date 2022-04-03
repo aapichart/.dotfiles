@@ -3,7 +3,8 @@ vim.cmd('syntax on')
 vim.o.shortmess = vim.o.shortmess .. 'c' 
 vim.o.hidden = true 
 vim.o.whichwrap = 'b,s,<,>,[,],h,l' 
-vim.o.pumheight = 10
+vim.o.pumheight = 11
+vim.o.encoding='utf-8'
 vim.o.fileencoding = 'utf-8'
 vim.o.cmdheight = 2
 vim.o.splitbelow = true
@@ -43,6 +44,8 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
+vim.o.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
+vim.cmd('hi Cursor guifg=green guibg=green')
 vim.cmd('colorscheme gruvbox-material')
 vim.cmd('highlight Normal ctermbg=NONE guibg=NONE')
 vim.cmd('highlight LineNr ctermbg=NONE guibg=NONE')
@@ -55,4 +58,3 @@ vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
 vim.cmd('highlight vimComment ctermbg=NONE guibg=NONE')
 vim.cmd('highlight vimLineComment ctermbg=NONE guibg=NONE')
 vim.cmd('highlight Comment ctermbg=NONE guibg=NONE')
-

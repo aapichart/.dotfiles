@@ -11,3 +11,4 @@ require("nvim-tree").setup{
       ignore = true,
   }
 }
+

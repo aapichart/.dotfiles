@@ -60,18 +60,25 @@ return require('packer').startup(function()
  
   -- Plugin for language server configuration
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+
   -- Plugin for code completion 
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'onsails/lspkind-nvim'
   use 'glepnir/lspsaga.nvim'
 
---  use 'hrsh7th/cmp-buffer'
 --  use 'hrsh7th/cmp-vsnip'
 --  use 'hrsh7th/vim-vsnip'
 --  use {'kabouzeid/nvim-lspinstall'}
+
+  -- Snips plugins
+  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
+
 
   use 'voldikss/vim-floaterm'
   use 'ptzz/lf.vim'

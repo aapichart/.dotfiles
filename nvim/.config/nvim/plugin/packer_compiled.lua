@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -184,6 +189,11 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
   ["vim-eunuch"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-eunuch",
@@ -208,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-slime",
     url = "https://github.com/jpalardy/vim-slime"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-surround"] = {
     loaded = true,

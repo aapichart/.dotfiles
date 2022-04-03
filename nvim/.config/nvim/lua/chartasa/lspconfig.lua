@@ -70,10 +70,11 @@ cmp.setup {
                 fallback()
             end
         end,
-        ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
+        -- Create Problem after Enter in insert mode, This will show "<Plug>(cmp.u.k.recursive)"
+        -- ['<CR>'] = cmp.mapping.confirm {
+            -- behavior = cmp.ConfirmBehavior.Replace,
+            -- select = true,
+        -- },
     },
     snippet = {
         expand = function(args)

@@ -65,4 +65,6 @@ mapn('<leader>ga',"<cmd>Lspsaga code_action<CR>")
 mapv('<leader>ga',"<cmd>Lspsaga range_code_action<CR>")
 mapn('<leader>gs',"<cmd>Lspsaga signature_help<CR>")
 
-
+-- ultisnips
+vim.g.UltiSnipsJumpForwardTrigger="<C-b>"
+vim.g.UltiSnipsJumpBackwardTrigger="<C-z>"
