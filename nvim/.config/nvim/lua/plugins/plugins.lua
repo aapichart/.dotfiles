@@ -61,6 +61,7 @@ return require('packer').startup(function()
   -- Plugin for language server configuration
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
+  use {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'}
 
   -- Plugin for code completion 
   use 'hrsh7th/nvim-cmp'
