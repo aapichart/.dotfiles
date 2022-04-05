@@ -13,6 +13,7 @@ nix-env -iA \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.yarn \
+    nixpkgs.xsel \
 	nixpkgs.xclip \
 	nixpkgs.fzf \
 	nixpkgs.ripgrep \
