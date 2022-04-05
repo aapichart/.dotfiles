@@ -10,6 +10,7 @@ nix-env -iA \
 	nixpkgs.antibody \
 	nixpkgs.git \
 	nixpkgs.neovim \
+    nixpkgs.python3.pkgs.pip \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.yarn \
