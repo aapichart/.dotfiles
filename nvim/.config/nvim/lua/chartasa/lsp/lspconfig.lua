@@ -1,4 +1,8 @@
 -- Setting up for nvim-lsp-installer
+local status_ok, nvim_lsp_installer = pcall(require, "nvim-lsp-installer")
+if not status_ok then
+	return
+end
 local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
     local opts = {}
@@ -17,6 +21,10 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 -- nvim-cmp
+local status_ok, lsp_cmp = pcall(require, "cmp")
+if not status_ok then
+	return
+end
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')

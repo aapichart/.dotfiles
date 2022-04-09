@@ -1,3 +1,9 @@
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+    print("Missing plugin nvim-treesitter")
+    return
+end
+
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"html", "javascript", "lua" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = { "javascript" }, -- List of parsers to ignore installing

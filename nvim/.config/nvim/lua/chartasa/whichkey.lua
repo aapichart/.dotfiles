@@ -1,3 +1,9 @@
+local status_ok, configs = pcall(require, "which-key")
+if not status_ok then
+    print("Missing plugin which-key")
+    return
+end
+
 local wk = require("which-key")
 local mappings = {
   F = {":Lf<cr>", "File Explore"},
