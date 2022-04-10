@@ -29,6 +29,7 @@ nix-env -iA \
     nixpkgs.terminator \
     nixpkgs.tree \
     nixpkgs.cmatrix \
+    nixpkgs.postgresql \
     nixpkgs.python39Packages.pip \
     nixpkgs.pv \
     nixpkgs.fd \
