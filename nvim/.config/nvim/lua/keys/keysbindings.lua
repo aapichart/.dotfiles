@@ -116,3 +116,7 @@ mapn('<leader>gs',"<cmd>Lspsaga signature_help<CR>")
 -- ultisnips
 vim.g.UltiSnipsJumpForwardTrigger="<C-b>"
 vim.g.UltiSnipsJumpBackwardTrigger="<C-z>"
+
+-- key mapping for vim-slime
+vim.cmd('xmap <C-s> <Plug>SlimeRegionSend')
+vim.cmd('nmap <C-s> <Plug>SlimeParagraphSend')

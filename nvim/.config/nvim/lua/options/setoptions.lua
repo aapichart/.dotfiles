@@ -44,6 +44,13 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
+-- For vim-slime
+vim.cmd('let g:slime_no_mappings = 1')
+vim.cmd('let g:slime_target = "tmux"')
+vim.cmd('let g:slime_paste_file = "$HOME/.slime_paste"')
+vim.cmd('let g:slime_python_ipython = 1')
+vim.cmd('let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}')
+
 vim.o.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
 vim.cmd('hi Cursor guifg=green guibg=green')
 vim.cmd('colorscheme gruvbox-material')
