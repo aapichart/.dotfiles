@@ -26,7 +26,8 @@ local mappings = {
     a = {'<cmd>lua vim.lsp.buf.code_action()<cr>', "Code actions"},
     e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', "Show line diagnostics"},
     q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', "Show loclist"},
-  }
+  },
 }
+
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)

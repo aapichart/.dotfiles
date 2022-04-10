@@ -13,6 +13,6 @@ require('chartasa.ultisnips')
 -- for lsp config
 require('chartasa.lsp.lspconfig')
 require('chartasa.lsp.null-ls')
---require('lsp.cmp')
+require('chartasa.lsp.cmp')
 --require('lsp.diagnostic_signs')
 --require('lsp.language_servers')

@@ -10,6 +10,9 @@ local function mapv(key1, realkey)
     map('v', key1, realkey, options)
 end
 
+local function mapx(key1, realkey)
+    map('x', key1, realkey, options)
+end
 local function mapi(key1, realkey)
     map('i', key1, realkey, options)
 end
@@ -26,6 +29,19 @@ mapn('<leader>e',':NvimTreeToggle<cr>')
 mapv('<','<gv')
 mapv('>','>gv')
 
+-- Resize with arrows
+mapn("<C-Up>", ":resize -2<CR>")
+mapn("<C-Down>", ":resize +2<CR>")
+mapn("<C-Left>", ":vertical resize -2<CR>")
+mapn("<C-Right>", ":vertical resize +2<CR>")
+
+-- Visual Block --
+-- Move text up and down
+mapx("J", ":move '>+1<CR>gv-gv")
+mapx("K", ":move '<-2<CR>gv-gv")
+mapx("<A-j>", ":move '>+1<CR>gv-gv")
+mapx("<A-k>", ":move '<-2<CR>gv-gv")
+
 -- Nerdcomment
 vim.g.NERDCreateDefaultMappings = 1
 vim.g.NERDSpaceDelims = 1
@@ -33,10 +49,12 @@ mapn('<leader>ci',"<cmd>call NERDCommenter#comment()<cr>")
 mapv('<leader>ci',"<cmd>call NERDCommenter#comment()<cr>")
 
 -- wincmd
-mapn('<leader>h',':wincmd h<Cr>')
-mapn('<leader>j',':wincmd j<Cr>')
-mapn('<leader>k',':wincmd k<Cr>')
-mapn('<leader>l',':wincmd l<Cr>')
+mapn('<leader>H',':wincmd h<Cr>')
+mapn('<leader>J',':wincmd j<Cr>')
+mapn('<leader>K',':wincmd k<Cr>')
+mapn('<leader>L',':wincmd l<Cr>')
+mapn('<leader>S',':wincmd s<Cr>')
+mapn('<leader>V',':wincmd v<Cr>')
 
 -- Telescope
 mapn('<leader>pp',"<cmd>lua require('telescope.builtin').builtin()<CR>")
@@ -50,7 +68,7 @@ mapn('<leader>rg',"<cmd>lua require('telescope.builtin').live_grep()<CR>")
 mapn('<leader>cs',"<cmd>lua require('telescope.builtin').colorscheme()<CR>")
 
 -- Lsp key gindings
-mapn('<space>e',"<cmd>lua vim.diagnostic.open_float()<CR>")
+mapn('<space>d',"<cmd>lua vim.diagnostic.open_float()<CR>")
 mapn('[d',"<cmd>lua vim.diagnostic.goto_prev()<CR>")
 mapn(']d',"<cmd>lua vim.diagnostic.goto_next()<CR>")
 mapn('<space>q',"<cmd>lua vim.diagnostic.setloclist()<CR>")

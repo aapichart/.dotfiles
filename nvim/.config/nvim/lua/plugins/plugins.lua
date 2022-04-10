@@ -35,19 +35,8 @@ return require('packer').startup(function()
   use 'itchyny/lightline.vim'
   use 'preservim/nerdcommenter'
 
-  -- treesitter for syntax highlighting and some other plugins for treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
-  use {'windwp/nvim-ts-autotag'}
-  use {'p00f/nvim-ts-rainbow'}
-  use {'windwp/nvim-autopairs'}
-
-  -- config lualine (status line)
-  --use {
-    --'hoob3rt/lualine.nvim',
-    --requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  --}
   -- config bufferline
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
   -- config nvim-tree for file explorer
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- Use this plugin for helping us know which keys are mapping
@@ -55,23 +44,34 @@ return require('packer').startup(function()
   -- Telescope is used like an extensible fuzzy finder
   --use {'nvim-lua/popup.nvim'}
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
-  -- Plugin for code completion and language servers
-  --use 'prabirshrestha/vim-lsp'
-  --use 'mattn/vim-lsp-settings'
  
-  -- Plugin for language server configuration
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'}
+  -- treesitter for syntax highlighting and some other plugins for treesitter
+  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
+  use {'windwp/nvim-ts-autotag'}
+  use {'p00f/nvim-ts-rainbow'}
+  use {'windwp/nvim-autopairs'}
+  
+  -- Plugin for language server configuration (lsp)
+  use { 
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+          -- Lsp support
+          'neovim/nvim-lspconfig',
+          'williamboman/nvim-lsp-installer',
+          'tamago324/nlsp-settings.nvim',
+          {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'},
 
-  -- Plugin for code completion 
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'onsails/lspkind-nvim'
-  use 'glepnir/lspsaga.nvim'
+          -- for Auto completion 
+          'hrsh7th/nvim-cmp',
+          'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-nvim-lsp',
+          'hrsh7th/cmp-nvim-lua',
+          'L3MON4D3/LuaSnip',
+          'saadparwaiz1/cmp_luasnip',
+          'onsails/lspkind-nvim',
+          'glepnir/lspsaga.nvim',
+        }
+    }
 
 --  use 'hrsh7th/cmp-vsnip'
 --  use 'hrsh7th/vim-vsnip'
@@ -81,7 +81,6 @@ return require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
 
-
   use 'voldikss/vim-floaterm'
   use 'ptzz/lf.vim'
 
@@ -90,7 +89,6 @@ return require('packer').startup(function()
   if packer_bootstrap then
     require('packer').sync()
   end
-
 end)
 
 

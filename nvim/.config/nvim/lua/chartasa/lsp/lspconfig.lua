@@ -1,3 +1,13 @@
+-- Setting lsp-zero
+local status_ok, lsp_zero = pcall(require, "lsp-zero")
+if not status_ok then
+    return
+end
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+lsp.nvim_workspace()
+lsp.setup()
+
 -- Setting up for nvim-lsp-installer
 local status_ok, nvim_lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
