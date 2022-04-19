@@ -8,25 +8,31 @@ lsp.preset('recommended')
 lsp.nvim_workspace()
 lsp.setup()
 
+-- Setting for lspconfig
+local status_ok, _ = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
 -- Setting up for nvim-lsp-installer
 local status_ok, nvim_lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
 	return
 end
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    -- if server.name == "sumneko_lua" then
-        -- opts = {
-            -- setting = {
-                -- Lua = {
-                    -- diagnostics = {
-                        -- globals = {'vim','use'}
-                    -- },
-                -- }
-        -- }
-    --}
-    --end
+local nvim_lsp_installer = require("nvim-lsp-installer")
+nvim_lsp_installer.on_server_ready(function(server)
+    local opts = {
+        on_attach = require('chartasa.lsp.handlers').on_attach,
+        capabilities = require('chartasa.lsp.handlers').capabilities,
+    }
+	if server.name == "sumneko_lua" then
+		local sumneko_opts = require("chartasa.lsp.settings.sumneko_lua")
+		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+	end
+	if server.name == "jsonls" then
+		local jsonls_opts = require("chartasa.lsp.settings.jsonls")
+		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+	end
     server:setup(opts)
 end)
 

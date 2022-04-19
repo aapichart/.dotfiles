@@ -81,6 +81,7 @@ return require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
 
+  use { 'akinsho/toggleterm.nvim' }
   use 'voldikss/vim-floaterm'
   use 'ptzz/lf.vim'
 
