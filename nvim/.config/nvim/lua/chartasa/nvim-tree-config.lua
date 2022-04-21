@@ -1,5 +1,3 @@
-vim.g.nvim_tree_indent_markers = 1
-
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -35,7 +33,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 require("nvim-tree").setup{
   auto_open = 1,
-  auto_close =1,
   update_to_buf_dir = {
     enable = true,
     auto_open = true,

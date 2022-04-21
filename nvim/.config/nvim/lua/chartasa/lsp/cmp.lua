@@ -9,8 +9,6 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local lspkind = require('lspkind')
-
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
@@ -47,6 +45,22 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 
+
+-- Setting for nvim-cmp
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	return
+end
+
+local snip_status_ok, luasnip = pcall(require, "luasnip")
+if not snip_status_ok then
+  return
+end
+require("luasnip/loaders/from_vscode").lazy_load()
+
+-- better autocompletin experience
+vim.o.completeopt = 'menuone,noselect'
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
@@ -55,7 +69,7 @@ end
 local cmp = require'cmp'
 cmp.setup({
   snippet = {
-    expand = function(args)
+    expalnd = function(args)
       -- For `vsnip` user.
       -- vim.fn["vsnip#anonymous"](args.body)
 
@@ -151,16 +165,17 @@ cmp.setup({
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+    -- documentation = {
+     -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+   -- },
   experimental = {
     ghost_text = false,
     native_menu = false,
   },
-  -- formatting = {
-    -- format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-  -- }
 })
+
+
+
+
 
 
