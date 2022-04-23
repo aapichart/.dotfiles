@@ -11,6 +11,7 @@ nix-env -iA \
 	nixpkgs.git \
 	nixpkgs.neovim \
     nixpkgs.python3.pkgs.pip \
+    nixpkgs.pipenv \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.yarn \
