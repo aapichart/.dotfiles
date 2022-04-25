@@ -44,7 +44,7 @@ return require('packer').startup(function()
   -- Telescope is used like an extensible fuzzy finder
   --use {'nvim-lua/popup.nvim'}
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
- 
+  use { 'sharkdp/fd' }
   -- treesitter for syntax highlighting and some other plugins for treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
   use {'windwp/nvim-ts-autotag'}
