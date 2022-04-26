@@ -1,3 +1,5 @@
 [user]
 	email = chart.asa@gmail.com
 	name = Chart
+[core]
+	excludesFile = ~/.gitignore_global

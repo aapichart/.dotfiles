@@ -7,4 +7,3 @@ require('chartasa')
 require('options/setoptions')
 require('options/autocommands')
 require('keys/keysbindings')
-
