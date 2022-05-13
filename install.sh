@@ -57,6 +57,7 @@ else
         nixpkgs.cmatrix \
         nixpkgs.postgresql \
         nixpkgs.python39Packages.pip \
+        nixpkgs.virtualenv \
         nixpkgs.pipenv \
         nixpkgs.pv \
         nixpkgs.fd \
