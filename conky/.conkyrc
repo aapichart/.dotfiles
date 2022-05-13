@@ -1,6 +1,5 @@
-
 #Conky By Jesse Avalos See me on Eye candy Linux (Google +) for more conkys.
-background yes
+background yes 
 update_interval 0.5
 total_run_times 0
 
@@ -14,9 +13,9 @@ no_buffers yes
 text_buffer_size 2048
 alignment top_left
 gap_x 20
-gap_y 0
-minimum_size 500 50
-maximum_width 500
+gap_y 10
+minimum_size 350 30
+maximum_width 350
 own_window yes 
 own_window_type normal
 own_window_transparent yes
@@ -45,9 +44,9 @@ own_window_colour 000000
 TEXT
 ${font Anurati:size=55}${color #F8F8F8}${time %A}${color white}
 ${font Anurati:size=25}${color #F8F8F8}ChartAsa${color white}
-${font Arial:size=10}${color red}Raspberry${color Ivory}PI
-${font Arial:size=10}${color green}    { \ }{ / }
-${font Arial:size=10}${color red}      ,-${font Arial:size=10}${color green}y${font Arial:size=10}${color red}-.
+${font Arial:size=08}${color red}Raspberry${color Ivory}PI
+${font Arial:size=08}${color green}    { \ }{ / }
+${font Arial:size=08}${color red}      ,-${font Arial:size=08}${color green}y${font Arial:size=10}${color red}-.
  ,(  _(_)_  ).
 ( (_) (_) (_) )
  ' ( _(_) _) '
@@ -56,13 +55,13 @@ ${font Arial:size=10}${color red}      ,-${font Arial:size=10}${color green}y${f
 ${voffset -60}
 ${color DimGray}
 ${font}
-${font Arial:bold:size=10}${color red}SYSTEM ${color DarkSlateGray} ${hr 2}
+${font Arial:bold:size=08}${color red}SYSTEM ${color DarkSlateGray} ${hr 2}
 $font${color DimGray}$sysname $kernel $alignr $machine
 Frequency $alignr${freq_g cpu0}Ghz
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
 
-${font Arial:bold:size=10}${color red}CPU ${color DarkSlateGray}${hr 2}
+${font Arial:bold:size=08}${color red}CPU ${color DarkSlateGray}${hr 2}
 # ${font Arial:bold:size=10}${color DimGray}Temp: $alignr ${exec /opt/vc/bin/vcgencmd measure_temp | cut -c6-9} C
 $font${color DimGray}CPU1 ${cpu cpu1}% ${cpubar cpu1}
 CPU2 ${cpu cpu2}% ${cpubar cpu2}
@@ -70,23 +69,23 @@ CPU3 ${cpu cpu3}% ${cpubar cpu3}
 CPU4 ${cpu cpu4}% ${cpubar cpu4}
 ${cpugraph DimGray DarkSlateGray} $color
 
-${font Arial:bold:size=10}${color red}MEMORY ${color DarkSlateGray}${hr 2}
+${font Arial:bold:size=08}${color red}MEMORY ${color DarkSlateGray}${hr 2}
 $font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 $font${color DimGray}SWAP $alignc $swap / $swapmax $alignr $swapperc%
 $swapbar
 
-${font Arial:bold:size=10}${color red}HDD ${color DarkSlateGray}${hr 2}
+${font Arial:bold:size=08}${color red}HDD ${color DarkSlateGray}${hr 2}
 $font${color DimGray}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
 ${fs_bar /home}
 
-${font Arial:bold:size=10}${color red}TOP PROCESSES ${color DarkSlateGray}${hr 2}
+${font Arial:bold:size=08}${color red}TOP PROCESSES ${color DarkSlateGray}${hr 2}
 ${color DimGray}$font${top_mem name 2}${alignr}${top mem 2} %
 $font${top_mem name 3}${alignr}${top mem 3} %
 $font${top_mem name 4}${alignr}${top mem 4} %
 $font${top_mem name 5}${alignr}${top mem 5} %
 
-${font Arial:bold:size=10}${color red}NETWORK ${color DarkSlateGray}${hr 2}
+${font Arial:bold:size=08}${color red}NETWORK ${color DarkSlateGray}${hr 2}
 $font${color DimGray}Wlan IP$alignr ${addr wlan0}
 Wlan UpSpeed
 ${upspeedgraph wlan0 DimGray DarkSlateGray} $color
