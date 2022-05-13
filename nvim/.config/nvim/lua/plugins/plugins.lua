@@ -30,7 +30,7 @@ return require('packer').startup(function()
   use 'tbabej/taskwiki'
   use 'tpope/vim-surround'
   use 'tpope/vim-eunuch'
-  use 'tpope/vim-fugitive'
+ -- use 'tpope/vim-fugitive'
   use 'lewis6991/gitsigns.nvim'
   use 'itchyny/lightline.vim'
   use 'preservim/nerdcommenter'
@@ -42,9 +42,12 @@ return require('packer').startup(function()
   -- Use this plugin for helping us know which keys are mapping
   use {'folke/which-key.nvim'}
   -- Telescope is used like an extensible fuzzy finder
-  --use {'nvim-lua/popup.nvim'}
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use { 'sharkdp/fd' }
+  use {'tom-anders/telescope-vim-bookmarks.nvim'}
+  use { 'nvim-telescope/telescope-media-files.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
+  use { 'nvim-telescope/telescope-file-browser.nvim' }
+  use {'sharkdp/fd'}
   -- treesitter for syntax highlighting and some other plugins for treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
   use {'windwp/nvim-ts-autotag'}
@@ -58,15 +61,18 @@ return require('packer').startup(function()
           -- Lsp support
           'neovim/nvim-lspconfig',
           'williamboman/nvim-lsp-installer',
+          'ray-x/lsp_signature.nvim',
+          'b0o/SchemaStore.nvim',
           'tamago324/nlsp-settings.nvim',
           {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'},
 
           -- for Auto completion 
           'hrsh7th/nvim-cmp',
           'hrsh7th/cmp-buffer',
+          'hrsh7th/cmp-path',
+          'hrsh7th/cmp-cmdline',
           'hrsh7th/cmp-nvim-lsp',
           'hrsh7th/cmp-nvim-lua',
-          'L3MON4D3/LuaSnip',
           'saadparwaiz1/cmp_luasnip',
           'glepnir/lspsaga.nvim',
         }
@@ -79,6 +85,7 @@ return require('packer').startup(function()
   -- Snips plugins
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
+  use 'L3MON4D3/LuaSnip'
 
   use { 'akinsho/toggleterm.nvim' }
   use 'voldikss/vim-floaterm'

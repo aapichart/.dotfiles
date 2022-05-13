@@ -32,17 +32,9 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 require("nvim-tree").setup{
-  auto_open = 1,
   update_to_buf_dir = {
     enable = true,
     auto_open = true,
-  },
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
   },
   view = {
       width = 27,

@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["SchemaStore.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/SchemaStore.nvim",
+    url = "https://github.com/b0o/SchemaStore.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -84,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -93,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
@@ -128,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -209,6 +229,26 @@ _G.packer_plugins = {
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/taskwiki",
     url = "https://github.com/tbabej/taskwiki"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
+  ["telescope-media-files.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
+    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+  },
+  ["telescope-vim-bookmarks.nvim"] = {
+    loaded = true,
+    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope-vim-bookmarks.nvim",
+    url = "https://github.com/tom-anders/telescope-vim-bookmarks.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -233,11 +273,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/apichart/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = true,
