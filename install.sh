@@ -63,7 +63,7 @@ else
         nixpkgs.lf \
         nixpkgs.ranger \
         nixpkgs.jq \
-        nixpkgs.nfsUtils \
+        nixpkgs.nfs-utils \
         nixpkgs.pandoc \
         nixpkgs.zathura \
         nixpkgs.figlet
