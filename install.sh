@@ -26,6 +26,7 @@ then
     stow nvim
     stow tmux
     stow lfconf
+    stow direnv
 
     # use zsh as default shell
     chsh -s $(which zsh) $USER
