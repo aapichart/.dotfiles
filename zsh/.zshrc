@@ -96,3 +96,5 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+
+export PATH="$HOME/.poetry/bin:$PATH"
