@@ -1,7 +1,7 @@
 require('chartasa.telescope')
 require('chartasa.lf')
 require('chartasa.nvim-web-devicons')
-require('chartasa.bufferline-config')
+require('chartasa.bufferline')
 require('chartasa.nvim-autopairs-config')
 require('chartasa.nvim-tree-config')
 require('chartasa.treesitter')
