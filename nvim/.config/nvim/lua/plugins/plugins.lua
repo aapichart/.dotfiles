@@ -42,11 +42,12 @@ return require('packer').startup(function()
   -- Use this plugin for helping us know which keys are mapping
   use {'folke/which-key.nvim'}
   -- Telescope is used like an extensible fuzzy finder
+  use { 'nvim-lua/popup.nvim' }
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim' }
   use {'tom-anders/telescope-vim-bookmarks.nvim'}
-  use { 'nvim-telescope/telescope-media-files.nvim' }
-  use { 'nvim-telescope/telescope-ui-select.nvim' }
-  use { 'nvim-telescope/telescope-file-browser.nvim' }
+  use {'nvim-telescope/telescope-media-files.nvim' }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
+  use {'nvim-telescope/telescope-file-browser.nvim' }
   use {'sharkdp/fd'}
   -- treesitter for syntax highlighting and some other plugins for treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}  
@@ -86,6 +87,7 @@ return require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'L3MON4D3/LuaSnip'
+  use { 'rafamadriz/friendly-snippets' }
 
   use { 'akinsho/toggleterm.nvim' }
   use 'voldikss/vim-floaterm'

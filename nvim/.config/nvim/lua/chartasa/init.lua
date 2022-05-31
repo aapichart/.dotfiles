@@ -9,8 +9,10 @@ require('chartasa.whichkey')
 require('chartasa.lightline')
 require('chartasa.gitsigns')
 require('chartasa.vimwiki')
-require('chartasa.ultisnips')
 require('chartasa.toggleterm')
+-- for snippets
+require('chartasa.ultisnips')
+require('chartasa.luasnip')
 -- for lsp config
 require('chartasa.lsp.lspconfig')
 require('chartasa.lsp.handlers').setup()
