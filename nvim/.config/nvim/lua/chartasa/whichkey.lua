@@ -6,8 +6,8 @@ end
 
 local wk = require("which-key")
 local mappings = {
-  F = {":Lf<cr>", "File Explore"},
-  f = {":Lexplore<cr>", "File Explore"},
+  f = {":Lf<cr>", "File Explore"},
+  F = {":Lexplore<cr>", "File Explore"},
   q = {":q<cr>", "Quit"},
   Q = {":q!<cr>", "Quit without Save"},
   x = {":bdelete<cr>", "Close buffer"},
