@@ -90,8 +90,8 @@ return require('packer').startup(function()
   use { 'rafamadriz/friendly-snippets' }
 
   use { 'akinsho/toggleterm.nvim' }
-  use 'voldikss/vim-floaterm'
   use 'ptzz/lf.vim'
+  use 'voldikss/vim-floaterm'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
