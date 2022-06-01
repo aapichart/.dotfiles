@@ -46,6 +46,7 @@ else
         nixpkgs.xsel \
         nixpkgs.xclip \
         nixpkgs.fzf \
+        nixpkgs.lazygit \
         nixpkgs.ripgrep \
         nixpkgs.bat \
         nixpkgs.direnv \
