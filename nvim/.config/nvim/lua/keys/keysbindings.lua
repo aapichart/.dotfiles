@@ -29,6 +29,10 @@ mapn('<leader>e',':NvimTreeToggle<cr>')
 mapv('<','<gv')
 mapv('>','>gv')
 
+-- close nvim tab
+mapn('<tab>','gt')
+mapn('<s-tab>','gT')
+
 -- Resize with arrows
 mapn("<C-Up>", ":resize -2<CR>")
 mapn("<C-Down>", ":resize +2<CR>")
