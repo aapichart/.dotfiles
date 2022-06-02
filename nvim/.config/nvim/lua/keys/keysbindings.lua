@@ -33,6 +33,9 @@ mapv('>','>gv')
 mapn('<tab>','gt')
 mapn('<s-tab>','gT')
 
+-- show buffer full path
+mapn('F', '2<C-G>')
+
 -- Resize with arrows
 mapn("<C-Up>", ":resize -2<CR>")
 mapn("<C-Down>", ":resize +2<CR>")
