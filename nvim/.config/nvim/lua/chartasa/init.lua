@@ -10,6 +10,8 @@ require('chartasa.lightline')
 require('chartasa.gitsigns')
 require('chartasa.vimwiki')
 require('chartasa.toggleterm')
+-- for markdown preview
+require('chartasa.markdown-preview')
 -- for snippets
 require('chartasa.ultisnips')
 require('chartasa.luasnip')

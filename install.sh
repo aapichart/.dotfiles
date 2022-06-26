@@ -69,6 +69,9 @@ else
         nixpkgs.nfs-utils \
         nixpkgs.pandoc \
         nixpkgs.zathura \
+        nixpkgs.bmon \
+        nixpkgs.iftop \
+        nixpkgs.nload \
         nixpkgs.figlet
     stow deskpi
     stow gtk-3.0

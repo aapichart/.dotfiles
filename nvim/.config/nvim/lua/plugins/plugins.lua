@@ -35,6 +35,10 @@ return require('packer').startup(function()
   use 'itchyny/lightline.vim'
   use 'preservim/nerdcommenter'
 
+  -- config for nvim markdown preview
+  use { 'iamcco/markdown-preview.nvim', run=function ()
+      vim.fn["mkdp#util#install"]()
+  end }
   -- config bufferline
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
   -- config nvim-tree for file explorer
