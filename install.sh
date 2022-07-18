@@ -57,6 +57,7 @@ else
         nixpkgs.terminator \
         nixpkgs.tree \
         nixpkgs.cmatrix \
+        nixpkgs.nmap \
         nixpkgs.postgresql \
         nixpkgs.python39Packages.pip \
         nixpkgs.virtualenv \
