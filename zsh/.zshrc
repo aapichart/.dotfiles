@@ -98,3 +98,5 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

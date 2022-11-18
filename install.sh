@@ -1,4 +1,4 @@
-if [ $SHELL = "/bin/bash" ]
+if [ $SHELL = "/usr/bin/bash" ]
 then
     # 1st phase installation - we will install nix package management and restart then run this install.sh again 
     # to install other utilities
@@ -15,6 +15,7 @@ then
         nixpkgs.git \
         nixpkgs.neovim \
         nixpkgs.tmux \
+	nixpkgs.direnv \
         nixpkgs.stow 
 
     # add zsh to valid login shells
@@ -49,7 +50,6 @@ else
         nixpkgs.lazygit \
         nixpkgs.ripgrep \
         nixpkgs.bat \
-        nixpkgs.direnv \
         nixpkgs.gtop \
         nixpkgs.gping \
         nixpkgs.neofetch \
