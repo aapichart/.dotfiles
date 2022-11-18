@@ -73,6 +73,7 @@ else
         nixpkgs.bmon \
         nixpkgs.iftop \
         nixpkgs.nload \
+        nixpkgs.vpnc \
         nixpkgs.figlet
     stow deskpi
     stow gtk-3.0
