@@ -46,6 +46,7 @@ else
     # install packages
     nix-env -iA \
         nixpkgs.yarn \
+        nixpkgs.nodejs_20 \
         nixpkgs.xsel \
         nixpkgs.xclip \
         nixpkgs.fzf \
