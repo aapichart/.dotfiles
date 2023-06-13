@@ -4,6 +4,7 @@ then
     # to install other utilities
     # install nix
     sudo mkdir -m 075 /nix
+    sudo chown -R /nix
     curl -L https://nixos.org/nix/install | sh
 
     # source nix
