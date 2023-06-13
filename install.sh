@@ -3,9 +3,9 @@ then
     # 1st phase installation - we will install nix package management and restart then run this install.sh again 
     # to install other utilities
     # install nix
-    sudo mkdir -m 075 /nix
-    sudo chown -R apichart /nix
-    curl -L https://nixos.org/nix/install | sh
+    sudo mkdir /nix
+    sudo chown apichart /nix
+    curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
 
     # source nix
     . ~/.nix-profile/etc/profile.d/nix.sh
