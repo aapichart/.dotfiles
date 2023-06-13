@@ -13,3 +13,10 @@
 - That should be cover all requirement 
 - PS. We need to git clone this package into our home folder ex. /home/tony 
     the package will be kept at /home/tony/.dotfiles  => This is the hidden folder
+- After done installation for os part.
+- 1. NVIM
+    - open any text file 
+    - then run :PackerInstall 
+      (This will install all plugin for nvim)
+    - and run :checkhealth 
+      (This will check all other plugins need for nvim ex. npm, nodejs, lsp - language Servers)
