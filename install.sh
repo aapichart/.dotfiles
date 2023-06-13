@@ -3,7 +3,7 @@ then
     # 1st phase installation - we will install nix package management and restart then run this install.sh again 
     # to install other utilities
     # install nix
-    mkdir -m 075 /nix
+    sudo mkdir -m 075 /nix
     curl -L https://nixos.org/nix/install | sh
 
     # source nix
