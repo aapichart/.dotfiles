@@ -1,4 +1,4 @@
-if [ $SHELL = "/usr/bin/bash" ] || [$SHELL = "/bin/bash"] || [$SHELL = "/bin/sh"]:
+if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ];
 then
     # 1st phase installation - we will install nix package management and restart then run this install.sh again 
     # to install other utilities
