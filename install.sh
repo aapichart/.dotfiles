@@ -27,6 +27,7 @@ then
     stow git
     stow zsh
     stow nvim
+    stow nvim.22
     stow tmux
     stow lfconf
     stow direnv

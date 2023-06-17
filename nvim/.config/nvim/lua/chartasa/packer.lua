@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
     })
 
     use 'jpalardy/vim-slime'
-    use 'airblade/vim-gitgutter'
+    --use 'airblade/vim-gitgutter'
     use 'vimwiki/vimwiki'
     use 'tbabej/taskwiki'
     use 'tpope/vim-surround'
