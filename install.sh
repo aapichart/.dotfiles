@@ -1,5 +1,4 @@
-if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ];
-then
+if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ] || [ $REINSTALL_NIX = "TRUE" ]; then
     # 1st phase installation - we will install nix package management and restart then run this install.sh again 
     # to install other utilities
     # install nix
@@ -10,6 +9,8 @@ then
     # source nix
     . ~/.nix-profile/etc/profile.d/nix.sh
 
+    # update nix channel
+    nix-channel --update
     # install packages
     nix-env -iA \
         nixpkgs.zsh \
@@ -37,6 +38,10 @@ then
 
     # bundle zsh plugins
     antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+    # Reset re-install nix variable
+    if [ $REINSTALL_NIX = "TRUE" ]; then
+        export REINSTALL_NIX = FALSE
 
     # Set up MesloLGS with devicons for vim and many app's glyph
     sudo cp ~/.local/share/fonts/*.ttf /usr/local/share/fonts

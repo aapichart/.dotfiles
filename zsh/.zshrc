@@ -9,6 +9,9 @@ export MYVIMRC=$HOME/.config/nvim/init.lua
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
+#use to controll install.sh under .dotfiles folder to re-install nix environment or not
+export REINSTALL_NIX=FALSE
+
 # use nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
