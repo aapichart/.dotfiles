@@ -25,4 +25,7 @@
       for checking treesitter plugin whether there are any errors
     1.3 run :Mason
       - This will let you install any language servers that you want ex. pyright for python
+    1.4 run :TSInstall c
+      - This will install c parser for you
+      - You should install c, gcc, html, python, etc.
     

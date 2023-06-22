@@ -6,6 +6,7 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'rust_analyzer',
+    'pyright',
 })
 
 local cmp = require('cmp')
