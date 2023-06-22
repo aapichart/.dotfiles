@@ -16,7 +16,13 @@
 - After done installation for os part.
 - 1. NVIM
     - open any text file 
-    - then run :PackerInstall 
+    1.1 run :PackerInstall 
       (This will install all plugin for nvim)
-    - and run :checkhealth 
+    1.2 run :checkhealth 
       (This will check all other plugins need for nvim ex. npm, nodejs, lsp - language Servers)
+      or you can run 
+      :checkhealth treesitter 
+      for checking treesitter plugin whether there are any errors
+    1.3 run :Mason
+      - This will let you install any language servers that you want ex. pyright for python
+    
