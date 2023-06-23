@@ -58,6 +58,7 @@ alias rng='ranger'
 alias ga='git add .'
 alias gs='git status'
 alias lf='lfcd'
+alias hms='home-manager switch'
 # Global alias
 alias -g F=' | fzf'
 alias -g L=' | less'
