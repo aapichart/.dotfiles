@@ -28,8 +28,10 @@
     1.4 run :npm install -g pyright
       - Because treesitter using pyright for parser python language
     1.5 run :npm install -g bash-parser
+            :TSInstall bash
       - Because treesitter using bash-parser for parser bash language
     1.6 run :npm install -g markdown-parser
+            :TSInstall markdown
       - Because treesitter using markdown-parser for parser md language
     1.7 run :TSInstall c
       - This will install c parser for you
