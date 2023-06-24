@@ -52,6 +52,7 @@
     pkgs.cmatrix
     pkgs.nmap
     pkgs.postgresql
+    pkgs.python310Full
     pkgs.python310Packages.pip
     pkgs.virtualenv
     pkgs.pipenv
