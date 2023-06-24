@@ -29,10 +29,11 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.zsh \
         nixpkgs.antibody \
         nixpkgs.git \
-        nixpkgs.neovim \
         nixpkgs.tmux \
 	    nixpkgs.direnv \
         nixpkgs.stow \
+        nixpkgs.conky \
+        nixpkgs.terminator \
         nixpkgs.lf
 
     # add zsh to valid login shells
@@ -42,10 +43,20 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     stow git
     stow zsh
     stow nvim
-    stow nvim.22
+    #stow nvim.22
     stow tmux
     stow lfconf
     stow direnv
+    stow deskpi
+    stow gtk-3.0
+    stow selected_editor
+    stow autostart
+    stow startupScript
+    stow rasp4utils
+    stow myfonts
+    stow krohnkite
+    stow terminator
+    stow conky
     
     # Install nix home-manager - This is a tool for manage nix installaton
     nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
@@ -78,53 +89,5 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
 
     # bundle zsh plugins
     antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
-#else
-    # 2nd phase installation - This phase we will focus on install utilities need for development
-    # install packages
-    #nix-env -iA \
-        #nixpkgs.yarn \
-        #nixpkgs.nodejs_20 \
-        #nixpkgs.xsel \
-        #nixpkgs.xclip \
-        #nixpkgs.fzf \
-        #nixpkgs.lazygit \
-        #nixpkgs.ripgrep \
-        #nixpkgs.bat \
-        #nixpkgs.gtop \
-        #nixpkgs.gping \
-        #nixpkgs.neofetch \
-        #nixpkgs.conky \
-        #nixpkgs.terminator \
-        #nixpkgs.tree \
-        #nixpkgs.cmatrix \
-        #nixpkgs.nmap \
-        #nixpkgs.postgresql \
-        #nixpkgs.python39Packages.pip \
-        #nixpkgs.virtualenv \
-        #nixpkgs.pipenv \
-        #nixpkgs.pv \
-        #nixpkgs.fd \
-        #nixpkgs.lf \
-        #nixpkgs.ranger \
-        #nixpkgs.jq \
-        #nixpkgs.nfs-utils \
-        #nixpkgs.pandoc \
-        #nixpkgs.zathura \
-        #nixpkgs.bmon \
-        #nixpkgs.iftop \
-        #nixpkgs.nload \
-        #nixpkgs.vpnc \
-        #nixpkgs.figlet
-    #stow deskpi
-    #stow gtk-3.0
-    #stow terminator
-    #stow conky
-    #stow selected_editor
-    #stow autostart
-    #stow startupScript
-    #stow rasp4utils
-    #stow myfonts
-    #stow krohnkite
 fi
 

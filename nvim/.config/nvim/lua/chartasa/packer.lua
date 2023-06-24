@@ -28,10 +28,10 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
     use { 'nvim-lua/popup.nvim' }
-    --  use {'tom-anders/telescope-vim-bookmarks.nvim'}
-    --  use {'nvim-telescope/telescope-media-files.nvim' }
-    --  use {'nvim-telescope/telescope-ui-select.nvim' }
-    --  use {'nvim-telescope/telescope-file-browser.nvim' }
+    use {'tom-anders/telescope-vim-bookmarks.nvim'}
+    use {'nvim-telescope/telescope-media-files.nvim' }
+    use {'nvim-telescope/telescope-ui-select.nvim' }
+    use {'nvim-telescope/telescope-file-browser.nvim' }
     use {'sharkdp/fd'}
     use ({
         'rose-pine/neovim',

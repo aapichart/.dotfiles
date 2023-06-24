@@ -34,8 +34,39 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.hello
+    pkgs.gcc
+    pkgs.neovim
     pkgs.htop
+    pkgs.yarn
+    pkgs.nodejs_20
+    pkgs.xsel
+    pkgs.xclip
+    pkgs.fzf
+    pkgs.lazygit
+    pkgs.ripgrep
+    pkgs.bat
+    pkgs.gtop
+    pkgs.gping
+    pkgs.neofetch
+    pkgs.tree
+    pkgs.cmatrix
+    pkgs.nmap
+    pkgs.postgresql
+    pkgs.python310Packages.pip
+    pkgs.virtualenv
+    pkgs.pipenv
+    pkgs.pv
+    pkgs.fd
+    pkgs.ranger
+    pkgs.jq
+    pkgs.nfs-utils
+    pkgs.pandoc
+    pkgs.zathura
+    pkgs.bmon
+    pkgs.iftop
+    pkgs.nload
+    pkgs.vpnc
+    pkgs.figlet
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -69,4 +100,15 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  
+  programs.neovim = {
+    extraConfig = ''
+      lua <<EOF
+	local status, ts_install = pcall(require, "nvim-treesitter.install")
+	if (status) then
+	   ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
+	end
+      EOF
+    '';
+  };
 }
