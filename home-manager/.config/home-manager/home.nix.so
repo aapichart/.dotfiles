@@ -35,6 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.gcc
+    pkgs.ufw
     pkgs.neovim
     pkgs.htop
     pkgs.yarn

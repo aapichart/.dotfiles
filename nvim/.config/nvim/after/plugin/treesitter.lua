@@ -8,6 +8,7 @@ configs.setup({
 
 	-- Install parsers synchronously (only applied to 'ensure_installed')
 	sync_install = false,
+    
 
 	-- Automatically install missing parsers when entering buffer
 	-- Recommendation: set to false if you don't have 'tree-sister' CLI installed locally
@@ -28,4 +29,13 @@ configs.setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
+
+    -- Setup for nvim-ts-autotag
+    autotag = {
+        enable = true,
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
+        filetypes = { "html", "xml", "javascript", "typescript", "vue", "jsx", "tsx"}
+    }
 })
