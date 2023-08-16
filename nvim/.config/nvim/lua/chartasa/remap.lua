@@ -54,3 +54,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- key mapping for vim-slime
+vim.keymap.set("x","<C-s>",'<Plug>SlimeRegionSend')
+vim.keymap.set("x","<C-s>",'<Plug>SlimeParagraphSend')
