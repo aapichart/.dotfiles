@@ -6,3 +6,6 @@ vim.g.floaterm_height = 0.9
 -- lf swap buffer by using key tab and shift-tab
 vim.keymap.set("n", "<tab>", "gt")
 vim.keymap.set("n", "<s-tab>", "gT")
+
+-- lf opened by using key <leader>F 
+vim.keymap.set("n", "<leader>F", "Lfcd")
