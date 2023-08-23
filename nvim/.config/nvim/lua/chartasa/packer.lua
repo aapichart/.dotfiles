@@ -87,6 +87,14 @@ return require('packer').startup(function(use)
 			{'neovim/nvim-lspconfig'},
 			{'williamboman/mason.nvim'},
 			{'williamboman/mason-lspconfig.nvim'},
+            -- LSP support for tailwindcss
+            {'roobert/tailwindcss-colorizer-cmp.nvim',
+            config = function ()
+                require("tailwindcss-colorizer-cmp").setup({
+                    color_square_width=2,
+                })
+            end
+            },
 			
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
