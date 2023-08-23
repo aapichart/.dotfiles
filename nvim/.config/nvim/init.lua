@@ -1,2 +1,2 @@
 require("chartasa")
-print("This is a new nvim config update on 16/06/2023")
+print("This is a new nvim config update on 23/08/2023")
