@@ -87,15 +87,6 @@ return require('packer').startup(function(use)
 			{'neovim/nvim-lspconfig'},
 			{'williamboman/mason.nvim'},
 			{'williamboman/mason-lspconfig.nvim'},
-            -- LSP support for tailwindcss
-            {'roobert/tailwindcss-colorizer-cmp.nvim',
-            config = function ()
-                require("tailwindcss-colorizer-cmp").setup({
-                    color_square_width=2,
-                })
-            end
-            },
-			
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
 			{'hrsh7th/cmp-buffer'},
@@ -107,12 +98,19 @@ return require('packer').startup(function(use)
 			-- Snippets
 			{'L3MON4D3/LuaSnip'},
 			{'rafamadriz/friendly-snippets'},
-		}
+		},
 	}
-    
+    -- LSP support for tailwindcss
+    use {'roobert/tailwindcss-colorizer-cmp.nvim',
+            config = function ()
+                require("tailwindcss-colorizer-cmp").setup({
+                    color_square_width=2,
+                })
+            end
+    }
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup{} 
+        config = function() require("nvim-autopairs").setup()
         end
     }
 
