@@ -59,13 +59,9 @@ return require('packer').startup(function(use)
     -- use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
     -- config nvim-tree for file explorer
     --use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  
+
     -- Use this plugin for helping us know which keys are mapping
     use {'folke/which-key.nvim'}
-
-
-    use {'windwp/nvim-ts-autotag'}
-    use {'p00f/nvim-ts-rainbow'}
 
     -- treesitter for syntax highlighting and some other plugins for treesitter
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -78,7 +74,10 @@ return require('packer').startup(function(use)
     use 'ptzz/lf.vim'
     use 'voldikss/vim-floaterm'
     use { 'akinsho/toggleterm.nvim' }
-	
+
+    use {'p00f/nvim-ts-rainbow'}
+    use {'windwp/nvim-ts-autotag'}
+
 	-- for Lsp section
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -110,7 +109,7 @@ return require('packer').startup(function(use)
     }
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup()
+        config = function() require("nvim-autopairs").setup({})
         end
     }
 

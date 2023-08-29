@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 configs.setup({
+
 	-- A List of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = {"javascript","typescript","c","cpp","cmake","python","lua","vim","vimdoc"},
 
@@ -22,7 +23,7 @@ configs.setup({
 	highlight = {
 		-- 'false' will disable the whole extension
 		enable = true,
-
+        use_languagetree = true,
 		-- Setting this to true will run `h: syntax` and tree-sister at the same time.
 		-- Set this to true if you depend on 'syntax' being enabled (like for indentation)
 		-- Using this option may slow down your editor, and you may see some duplicate highlights,
@@ -36,6 +37,8 @@ configs.setup({
         enable_rename = true,
         enable_close = true,
         enable_close_on_slash = true,
-        filetypes = { "html", "xml", "javascript", "typescript", "vue", "jsx", "tsx"}
-    }
+        filetypes = { "html", "xml", "javascript", "javascriptreact", "typescript", "typescriptreact", 
+                        "vue", "jsx", "tsx","xml", "handlebars", "php", "markdown"}
+    },
+    indent = { enable = true },
 })
