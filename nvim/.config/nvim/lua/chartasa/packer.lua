@@ -1,9 +1,9 @@
-
 -- Bootstrap for packer
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
 end
 
 vim.cmd([[
@@ -18,22 +18,22 @@ vim.cmd([[
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	--
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    --
+    use 'wbthomason/packer.nvim'
     -- Telescope is used like an extensible fuzzy finder
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or 			       , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or 			       , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
     use { 'nvim-lua/popup.nvim' }
-    use {'tom-anders/telescope-vim-bookmarks.nvim'}
-    use {'nvim-telescope/telescope-media-files.nvim' }
-    use {'nvim-telescope/telescope-ui-select.nvim' }
-    use {'nvim-telescope/telescope-file-browser.nvim' }
-    use {'sharkdp/fd'}
-    use ({
+    use { 'tom-anders/telescope-vim-bookmarks.nvim' }
+    use { 'nvim-telescope/telescope-media-files.nvim' }
+    use { 'nvim-telescope/telescope-ui-select.nvim' }
+    use { 'nvim-telescope/telescope-file-browser.nvim' }
+    use { 'sharkdp/fd' }
+    use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
     use 'preservim/nerdcommenter'
 
     -- config for nvim markdown preview
-    use { 'iamcco/markdown-preview.nvim', run=function ()
+    use { 'iamcco/markdown-preview.nvim', run = function()
         vim.fn["mkdp#util#install"]()
     end }
     -- config bufferline
@@ -61,65 +61,67 @@ return require('packer').startup(function(use)
     --use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
     -- Use this plugin for helping us know which keys are mapping
-    use {'folke/which-key.nvim'}
+    use { 'folke/which-key.nvim' }
 
     -- treesitter for syntax highlighting and some other plugins for treesitter
-    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use ('nvim-treesitter/playground')
-	use ('theprimeagen/harpoon')
-	use ('mbbill/undotree')
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/playground')
+    use('theprimeagen/harpoon')
+    use('mbbill/undotree')
     -- vim-fugitive for git helper
-    use ('tpope/vim-fugitive')
+    use('tpope/vim-fugitive')
     -- lf for file explorer
     use 'ptzz/lf.vim'
     use 'voldikss/vim-floaterm'
     use { 'akinsho/toggleterm.nvim' }
 
-    use {'p00f/nvim-ts-rainbow'}
-    use {'windwp/nvim-ts-autotag'}
+    use { 'p00f/nvim-ts-rainbow' }
+    use { 'windwp/nvim-ts-autotag' }
 
-	-- for Lsp section
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
+    -- for Lsp section
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'},
-		},
-	}
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+        },
+    }
     -- LSP support for tailwindcss
-    use {'roobert/tailwindcss-colorizer-cmp.nvim',
-            config = function ()
-                require("tailwindcss-colorizer-cmp").setup({
-                    color_square_width=2,
-                })
-            end
+    use { 'roobert/tailwindcss-colorizer-cmp.nvim',
+        config = function()
+            require("tailwindcss-colorizer-cmp").setup({
+                color_square_width = 2,
+            })
+        end
     }
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup({})
+        config = function()
+            require("nvim-autopairs").setup({})
         end
     }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+    -- Insert Blank Line on nvim editor
+    use {
+        "lukas-reineke/indent-blankline.nvim"
+    }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
-
-
-
-
