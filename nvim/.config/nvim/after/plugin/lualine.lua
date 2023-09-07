@@ -29,8 +29,16 @@ require('lualine').setup {
             {
                 'filename',
                 file_status = true,
-                path = 2,
-            }
+                path = 1,
+            },
+            {
+                'tabs',
+                mode = 2,
+                tab_color = {
+                    active = 'lualine_{section}_normal',
+                    inactive = 'lualine_{section}_inactive',
+                },
+            },
         },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
