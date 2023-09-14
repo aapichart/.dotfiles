@@ -1,7 +1,8 @@
-window_root "~/works/"
+window_root "~/works/friendApp2-tabs/"
 new_window "react native runtime window"
+run_cmd "npm start"
 split_v 20
 run_cmd "watch -t date"
 split_h 60
-select pane 0
+select_pane 1
 
