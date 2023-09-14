@@ -45,6 +45,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     stow nvim
     #stow nvim.22
     stow tmux
+    stow tmuxifier
     stow lfconf
     stow direnv
     stow deskpi
