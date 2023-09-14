@@ -1,3 +1,20 @@
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    float = {
+        border = "single",
+        format = function(diagnostic)
+            return string.format(
+                "%s (%s) [%s]",
+                diagnostic.message,
+                diagnostic.source,
+                diagnostic.code or diagnostic.user_data, lsp.code
+            )
+        end
+    }
+})
+vim.cmd [[autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focusable=false})]]
+
 --This config is for using lsp fomatting buffer when saved
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
@@ -32,7 +49,6 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
     print("help")
     local opts = { buffer = bufnr, remap = false }
-
     vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references, opts)
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
