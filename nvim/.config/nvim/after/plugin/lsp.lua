@@ -18,6 +18,10 @@ vim.cmd [[autocmd CursorHold <buffer> lua vim.diagnostic.open_float({focusable=f
 --This config is for using lsp fomatting buffer when saved
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
+local lspconfig = require('lspconfig')
+lspconfig.pyright.setup {}
+lspconfig.tsserver.setup {}
+
 --This is for lsp config
 local lsp = require('lsp-zero')
 
