@@ -8,7 +8,8 @@ local wk = require("which-key")
 local mappings = {
     f = {
       name = "Search Files Utilities",
-      e = {":Lexplore<cr>", "File Explore"},
+      --e = {":Lexplore<cr>", "File Explore"},
+      e = {":NvimTreeToggle<cr>", "File Explore"},
       f = {":Telescope find_files<cr>", "Telescope Find File"},
       g = {":Telescope live_grep<cr>", "Telescope Live Grep"},
     },
