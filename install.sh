@@ -42,7 +42,8 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     # stow any dot config modules
     stow git
     stow zsh
-    stow nvim
+    #stow nvim
+    stow nvim.lazy
     #stow nvim.22
     stow tmux
     stow tmuxifier
@@ -83,7 +84,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     sudo fc-cache -fv
     
     # Reset re-install nix variable
-    [ $REINSTALL_NIX="TRUE" ] && export $REINSTALL_NIX="FALSE"
+    [ $REINSTALL_NIX="TRUE" ] && export REINSTALL_NIX="FALSE"
     
     # use zsh as default shell
     chsh -s $(which zsh) $USER
