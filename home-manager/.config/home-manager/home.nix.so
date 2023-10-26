@@ -96,21 +96,21 @@
   #  /etc/profiles/per-user/apichart/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
-  home.sessionVariables = {
+  #home.sessionVariables = {
     # EDITOR = "emacs";
-  };
+  #};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   
-  programs.neovim = {
-    extraConfig = ''
-      lua <<EOF
-	local status, ts_install = pcall(require, "nvim-treesitter.install")
-	if (status) then
-	   ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
-	end
-      EOF
-    '';
-  };
+  #programs.neovim = {
+  #  extraConfig = ''
+  #    lua <<EOF
+  #	local status, ts_install = pcall(require, "nvim-treesitter.install")
+  #  	if (status) then
+#	   ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
+#	end
+#      EOF
+#    '';
+#  };
 }
