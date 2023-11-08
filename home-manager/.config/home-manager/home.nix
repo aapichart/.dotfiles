@@ -6,13 +6,6 @@
   home.username = "apichart";
   home.homeDirectory = "/home/apichart";
 
-  nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  home-manager = {
-    url = "github:nix-community/home-manager";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -20,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "22.11"; # Please read the comment before changing.
+  home.stateVersion = "23.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -41,40 +34,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    #pkgs.gcc
-    pkgs.neovim
-    pkgs.htop
-    pkgs.yarn
-    pkgs.nodejs_20
-    pkgs.xsel
-    pkgs.xclip
-    pkgs.fzf
-    pkgs.lazygit
-    pkgs.ripgrep
-    pkgs.bat
-    pkgs.gtop
-    pkgs.gping
-    pkgs.neofetch
-    pkgs.tree
-    pkgs.cmatrix
-    pkgs.nmap
-    pkgs.postgresql
-    pkgs.python310Full
-    pkgs.python310Packages.pip
-    pkgs.virtualenv
-    pkgs.pipenv
-    pkgs.pv
-    pkgs.fd
-    pkgs.ranger
-    pkgs.jq
-    pkgs.nfs-utils
-    pkgs.pandoc
-    pkgs.zathura
-    pkgs.bmon
-    pkgs.iftop
-    pkgs.nload
-    pkgs.vpnc
-    pkgs.figlet
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -104,20 +63,8 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     # EDITOR = "emacs";
-    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  
-  programs.neovim = {
-    extraConfig = ''
-      lua <<EOF
-  	local status, ts_install = pcall(require, "nvim-treesitter.install")
-   	if (status) then
-	   ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
-	end
-      EOF
-    '';
-  };
 }

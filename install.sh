@@ -34,7 +34,41 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.stow \
         nixpkgs.conky \
         nixpkgs.terminator \
-        nixpkgs.lf
+        nixpkgs.lf \
+    nixpkgs.gcc \
+	  nixpkgs.neovim \
+    nixpkgs.htop \
+    nixpkgs.yarn \
+    nixpkgs.nodejs_20 \
+    nixpkgs.xsel \
+    nixpkgs.xclip \
+    nixpkgs.fzf \
+    nixpkgs.lazygit \
+    nixpkgs.ripgrep \
+    nixpkgs.bat \
+    nixpkgs.gtop \
+    nixpkgs.gping \
+    nixpkgs.neofetch \
+    nixpkgs.tree \
+    nixpkgs.cmatrix \
+    nixpkgs.nmap \
+    nixpkgs.postgresql \
+    nixpkgs.python310Full \
+    nixpkgs.python310Packages.pip \
+    nixpkgs.virtualenv \
+    nixpkgs.pipenv \
+    nixpkgs.pv \
+    nixpkgs.fd \
+    nixpkgs.ranger \
+    nixpkgs.jq \
+    nixpkgs.nfs-utils \
+    nixpkgs.pandoc \
+    nixpkgs.zathura \
+    nixpkgs.bmon \
+    nixpkgs.iftop \
+    nixpkgs.nload \
+    nixpkgs.vpnc \
+    nixpkgs.figlet
 
     # add zsh to valid login shells
     command -v zsh | sudo tee -a /etc/shells
@@ -61,22 +95,22 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     stow conky
     
     # Install nix home-manager - This is a tool for manage nix installaton
-    nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+    #nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
     # update nix channel
-    nix-channel --update
+    #nix-channel --update
     # Install home-manager
-    nix-shell '<home-manager>' -A install
+    #nix-shell '<home-manager>' -A install
     # Source this home-manager session files
-    . $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+    #. $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
     
     # This routine use for config home-manager
-    stow home-manager
-    if [ -f "$HOME/.config/home-manager/home.nix" ]; then 
-        rm -f $HOME/.config/home-manager/home.nix
-        mv $HOME/.config/home-manager/home.nix.so $HOME/.config/home-manager/home.nix 
-    fi
+    #stow home-manager
+    #if [ -f "$HOME/.config/home-manager/home.nix" ]; then 
+    #    rm -f $HOME/.config/home-manager/home.nix
+    #    mv $HOME/.config/home-manager/home.nix.so $HOME/.config/home-manager/home.nix 
+    #fi
     # Run home-manager auto install
-    home-manager switch 
+    #home-manager switch 
    
    # Set up MesloLGS with devicons for vim and many app's glyph
     sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
