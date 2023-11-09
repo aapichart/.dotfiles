@@ -68,6 +68,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     nixpkgs.iftop \
     nixpkgs.nload \
     nixpkgs.vpnc \
+    nixpkgs.luarocks \
     nixpkgs.figlet
 
     # add zsh to valid login shells

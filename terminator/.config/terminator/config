@@ -6,8 +6,7 @@
   [[default]]
     background_darkness = 0.6
     background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = MesloLGS NF Bold Italic 13
+    font = Monofur Nerd Font Mono 16
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
@@ -16,7 +15,6 @@
     allow_bold = False
     background_darkness = 0.78
     background_type = transparent
-    cursor_color = "#aaaaaa"
     font = Noto Sans Mono 10
     show_titlebar = False
     scrollbar_position = hidden
@@ -28,7 +26,6 @@
     allow_bold = False
     background_darkness = 0.78
     background_type = transparent
-    cursor_color = "#aaaaaa"
     font = Noto Sans Mono 10
     show_titlebar = False
     scrollbar_position = hidden
@@ -39,7 +36,6 @@
     allow_bold = False
     background_darkness = 0.78
     background_type = transparent
-    cursor_color = "#aaaaaa"
     font = Noto Sans Mono 10
     show_titlebar = False
     scrollbar_position = hidden
@@ -50,7 +46,6 @@
     allow_bold = False
     background_darkness = 0.78
     background_type = transparent
-    cursor_color = "#aaaaaa"
     font = MesloLGS NF 6
     show_titlebar = False
     scrollbar_position = hidden
