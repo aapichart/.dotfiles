@@ -30,46 +30,56 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.antibody \
         nixpkgs.git \
         nixpkgs.tmux \
-	    nixpkgs.direnv \
+	      nixpkgs.direnv \
         nixpkgs.stow \
         nixpkgs.conky \
         nixpkgs.terminator \
         nixpkgs.lf \
-    nixpkgs.gcc \
-	  nixpkgs.neovim \
-    nixpkgs.htop \
-    nixpkgs.yarn \
-    nixpkgs.nodejs_20 \
-    nixpkgs.xsel \
-    nixpkgs.xclip \
-    nixpkgs.fzf \
-    nixpkgs.lazygit \
-    nixpkgs.ripgrep \
-    nixpkgs.bat \
-    nixpkgs.gtop \
-    nixpkgs.gping \
-    nixpkgs.neofetch \
-    nixpkgs.tree \
-    nixpkgs.cmatrix \
-    nixpkgs.nmap \
-    nixpkgs.postgresql \
-    nixpkgs.python310Full \
-    nixpkgs.python310Packages.pip \
-    nixpkgs.virtualenv \
-    nixpkgs.pipenv \
-    nixpkgs.pv \
-    nixpkgs.fd \
-    nixpkgs.ranger \
-    nixpkgs.jq \
-    nixpkgs.nfs-utils \
-    nixpkgs.pandoc \
-    nixpkgs.zathura \
-    nixpkgs.bmon \
-    nixpkgs.iftop \
-    nixpkgs.nload \
-    nixpkgs.vpnc \
-    nixpkgs.luarocks \
-    nixpkgs.figlet
+        nixpkgs.gcc \
+        nixpkgs.neovim \
+        nixpkgs.htop \
+        nixpkgs.yarn \
+        nixpkgs.nodejs_20 \
+        nixpkgs.xsel \
+        nixpkgs.xclip \
+        nixpkgs.fzf \
+        nixpkgs.lazygit \
+        nixpkgs.ripgrep \
+        nixpkgs.bat \
+        nixpkgs.gtop \
+        nixpkgs.gping \
+        nixpkgs.neofetch \
+        nixpkgs.tree \
+        nixpkgs.cmatrix \
+        nixpkgs.nmap \
+        nixpkgs.postgresql \
+        nixpkgs.python310Full \
+        nixpkgs.python310Packages.pip \
+        nixpkgs.virtualenv \
+        nixpkgs.pipenv \
+        nixpkgs.pv \
+        nixpkgs.fd \
+        nixpkgs.ranger \
+        nixpkgs.jq \
+        nixpkgs.nfs-utils \
+        nixpkgs.pandoc \
+        nixpkgs.zathura \
+        nixpkgs.bmon \
+        nixpkgs.iftop \
+        nixpkgs.nload \
+        nixpkgs.vpnc \
+        nixpkgs.luarocks \
+        nixpkgs.figlet \
+        nixpkgs.go \
+        nixpkgs.gotools \
+        nixpkgs.gopls \
+        nixpkgs.go-outline \
+        nixpkgs.gocode \
+        nixpkgs.gopkgs \
+        nixpkgs.gocode-gomod \
+        nixpkgs.godef \
+        nixpkgs.golint
+
 
     # add zsh to valid login shells
     command -v zsh | sudo tee -a /etc/shells
