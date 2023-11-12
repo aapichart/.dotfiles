@@ -78,7 +78,8 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.gopkgs \
         nixpkgs.gocode-gomod \
         nixpkgs.godef \
-        nixpkgs.golint
+        nixpkgs.golint \
+        nixpkgs.typescript
 
 
     # add zsh to valid login shells
