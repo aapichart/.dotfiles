@@ -14,13 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 require('config.globals')
 require('config.options')
 require('config.keymaps')
+require('config.autocmds')
 
 local opts = {
 	defaults = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nightfox" }	
+		colorscheme = { "nightfox" }
 	},
 	rtp = {
 		disabled_plugins = {

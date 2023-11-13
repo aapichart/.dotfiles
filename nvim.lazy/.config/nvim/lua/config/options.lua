@@ -8,7 +8,7 @@ opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
 
--- Search 
+-- Search
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
@@ -23,7 +23,7 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
-  
+
 -- Behavior
 opt.hidden = true
 opt.errorbells = false
