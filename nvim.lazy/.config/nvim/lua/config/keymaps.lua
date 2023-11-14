@@ -35,7 +35,7 @@ vim.g.lf_open_new_tab = 0
 vim.g.lf_map_keys = 0
 vim.g.floaterm_width = 0.9
 vim.g.floaterm_height = 0.9
-keymap.set("n", "<leader>lf", ":Lfcd<CR>", opts)
+keymap.set("n", "<leader>lf", "<Cmd>Lf<CR>", opts)
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })

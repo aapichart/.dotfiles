@@ -1,7 +1,12 @@
 return {
-	"ptzz/lf.vim",
+	"lmburns/lf.nvim",
 	lazy = false,
 	dependencies = {
-		"voldikss/vim-floaterm",
+		"akinsho/toggleterm.nvim",
 	},
+  config = function()
+    require("lf").setup({
+      default_action = "tabedit",
+    })
+  end
 }
