@@ -5,11 +5,11 @@
 * Installation
 - We have to run the script twice or two phase executions.
 - 1. 1st phase, we try to install nix (as a package management)
-    - > sh install.sh
+    - > sh installP1.sh
     - > reboot
     - After reboot, you may ask for configuration zsh shell.  After done, goto 2nd phase
 - 2. 2nd phase, we try to use nix install all tools and dependencies.
-    - > sh install.sh
+    - > sh installP2.sh
 - That should be cover all requirement 
 - PS. We need to git clone this package into our home folder ex. /home/tony 
     the package will be kept at /home/tony/.dotfiles  => This is the hidden folder
