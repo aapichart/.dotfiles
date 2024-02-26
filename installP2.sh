@@ -90,13 +90,18 @@ sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
 #sudo cd /usr/local/share/fonts
 sudo fc-cache -fv
 
+# Install PowerlineFont
+[ -f fonts ] || rm -rf fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+sh ./fonts/install.sh
+# clean up directory
+rm -rf fonts
+
 # Set up ohmyzsh for managing theme and  command line prompt
-# Remove if already install ohmyzsh, before reinstall it,
-rm -rf install.sh
-rm -rf .oh-my-zsh
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-chmod +x install.sh
-sh install.sh
+[ -f $HOME/.oh-my-zsh ] || rm -rf $HOME/.oh-my-zsh
+mv $HOME/.zshrc $HOME/.zshrc_ready
+curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
+cp $HOME/.zshrc_ready $HOME/.zshrc
 echo ""
 echo ""
 
