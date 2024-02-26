@@ -1,4 +1,6 @@
-    # install packages
+if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ] || [ $REINSTALL_NIX = "TRUE" ]; then
+
+# install packages
     nix-env -iA \
         nixpkgs.zsh \
         nixpkgs.conky \
@@ -73,15 +75,19 @@
     stow krohnkite
     stow terminator
     stow conky
-    
-   # Set up MesloLGS with devicons for vim and many app's glyph
-    sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
-    #sudo cd /usr/local/share/fonts
-    sudo fc-cache -fv
-    
+  
     # use zsh as default shell
     chsh -s $(which zsh) $USER
 
     # bundle zsh plugins
     antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+fi
+
+# Set up MesloLGS with devicons for vim and many app's glyph
+sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
+sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
+#sudo cd /usr/local/share/fonts
+sudo fc-cache -fv
+    
 
