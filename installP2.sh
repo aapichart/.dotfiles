@@ -91,3 +91,10 @@ sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
 sudo fc-cache -fv
     
 
+# Need to reboot the system
+read -p "Finish Installation Process, Please reboot the system: (y/n) " check
+if [ "$check" = "y" ]; then
+   reboot
+else
+   echo "Finish Installation Process !!!!" 
+fi
