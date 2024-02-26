@@ -89,7 +89,16 @@ sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
 sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
 #sudo cd /usr/local/share/fonts
 sudo fc-cache -fv
-    
+
+# Set up ohmyzsh for managing theme and  command line prompt
+# Remove if already install ohmyzsh, before reinstall it,
+rm -rf install.sh
+rm -rf .oh-my-zsh
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+chmod +x install.sh
+sh install.sh
+echo ""
+echo ""
 
 # Need to reboot the system
 read -p "Finish Installation Process, Please reboot the system: (y/n) " check
