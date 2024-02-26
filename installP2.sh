@@ -82,33 +82,36 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     # bundle zsh plugins
     antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
+
+    # Set up MesloLGS with devicons for vim and many app's glyph
+    # This will solve the powerline prompt strange icon issues
+    sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
+    sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
+    #sudo cd /usr/local/share/fonts
+    sudo fc-cache -fv
+
+    # Install PowerlineFont
+    [ -f fonts ] || rm -rf fonts
+    git clone https://github.com/powerline/fonts.git --depth=1
+    sh ./fonts/install.sh
+    sudo fc-cache -fv
+    # clean up directory
+    rm -rf fonts
+
+    # Set up ohmyzsh for managing theme and  command line prompt
+    [ -f $HOME/.oh-my-zsh ] || rm -rf $HOME/.oh-my-zsh
+    mv $HOME/.zshrc $HOME/.zshrc_ready
+    curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
+    cp $HOME/.zshrc_ready $HOME/.zshrc
+    echo ""
+    echo ""
+
 fi
-
-# Set up MesloLGS with devicons for vim and many app's glyph
-sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
-sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
-#sudo cd /usr/local/share/fonts
-sudo fc-cache -fv
-
-# Install PowerlineFont
-[ -f fonts ] || rm -rf fonts
-git clone https://github.com/powerline/fonts.git --depth=1
-sh ./fonts/install.sh
-# clean up directory
-rm -rf fonts
-
-# Set up ohmyzsh for managing theme and  command line prompt
-[ -f $HOME/.oh-my-zsh ] || rm -rf $HOME/.oh-my-zsh
-mv $HOME/.zshrc $HOME/.zshrc_ready
-curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
-cp $HOME/.zshrc_ready $HOME/.zshrc
-echo ""
-echo ""
 
 # Need to reboot the system
 read -p "Finish Installation Process, Please reboot the system: (y/n) " check
 if [ "$check" = "y" ]; then
    reboot
 else
-   echo "Finish Installation Process !!!!" 
+  echo "Finish Installation Process ( without reboot - some features may not be set )!!!!" 
 fi
