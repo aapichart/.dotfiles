@@ -100,9 +100,10 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
 
     # Set up ohmyzsh for managing theme and  command line prompt
     [ -f $HOME/.oh-my-zsh ] || rm -rf $HOME/.oh-my-zsh
-    mv $HOME/.zshrc $HOME/.zshrc_ready
+    #mv $HOME/.zshrc $HOME/.zshrc_ready
     curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
-    cp $HOME/.zshrc_ready $HOME/.zshrc
+    #cp $HOME/.zshrc_ready $HOME/.zshrc
+    stow zsh
     echo ""
     echo ""
 

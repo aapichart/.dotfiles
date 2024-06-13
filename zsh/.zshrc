@@ -61,6 +61,8 @@ alias gs='git status'
 alias lf='lfcd'
 alias tm='tmuxifier'
 alias hms='home-manager switch'
+alias ccopy='xsel --clipboard --input'
+alias cpate='xsel --clipboard --output'
 # Global alias
 alias -g F=' | fzf'
 alias -g L=' | less'
