@@ -63,6 +63,7 @@ alias tm='tmuxifier'
 alias hms='home-manager switch'
 alias ccopy='xsel --clipboard --input'
 alias cpate='xsel --clipboard --output'
+alias gpt='tgpt'
 # Global alias
 alias -g F=' | fzf'
 alias -g L=' | less'
