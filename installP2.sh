@@ -27,7 +27,6 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.python310Packages.pip \
         nixpkgs.virtualenv \
         nixpkgs.pipenv \
-        nixpkgs.flake8 \
         nixpkgs.pv \
         nixpkgs.fd \
         nixpkgs.ranger \
