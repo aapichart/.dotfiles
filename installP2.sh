@@ -37,9 +37,13 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.python312Full \
         nixpkgs.python312Packages.pip \
         nixpkgs.python312Packages.flake8 \
+        nixpkgs.python312Packages.poetry-core \
         nixpkgs.lua54Packages.lua \
         nixpkgs.lua54Packages.luarocks \
         nixpkgs.lua54Packages.luacheck \
+        nixpkgs.stylua \
+        nixpkgs.eslint_d \
+        nixpkgs.prettierd \
         nixpkgs.figlet \
         nixpkgs.go \
         nixpkgs.gotools \
@@ -51,7 +55,12 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.godef \
         nixpkgs.golint \
         nixpkgs.typescript
-
+    # To check nix avilable packages for nix-env using the following command
+    # nix-env -qaP -P '.*prettierd.*'
+    # To check whether existing package is in which location on linux system using the following command
+    # nix-env -q --out-path | grep prettierd
+    # To uninstall the package above using the following command
+    # nix-env --uninstall fsouza-prettierd-0.25.3
 
     # add zsh to valid login shells
     command -v zsh | sudo tee -a /etc/shells
