@@ -43,6 +43,9 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.lua54Packages.luarocks \
         nixpkgs.lua54Packages.luacheck \
         nixpkgs.tree-sitter \
+        nixpkgs.cargo \
+        nixpkgs.php83Packages.composer \
+        nixpkgs.jdt-language-server \
         nixpkgs.stylua \
         nixpkgs.eslint_d \
         nixpkgs.prettierd \
