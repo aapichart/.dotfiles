@@ -23,10 +23,6 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.cmatrix \
         nixpkgs.nmap \
         nixpkgs.postgresql \
-        nixpkgs.python310Full \
-        nixpkgs.python310Packages.pip \
-        nixpkgs.virtualenv \
-        nixpkgs.pipenv \
         nixpkgs.pv \
         nixpkgs.fd \
         nixpkgs.ranger \
@@ -38,7 +34,12 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.iftop \
         nixpkgs.nload \
         nixpkgs.vpnc \
-        nixpkgs.luarocks \
+        nixpkgs.python312Full \
+        nixpkgs.python312Packages.pip \
+        nixpkgs.python312Packages.flake8 \
+        nixpkgs.lua54Packages.lua \
+        nixpkgs.lua54Packages.luarocks \
+        nixpkgs.lua54Packages.luacheck \
         nixpkgs.figlet \
         nixpkgs.go \
         nixpkgs.gotools \
@@ -57,6 +58,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
 
     # stow any dot config modules
     stow git
+    [ -f $HOME/.zshrc] || rm -rf $HOME/.zshrc
     stow zsh
     #stow nvim
     stow nvim.lazy
