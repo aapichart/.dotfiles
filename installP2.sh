@@ -36,11 +36,13 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.vpnc \
         nixpkgs.python312Full \
         nixpkgs.python312Packages.pip \
+        nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
         nixpkgs.lua54Packages.lua \
         nixpkgs.lua54Packages.luarocks \
         nixpkgs.lua54Packages.luacheck \
+        nixpkgs.tree-sitter \
         nixpkgs.stylua \
         nixpkgs.eslint_d \
         nixpkgs.prettierd \
@@ -61,6 +63,8 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     # nix-env -q --out-path | grep prettierd
     # To uninstall the package above using the following command
     # nix-env --uninstall fsouza-prettierd-0.25.3
+    # To install the package
+    # nix-env -iA nixpkgs.prettierd
 
     # add zsh to valid login shells
     command -v zsh | sudo tee -a /etc/shells
