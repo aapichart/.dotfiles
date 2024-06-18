@@ -36,6 +36,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.vpnc \
         nixpkgs.python312Full \
         nixpkgs.python312Packages.pip \
+        nixpkgs.pipenv \
         nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
@@ -46,6 +47,9 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.cargo \
         nixpkgs.php83Packages.composer \
         nixpkgs.jdt-language-server \
+        nixpkgs.java-language-server \
+        nixpkgs.jdk22 \
+        nixpkgs.php83 \
         nixpkgs.stylua \
         nixpkgs.eslint_d \
         nixpkgs.prettierd \
