@@ -112,6 +112,9 @@ export PATH="$HOME/.poetry/bin:$PATH"
 #This setting is for lua configuration
 export PATH="$HOME/.luarocks/bin:$PATH"
 
+#This setting is for npm configuration
+export PATH="$HOME/.npm:$PATH"
+
 #This setting is for tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts/"
