@@ -1,7 +1,9 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #$LANG=en_US.UTF-8 $LC_ALL= $LC_CTYPE=C.UTF-8
+export OPENSSL_ROOT_DIR=/usr/include/openssl
 export TERM="screen-256color"
 EDITOR='nvim'
 # export variable for nvim

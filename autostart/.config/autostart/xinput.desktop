@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xinput 
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=TouchScreen Calibration
+Name=TouchScreen Calibration
+Comment[en_US]=Touch Screen Calibration
+Comment=Touch Screen Calibration
