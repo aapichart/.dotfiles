@@ -36,10 +36,14 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.vpnc \
         nixpkgs.python312Full \
         nixpkgs.python312Packages.pip \
+        nixpkgs.python312Packages.pip-api \
         nixpkgs.pipenv \
         nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
+        nixpkgs.lua51Packages.lua \
+        nixpkgs.lua51Packages.luarocks \
+        nixpkgs.lua51Packages.luacheck \
         nixpkgs.lua54Packages.lua \
         nixpkgs.lua54Packages.luarocks \
         nixpkgs.lua54Packages.luacheck \
