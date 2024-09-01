@@ -8,7 +8,7 @@ local opts = {
 
 return {
 	"williamboman/mason-lspconfig.nvim",
-	lazy = false,
+	lazy = true,
 	opts = opts,
 	event = "BufReadPre",
 	dependencies = "williamboman/mason.nvim",
