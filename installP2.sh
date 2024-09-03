@@ -41,12 +41,6 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
-        nixpkgs.lua51Packages.lua \
-        nixpkgs.lua51Packages.luarocks \
-        nixpkgs.lua51Packages.luacheck \
-        nixpkgs.lua54Packages.lua \
-        nixpkgs.lua54Packages.luarocks \
-        nixpkgs.lua54Packages.luacheck \
         nixpkgs.tree-sitter \
         nixpkgs.cargo \
         nixpkgs.php83Packages.composer \
@@ -68,14 +62,23 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.godef \
         nixpkgs.golint \
         nixpkgs.typescript
+        
     # To check nix avilable packages for nix-env using the following command
     # nix-env -qaP -P '.*prettierd.*'
+    #
     # To check whether existing package is in which location on linux system using the following command
     # nix-env -q --out-path | grep prettierd
+    #
     # To uninstall the package above using the following command
     # nix-env --uninstall fsouza-prettierd-0.25.3
+    # or
+    # nix-env -e fsouza-prettierd-0.25.3
+    #
     # To install the package
     # nix-env -iA nixpkgs.prettierd
+    #
+    # To check packages which already installed in your system
+    # nix-env -q | grep prettierd
 
     # add zsh to valid login shells
     command -v zsh | sudo tee -a /etc/shells
