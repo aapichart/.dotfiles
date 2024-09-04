@@ -5,7 +5,7 @@ return {
     vim.cmd([[hi NvimTreeNormal guibg=None ctermbg=None]])
     require("nvim-tree").setup({
       filters = {
-        dotfiles = false, 
+        dotfiles = false,
       },
     })
   end,

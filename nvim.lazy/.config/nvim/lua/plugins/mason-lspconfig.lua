@@ -1,7 +1,7 @@
 local opts = {
 	ensure_installed = {
-		"efm",
-		"lua_ls",
+		-- "efm",
+		-- "lua_ls",
 	},
 	automatic_installation = true,
 }
@@ -11,4 +11,7 @@ return {
 	opts = opts,
 	event = "BufReadPre",
 	dependencies = "williamboman/mason.nvim",
+
 }
+
+
