@@ -37,6 +37,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.python312Full \
         nixpkgs.python312Packages.pip \
         nixpkgs.python312Packages.pip-api \
+        nixpkgs.python312Packages.virtualenv \
         nixpkgs.pipenv \
         nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
