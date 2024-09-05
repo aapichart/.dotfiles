@@ -34,7 +34,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.iftop \
         nixpkgs.nload \
         nixpkgs.vpnc \
-        nixpkgs.python312Full \
+        nixpkgs.python312Packages.python \
         nixpkgs.python312Packages.pip \
         nixpkgs.python312Packages.pip-api \
         nixpkgs.python312Packages.virtualenv \
