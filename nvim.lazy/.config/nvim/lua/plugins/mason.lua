@@ -1,6 +1,6 @@
 return {
   "williamboman/mason.nvim",
-  lazy = false,
+  -- lazy = false,
   cmd = {"Mason", "MasonInstall","MasonUpdate"},
   event = "BufReadPre",
   option = {
