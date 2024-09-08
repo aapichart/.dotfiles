@@ -42,6 +42,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.python312Packages.tree-sitter \
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
+        nixpkgs.python312Packages.ipython \
         nixpkgs.tree-sitter \
         nixpkgs.julia \
         nixpkgs.lua51Packages.lua \
