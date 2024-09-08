@@ -1,30 +1,30 @@
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
-  return
+	return
 end
 
 mason.setup()
 
 local mason_lspconfig_status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_status then
-  return
+	return
 end
 
 mason_lspconfig.setup({
-  ensure_installed = {
-    "pyright",
-    "lua_ls",
-    "ts_ls",
-    "jsonls",
-  },
-  automatic_installation = true,
-  -- handlers = {
-  --   -- this first function is the "default handler"
-  --   -- it applies to every language server without a "custom handler"
-  --   function(server_name)
-  --     require('lspconfig')[server_name].setup({})
-  --   end,
-  -- },
+	ensure_installed = {
+		"pyright",
+		"lua_ls",
+		"eslint_d",
+		"jsonls",
+	},
+	automatic_installation = true,
+	-- handlers = {
+	--   -- this first function is the "default handler"
+	--   -- it applies to every language server without a "custom handler"
+	--   function(server_name)
+	--     require('lspconfig')[server_name].setup({})
+	--   end,
+	-- },
 })
 
 -- enable keybinds only for when lsp server available
@@ -83,7 +83,7 @@ local config = function()
 	})
 
 	-- typescript
-	lspconfig.tsserver.setup({
+	lspconfig.eslint_d.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
@@ -122,7 +122,6 @@ local config = function()
 			},
 		},
 	})
-
 end
 
 return {
