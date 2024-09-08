@@ -83,7 +83,7 @@ local config = function()
 	})
 
 	-- typescript
-	lspconfig.eslint_d.setup({
+	lspconfig.tsserver.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
