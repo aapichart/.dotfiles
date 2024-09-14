@@ -20,7 +20,8 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nightfox" },
+		-- colorscheme = { "nightfox" },
+		colorscheme = { "kanagawa" },
 	},
 	rtp = {
 		disabled_plugins = {
