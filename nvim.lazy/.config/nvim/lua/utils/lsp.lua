@@ -23,6 +23,8 @@ M.on_attach = function(client, bufnr)
 	if client.name == "pyright" then
 		mapkey("<leader>oi", "PyrightOrganizeImports", "n", opts)
 	end
+
+	client.server_capabilities.documentation_formatting = true
 end
 
 M.diagnostic_signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
