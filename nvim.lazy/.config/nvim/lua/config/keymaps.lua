@@ -30,6 +30,10 @@ keymap.set("n", "<leader>sm", "<C-w>=", opts) -- Toggle Maxzimize
 keymap.set("v", "<", "<gv")
 keymap.set("v", ">", ">gv")
 
+-- Move code to another location by up or down in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Mapping key for lf, lf need floatTerm
 vim.g.lf_open_new_tab = 0
 vim.g.lf_map_keys = 0
