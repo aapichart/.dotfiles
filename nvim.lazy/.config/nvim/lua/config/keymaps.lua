@@ -50,3 +50,6 @@ vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
 -- vim.api.nvim_set_keymap("n", "<s-tab>", ":bp<CR>", { noremap = false })
 vim.api.nvim_set_keymap("n", "<tab>", "gT", { noremap = false })
 vim.api.nvim_set_keymap("n", "<s-tab>", "gt", { noremap = false })
+
+-- Ending terminal command mode with <leader>e key
+vim.api.nvim_set_keymap("t", "<C-\\>", "<C-\\><C-n><C-\\>", { noremap = false })
