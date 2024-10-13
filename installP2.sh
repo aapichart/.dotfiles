@@ -23,6 +23,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.cmatrix \
         nixpkgs.nmap \
         nixpkgs.postgresql \
+        nixpkgs.sqlite \
         nixpkgs.pv \
         nixpkgs.fd \
         nixpkgs.ranger \
