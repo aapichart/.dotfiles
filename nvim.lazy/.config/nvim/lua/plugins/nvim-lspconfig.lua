@@ -67,10 +67,10 @@ local config = function()
 		return strsplit(s, "\n")[2]
 	end
 
-	-- local lua_library_files = vim.api.nvim_get_runtime_file("", true)
+	local lua_library_files = vim.api.nvim_get_runtime_file("", true)
 	-- local resource_path = get_quarto_resource_path()
 	-- table.insert(lua_library_files, resource_path .. "lua-types")
-	-- local lua_plugin_paths = {}
+	local lua_plugin_paths = {}
 	-- table.insert(lua_plugin_paths, resource_path .. "lua-plugin/plugin.lua")
 
 	lspconfig.sumneko_lua.setup({
@@ -84,7 +84,7 @@ local config = function()
 				},
 				runtime = {
 					version = "LuaJIT",
-					-- plugin = lua_plugin_paths[1],
+					plugin = lua_plugin_paths[1],
 				},
 				diagnostic = {
 					globals = {
@@ -117,6 +117,9 @@ local config = function()
 			return util.root_pattern(".git", "setup.py", "setup.cfg", "pyproject.tom", "requirements.txt")(fname)
 				or util.path.dirname(fname)
 		end,
+		settings = {
+			python = {},
+		},
 	})
 
 	lspconfig.julias.setup({

@@ -4,14 +4,17 @@ return {
 		"onsails/lspkind.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-nvim-lsp-document-symbol",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-calc",
 		"hrsh7th/cmp-emoji",
+		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 		"f3fora/cmp-spell",
 		"ray-x/cmp-treesitter",
 		"kdheepak/cmp-latex-symbols",
+		"David-Kunz/cmp-npm",
 		"jc-doyle/cmp-pandoc-references",
 		"rafamadriz/friendly-snippets",
 		{
@@ -79,6 +82,8 @@ return {
 				{ name = "emoji" },
 				{ name = "nvim_lsp" }, -- lsp
 				{ name = "path" }, -- file system paths
+				{ name = "buffer" },
+				{ name = "nvim_lsp_signature_help" }, -- signature help
 			}),
 			-- configure lspkind for vs-code like icons
 			formatting = {
