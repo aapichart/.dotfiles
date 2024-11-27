@@ -10,11 +10,15 @@ return {
 		workspace = {
 			{
 				name = "personal",
-				path = "~/vaults/personal",
+				path = "~/Works/opsidians/personal",
 			},
 			{
 				name = "work",
-				path = "~/vaults/work",
+				path = "~/Works/obsidians/work",
+			},
+			{
+				name = "chartSpaceOO",
+				path = "~/Works/obsidians/chartSpaceOO",
 			},
 		},
 	},
