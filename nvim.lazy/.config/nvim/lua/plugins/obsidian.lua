@@ -7,18 +7,14 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	opts = {
-		workspace = {
-			{
-				name = "personal",
-				path = "~/Works/opsidians/personal",
-			},
+		workspaces = {
 			{
 				name = "work",
-				path = "~/Works/obsidians/work",
+				path = "~/Works/obsidians/chartSpaceOO/work",
 			},
 			{
-				name = "chartSpaceOO",
-				path = "~/Works/obsidians/chartSpaceOO",
+				name = "personal",
+				path = "~/Works/obsidians/chartSpaceOO/personal",
 			},
 		},
 	},
