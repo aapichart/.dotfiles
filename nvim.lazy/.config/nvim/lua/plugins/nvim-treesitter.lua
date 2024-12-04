@@ -1,5 +1,5 @@
 local config = function()
-	require("nvim-treesitter.configs").setup({
+	require("nvim-ts-autotag").setup({
 		indent = {
 			enable = true,
 		},
@@ -8,8 +8,10 @@ local config = function()
 		},
 		ensure_installed = {
 			"markdown",
+			"markdown_inline",
 			"r",
-			"julia",
+			"regex",
+			"julials",
 			"vim",
 			"query",
 			"json",

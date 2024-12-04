@@ -73,41 +73,41 @@ local config = function()
 	local lua_plugin_paths = {}
 	-- table.insert(lua_plugin_paths, resource_path .. "lua-plugin/plugin.lua")
 
-	lspconfig.sumneko_lua.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		flags = lsp_flags,
-		setting = {
-			lua = {
-				completion = {
-					callSnippet = "Replace",
-				},
-				runtime = {
-					version = "LuaJIT",
-					plugin = lua_plugin_paths[1],
-				},
-				diagnostic = {
-					globals = {
-						"vim",
-						"quarto",
-						"pandoc",
-						"io",
-						"string",
-						"print",
-						"require",
-						"table",
-					},
-				},
-				workspace = {
-					library = lua_library_files,
-					checkThirdParty = false,
-				},
-				telemetry = {
-					enable = false,
-				},
-			},
-		},
-	})
+	-- lspconfig.sumneko_lua.setup({
+	-- 	on_attach = on_attach,
+	-- 	capabilities = capabilities,
+	-- 	flags = lsp_flags,
+	-- 	setting = {
+	-- 		lua = {
+	-- 			completion = {
+	-- 				callSnippet = "Replace",
+	-- 			},
+	-- 			runtime = {
+	-- 				version = "LuaJIT",
+	-- 				plugin = lua_plugin_paths[1],
+	-- 			},
+	-- 			diagnostic = {
+	-- 				globals = {
+	-- 					"vim",
+	-- 					"quarto",
+	-- 					"pandoc",
+	-- 					"io",
+	-- 					"string",
+	-- 					"print",
+	-- 					"require",
+	-- 					"table",
+	-- 				},
+	-- 			},
+	-- 			workspace = {
+	-- 				library = lua_library_files,
+	-- 				checkThirdParty = false,
+	-- 			},
+	-- 			telemetry = {
+	-- 				enable = false,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- })
 
 	lspconfig.pyright.setup({
 		on_attach = on_attach,
@@ -122,7 +122,7 @@ local config = function()
 		},
 	})
 
-	lspconfig.julias.setup({
+	lspconfig.julials.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		flags = lsp_flags,
