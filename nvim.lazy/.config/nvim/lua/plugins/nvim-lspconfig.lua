@@ -34,11 +34,11 @@ local config = function()
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-	lspconfig.r_language_server.setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-		flags = lsp_flags,
-	})
+	-- lspconfig.r_language_server.setup({
+	-- 	on_attach = on_attach,
+	-- 	capabilities = capabilities,
+	-- 	flags = lsp_flags,
+	-- })
 
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,
