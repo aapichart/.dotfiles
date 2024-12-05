@@ -24,7 +24,7 @@ return {
 		notes_subdir = "notes",
 		log_level = vim.log.levels.INFO,
 		daily_notes = {
-			folder = "notes/dailies",
+			folder = "notes/diary",
 			date_format = "%Y-%m-%d",
 			alias_format = "%B %-d, %Y",
 			default_tags = { "daily-notes" },
