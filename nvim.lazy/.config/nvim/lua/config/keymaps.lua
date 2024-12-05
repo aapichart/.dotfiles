@@ -41,13 +41,20 @@ vim.g.floaterm_width = 0.9
 vim.g.floaterm_height = 0.9
 keymap.set("n", "<leader>lf", "<Cmd>Lf<CR>", opts)
 
+-- Mapping key for Obsidian
+keymap.set("n", "<leader>os", "<Cmd>ObsidianSearch<CR>", opts)
+keymap.set("n", "<leader>on", "<Cmd>ObsidianNewFromTemplate<CR>", opts)
+keymap.set("n", "<leader>od", "<Cmd>ObsidianDailies<CR>", opts)
+keymap.set("n", "<leader>oc", "<Cmd>ObsidianToggleCheckbox<CR>", opts)
+keymap.set("n", "<leader>oq", "<Cmd>ObsidianQuickSwitch<CR>", opts)
+
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
 vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
 
 -- Move between buffers
--- vim.api.nvim_set_keymap("n", "<tab>", ":bn<CR>", { noremap = false })
--- vim.api.nvim_set_keymap("n", "<s-tab>", ":bp<CR>", { noremap = false })
+keymap.set("n", "<leader>bn", "<Cmd>bnext<CR>", opts)
+keymap.set("n", "<leader>bp", "<Cmd>bprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<tab>", "gT", { noremap = false })
 vim.api.nvim_set_keymap("n", "<s-tab>", "gt", { noremap = false })
 
