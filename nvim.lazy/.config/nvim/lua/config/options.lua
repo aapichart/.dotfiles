@@ -15,6 +15,7 @@ opt.smartcase = true
 opt.hlsearch = false
 
 -- Appearance
+opt.showtabline = 0 -- hide tabline
 opt.number = true
 opt.relativenumber = true
 opt.termguicolors = true

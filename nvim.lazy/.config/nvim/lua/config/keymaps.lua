@@ -53,10 +53,11 @@ vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
 vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
 
 -- Move between buffers
-keymap.set("n", "<leader>bn", "<Cmd>bnext<CR>", opts)
-keymap.set("n", "<leader>bp", "<Cmd>bprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<tab>", "gT", { noremap = false })
-vim.api.nvim_set_keymap("n", "<s-tab>", "gt", { noremap = false })
+keymap.set("n", "<leader>fn", "<Cmd>bnext<CR>", opts)
+keymap.set("n", "<leader>fp", "<Cmd>bprevious<CR>", opts)
+-- disable tab key to switch buffers, using telescope buffers instead
+-- vim.api.nvim_set_keymap("n", "<tab>", "gT", { noremap = false })
+-- vim.api.nvim_set_keymap("n", "<s-tab>", "gt", { noremap = false })
 
 -- Ending terminal command mode with <leader>e key
 vim.api.nvim_set_keymap("t", "<C-\\>", "<C-\\><C-n><C-\\>", { noremap = false })
