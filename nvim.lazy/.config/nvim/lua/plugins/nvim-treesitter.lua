@@ -13,7 +13,6 @@ local config = function()
 			"regex",
 			"julials",
 			"vim",
-			"query",
 			"json",
 			"javascript",
 			"typescript",
