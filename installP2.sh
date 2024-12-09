@@ -5,6 +5,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.zsh \
         nixpkgs.conky \
         nixpkgs.terminator \
+        nixpkgs.kitty \
         nixpkgs.lf \
         nixpkgs.gcc \
         nixpkgs.htop \
@@ -111,6 +112,7 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     stow myfonts
     stow krohnkite
     stow terminator
+    stow kitty
     stow conky
   
     # use zsh as default shell
