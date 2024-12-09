@@ -7,6 +7,7 @@ local config = function()
 
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 	local lspconfig = require("lspconfig")
+	local util = require("lspconfig.util")
 
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
