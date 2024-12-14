@@ -15,29 +15,39 @@ require("config.globals")
 require("config.options")
 require("config.keymaps")
 
-local opts = {
-	defaults = {
-		lazy = true,
-	},
-	install = {
-		-- colorscheme = { "nightfox" },
-		colorscheme = { "kanagawa" },
-	},
-	rtp = {
-		disabled_plugins = {
-			"gzip",
-			"matchit",
-			"matchparen",
-			"netrwPlugin",
-			"tarPlugin",
-			"tohtml",
-			"tutor",
-			"zipPlugin",
+local opts =
+	{
+		defaults = {
+			lazy = true,
 		},
-	},
-	change_detection = {
-		notify = true,
-	},
-}
-
+		install = {
+			-- colorscheme = { "nightfox" },
+			colorscheme = { "kanagawa" },
+		},
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+		change_detection = {
+			notify = true,
+		},
+		backend = "kitty",
+		integrations = {
+			markdown = {
+				enabled = true,
+				clear_in_insert_mode = false,
+				download_remote_images = true,
+				only_render_image_at_cursor = false,
+				filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+			},
+		},
+	}, 
 require("lazy").setup("plugins", opts)
