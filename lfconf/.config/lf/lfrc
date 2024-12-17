@@ -2,6 +2,9 @@
 set hidden true
 set ignorecase true
 set icons true
+set preview_images true
+set preview_images_method ueberzug
+set preview_images_on_hover true
 
 # Custom Functions
 cmd mkdir ${{
@@ -17,6 +20,11 @@ cmd mkfile ${{
 }}
 
 cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
+
+# set cmd preview command
+cmd preview = ueberzug layer --parser bash --silent
+
+
 
 # Archive bindings
 cmd unarchive ${{

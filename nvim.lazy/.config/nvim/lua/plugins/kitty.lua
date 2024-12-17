@@ -6,10 +6,12 @@ return {
 			opts = {
 				rocks = { "magick" },
 			},
-			-- rocks = {
-			-- 	hererocks = true, -- recommended if you do not have global installation of lua 5.1.
-			-- },
 		},
+		-- {
+		-- 	rocks = {
+		-- 		hererocks = true, -- recommended if you do not have global installation of lua 5.1.
+		-- 	},
+		-- },
 		{
 			"3rd/image.nvim",
 			dependencies = { "luarocks.nvim" },
