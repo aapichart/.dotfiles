@@ -6,7 +6,6 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.conky \
         nixpkgs.terminator \
         nixpkgs.kitty \
-        nixpkgs.ueberzug \
         nixpkgs.graphicsmagick \
         nixpkgs.lf \
         nixpkgs.gcc \
