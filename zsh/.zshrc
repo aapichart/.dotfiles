@@ -111,8 +111,11 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+#This is for kitty setting
+export PATH="$HOME/.local/bin/:$PATH"
+
 #This is for jupyter lab setting
-export PATH="$PATH:~/usr/lib32/"
+export PATH="/usr/lib32/:$PATH"
 
 #This setting is for lua configuration
 export PATH="$HOME/.luarocks/bin:$PATH"

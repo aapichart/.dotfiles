@@ -1,11 +1,14 @@
-if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ] || [ $REINSTALL_NIX = "TRUE" ]; then
+#!/bin/bash
 
+if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
 # install packages
+    # source nix
+    . $HOME/.nix-profile/etc/profile.d/nix.sh
+
     nix-env -iA \
         nixpkgs.zsh \
         nixpkgs.conky \
         nixpkgs.terminator \
-        nixpkgs.kitty \
         nixpkgs.graphicsmagick \
         nixpkgs.lf \
         nixpkgs.gcc \
@@ -36,8 +39,13 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.bmon \
         nixpkgs.iftop \
         nixpkgs.nload \
-        nixpkgs.vpnc \
-        nixpkgs.python312Packages.python \
+        nixpkgs.vpnc 
+
+    echo "1st Stage - Installation is done .................!! "
+fi
+
+if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+    nix-env -iA nixpkgs.python312Packages.python \
         nixpkgs.python312Packages.pip \
         nixpkgs.python312Packages.pip-api \
         nixpkgs.python312Packages.virtualenv \
@@ -51,30 +59,30 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
         nixpkgs.lua52Packages.lua \
         nixpkgs.lua52Packages.luarocks \
         nixpkgs.lua52Packages.luacheck \
-        nixpkgs.vimPlugins.nvim-treesitter-parser.regex \
+        nixpkgs.vimPlugins.nvim-treesitter-parsers.regex \
         nixpkgs.cargo \
         nixpkgs.php83Packages.composer \
-        nixpkgs.jdt-language-server \
-        nixpkgs.java-language-server \
-        nixpkgs.jdk22 \
-        nixpkgs.php83 \
-        nixpkgs.stylua \
+        # nixpkgs.jdt-language-server \
+        # nixpkgs.java-language-server \
+        # nixpkgs.jdk22 \
+        # nixpkgs.php83 \
+    nix-env -iA nixpkgs.stylua \
         nixpkgs.eslint_d \
         nixpkgs.prettierd \
         nixpkgs.figlet \
         nixpkgs.go \
         nixpkgs.gotools \
         nixpkgs.gopls \
-        nixpkgs.go-outline \
+        nixpkgs.go-outline 
         #nixpkgs.gocode \
-        nixpkgs.gopkgs \
+        # nixpkgs.gopkgs \
         #nixpkgs.gocode-gomod \
-        nixpkgs.godef \
-        nixpkgs.golint \
-        nixpkgs.typescript
+        # nixpkgs.godef \
+        # nixpkgs.golint \
+        # nixpkgs.typescript
         
     # To check nix avilable packages for nix-env using the following command
-    # nix-env -qaP -P '.*prettierd.*'
+    # nix-env -qaP '.*prettierd.*'
     #
     # To check whether existing package is in which location on linux system using the following command
     # nix-env -q --out-path | grep prettierd
@@ -89,67 +97,92 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     #
     # To check packages which already installed in your system
     # nix-env -q | grep prettierd
+  echo "2nd Stage - Installation Process are done......................!! "
+fi
 
-    # add zsh to valid login shells
-    command -v zsh | sudo tee -a /etc/shells
+if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+  # Install Kitty terminal for graphic user
+  # Check whether Kitty already installed or not
+  if [[ -f ~/.local/bin/kitty ]]; then
+    echo "Kitty is ready to rock...!!!!"
+  else
+    if [[ -f ./kitty/.config/kitty/autoInstallKitty.sh ]]; then
+      echo "Kitty auto Installer exist.  Prepare for installation.....!!"
+      ./kitty/.config/kitty/autoInstallKitty.sh
+    fi
+  fi
+  echo "3rd Stage - Installation Process are done......................!! "
+fi
+
+if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+  echo "Configuration Process start .......................!! "
+  # add zsh to valid login shells
+  command -v zsh | sudo tee -a /etc/shells
 
     # stow any dot config modules
-    stow git
-    [ -f $HOME/.zshrc] || rm -rf $HOME/.zshrc
-    stow zsh
-    #stow nvim
-    stow nvim.lazy
-    #stow nvim.22
-    stow tmux
-    stow tmuxifier
-    stow lfconf
-    stow direnv
-    stow deskpi
-    stow gtk-3.0
-    stow selected_editor
-    stow autostart
-    stow startupScript
-    stow rasp4utils
-    stow myfonts
-    stow krohnkite
-    stow terminator
-    stow kitty
-    stow conky
+  stow git
+  if [[ -f "$HOME/.zshrc" ]]; then
+    rm -rf $HOME/.zshrc
+  fi
+  stow zsh
+  #stow nvim
+  stow nvim.lazy
+  #stow nvim.22
+  stow tmux
+  stow tmuxifier
+  stow lfconf
+  stow direnv
+  stow deskpi
+  stow gtk-3.0
+  stow selected_editor
+  stow autostart
+  stow startupScript
+  stow rasp4utils
+  stow myfonts
+  stow krohnkite
+  stow terminator
+  stow kitty
+  stow conky
   
-    # use zsh as default shell
-    chsh -s $(which zsh) $USER
+  # use zsh as default shell
+  chsh -s $(which zsh) $USER
 
-    # bundle zsh plugins
-    antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+  # bundle zsh plugins
+  antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
 
-    # Set up MesloLGS with devicons for vim and many app's glyph
-    # This will solve the powerline prompt strange icon issues
-    sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
-    sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
-    #sudo cd /usr/local/share/fonts
-    sudo fc-cache -fv
+  # Set up MesloLGS with devicons for vim and many app's glyph
+  # This will solve the powerline prompt strange icon issues
+  sudo cp $HOME/.local/share/fonts/*.ttf /usr/local/share/fonts
+  sudo cp $HOME/.local/share/fonts/*.otf /usr/local/share/fonts
+  #sudo cd /usr/local/share/fonts
+  sudo fc-cache -fv
 
-    # Install PowerlineFont
-    [ -f fonts ] || rm -rf fonts
-    git clone https://github.com/powerline/fonts.git --depth=1
-    sh ./fonts/install.sh
-    sudo fc-cache -fv
-    # clean up directory
+  # Install PowerlineFont
+  if [[ -f fonts ]]; then 
     rm -rf fonts
+  fi
+  git clone https://github.com/powerline/fonts.git --depth=1
+  sh ./fonts/install.sh
+  sudo fc-cache -fv
+  # clean up directory
+  rm -rf fonts
 
-    # Set up ohmyzsh for managing theme and  command line prompt
-    [ -f $HOME/.oh-my-zsh ] || rm -rf $HOME/.oh-my-zsh
-    curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
-    [ -f $HOME/.zshrc.pre-oh-my-zsh] || cp $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc  
-    echo ""
-    echo ""
-
+  # Set up ohmyzsh for managing theme and  command line prompt
+  if [[ -f "$HOME/.oh-my-zsh" ]]; then
+    rm -rf $HOME/.oh-my-zsh
+  fi
+  curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
+  if [[ -f "$HOME/.zshrc.pre-oh-my-zsh" ]]; then
+    cp $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
+  fi
+  echo ""
+  echo ""
 fi
 
 # Need to reboot the system
 read -p "Finish Installation Process, Please reboot the system: (y/n) " check
-if [ "$check" = "y" ]; then
+if [[ "$check" = "y" ]]; then
    reboot
 else
   echo "Finish Installation Process ( without reboot - some features may not be set )!!!!" 
