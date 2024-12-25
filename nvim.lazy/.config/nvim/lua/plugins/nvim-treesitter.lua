@@ -30,7 +30,7 @@ local config = function()
 		},
 		auto_install = true,
 		highlight = {
-			enable = true,
+			enable = { "markdown", "markdown_inline" },
 			additional_vim_regex_highlighting = true,
 		},
 		incremental_selection = {

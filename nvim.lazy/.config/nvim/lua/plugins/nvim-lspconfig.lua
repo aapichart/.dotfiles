@@ -35,11 +35,30 @@ local config = function()
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-	-- lspconfig.r_language_server.setup({
-	-- 	on_attach = on_attach,
-	-- 	capabilities = capabilities,
-	-- 	flags = lsp_flags,
-	-- })
+	lspconfig.lua_ls({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		flags = lsp_flags,
+		cmd = {
+			"lua_language_server",
+		},
+		settings = {
+			lua = {
+				runtime = {
+					version = "LuaJIT",
+				},
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+				telemetry = {
+					enable = false,
+				},
+			},
+		},
+	})
 
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,

@@ -14,7 +14,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
         nixpkgs.gcc \
         nixpkgs.htop \
         nixpkgs.yarn \
-        nixpkgs.nodejs_20 \
+        nixpkgs.nodejs_23 \
         nixpkgs.xsel \
         nixpkgs.xclip \
         nixpkgs.fzf \
@@ -45,7 +45,8 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
 fi
 
 if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
-    nix-env -iA nixpkgs.python312Packages.python \
+    nix-env -iA nixpkgs.python312Full \
+        nixpkgs.python312Packages.python \
         nixpkgs.python312Packages.pip \
         nixpkgs.python312Packages.pip-api \
         nixpkgs.python312Packages.virtualenv \
@@ -54,14 +55,16 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
         nixpkgs.python312Packages.flake8 \
         nixpkgs.python312Packages.poetry-core \
         nixpkgs.tree-sitter \
+        nixpkgs.wl-clipboard \
         nixpkgs.julia \
         nixpkgs.lua51Packages.lua \
+        nixpkgs.lua51Packages.luarocks \
         nixpkgs.lua52Packages.lua \
         nixpkgs.lua52Packages.luarocks \
         nixpkgs.lua52Packages.luacheck \
         nixpkgs.vimPlugins.nvim-treesitter-parsers.regex \
         nixpkgs.cargo \
-        nixpkgs.php83Packages.composer \
+        nixpkgs.php83Packages.composer 
         # nixpkgs.jdt-language-server \
         # nixpkgs.java-language-server \
         # nixpkgs.jdk22 \
@@ -110,6 +113,17 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
       echo "Kitty auto Installer exist.  Prepare for installation.....!!"
       ./kitty/.config/kitty/autoInstallKitty.sh
     fi
+  fi
+
+  if [[ -f /etc/vpnc ]]; then
+    sudo cp ./vpnc/default.conf /etc/vpnc/default.conf
+    sudo chown chart:chart /etc/vpnc
+    sudo chown chart:chart /etc/vpnc/default.conf
+  else
+    sudo mkdir -p /etc/vpnc/
+    sudo cp ./vpnc/default.conf /etc/vpnc/default.conf
+    sudo chown chart:chart /etc/vpnc
+    sudo chown chart:chart /etc/vpnc/default.conf
   fi
   echo "3rd Stage - Installation Process are done......................!! "
 fi
