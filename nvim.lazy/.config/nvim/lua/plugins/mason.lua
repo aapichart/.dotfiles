@@ -30,7 +30,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"svelte",
-				"lua_language_server",
+				-- "lua-language-server",
 				"graphql",
 				"emmet_ls",
 				"prismals",
