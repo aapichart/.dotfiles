@@ -167,11 +167,29 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
 
   # This setup is for tmuxifier
   git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier/
-  echo "Done cloning code for tmuxifier...... "
+  echo "Done cloning code for tmuxifier.....................!! "
+
   # This setup is for tpm -- It is used to auto install any plugins for tmux
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
+  if [[ -f ~/.tmux/plugins/tpm/ ]]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
+  else
+    mkdir -p ~/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
+  fi
+
+  # This setup is for t (tmux session manager)
   ln -s ~/.tmux/plugins/t-smart-tmux-session-manager/bin/t ~/.local/bin/t
-  echo "Done cloning code for tpm"
+  echo "Done cloning code for tpm.......................!!"
+
+  # This setup is for catppuccin tmux theme
+  if [[ -f ~/.tmux/plugins/catppuccin/ ]]; then
+    git clone https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/
+  else
+    mkdir -p ~/.tmux/plugins/catppuccin
+    git clone https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/
+  fi
+  echo "Done cloining cappuccin theme..................!!"
+
 
   # Set up MesloLGS with devicons for vim and many app's glyph
   # This will solve the powerline prompt strange icon issues
