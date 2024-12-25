@@ -114,7 +114,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
       ./kitty/.config/kitty/autoInstallKitty.sh
     fi
   fi
-
+  # This setup is for vpnc
   if [[ -f /etc/vpnc ]]; then
     sudo cp ./vpnc/default.conf /etc/vpnc/default.conf
     sudo chown chart:chart /etc/vpnc
@@ -164,6 +164,14 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   # bundle zsh plugins
   antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
+
+  # This setup is for tmuxifier
+  git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier/
+  echo "Done cloning code for tmuxifier...... "
+  # This setup is for tpm -- It is used to auto install any plugins for tmux
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
+  ln -s ~/.tmux/plugins/t-smart-tmux-session-manager/bin/t ~/.local/bin/t
+  echo "Done cloning code for tpm"
 
   # Set up MesloLGS with devicons for vim and many app's glyph
   # This will solve the powerline prompt strange icon issues

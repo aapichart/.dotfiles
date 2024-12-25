@@ -120,19 +120,22 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$PATH:$HOME/.nix-profile/bin"
 
-#This is for kitty setting
+# This is for kitty setting
 export PATH="$HOME/.local/bin/:$PATH"
 
-#This is for jupyter lab setting
+# This is for jupyter lab setting
 export PATH="/usr/lib32/:$PATH"
 
-#This setting is for lua configuration
+# This setting is for lua configuration
 export PATH="$HOME/.luarocks/bin:$PATH"
 
-#This setting is for npm configuration
+# This setting is for npm configuration
 export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 
-#This setting is for tmuxifier
+# This setting is for t using for tmux
+export PATH="$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin/:$PATH"
+
+# This setting is for tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts/"
 eval "$(tmuxifier init -)"
