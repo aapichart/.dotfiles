@@ -5,78 +5,79 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     # source nix
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 
-    nix-env -iA \
-        nixpkgs.zsh \
-        nixpkgs.conky \
-        nixpkgs.terminator \
-        nixpkgs.graphicsmagick \
-        nixpkgs.lf \
-        nixpkgs.gcc \
-        nixpkgs.htop \
-        nixpkgs.yarn \
-        nixpkgs.nodejs_23 \
-        nixpkgs.xsel \
-        nixpkgs.xclip \
-        nixpkgs.fzf \
-        nixpkgs.lazygit \
-        nixpkgs.ripgrep \
-        nixpkgs.bat \
-        nixpkgs.gtop \
-        nixpkgs.gping \
-        nixpkgs.neofetch \
-        nixpkgs.tree \
-        nixpkgs.cmatrix \
-        nixpkgs.nmap \
-        nixpkgs.postgresql \
-        nixpkgs.sqlite \
-        nixpkgs.pv \
-        nixpkgs.fd \
-        nixpkgs.ranger \
-        nixpkgs.jq \
-        nixpkgs.nfs-utils \
-        nixpkgs.pandoc \
-        nixpkgs.zathura \
-        nixpkgs.bmon \
-        nixpkgs.iftop \
-        nixpkgs.nload \
-        nixpkgs.vpnc 
+    nix-env -iA nixpkgs.zsh 
+    nix-env -iA nixpkgs.conky 
+    nix-env -iA nixpkgs.terminator 
+    nix-env -iA nixpkgs.graphicsmagick 
+    nix-env -iA nixpkgs.lf 
+    nix-env -iA nixpkgs.gcc 
+    nix-env -iA nixpkgs.htop 
+    nix-env -iA nixpkgs.yarn 
+    nix-env -iA nixpkgs.nodejs_23 
+    nix-env -iA nixpkgs.xsel 
+    nix-env -iA nixpkgs.xclip 
+    nix-env -iA nixpkgs.fzf 
+    nix-env -iA nixpkgs.lazygit 
+    nix-env -iA nixpkgs.ripgrep 
+    nix-env -iA nixpkgs.bat 
+    nix-env -iA nixpkgs.gtop 
+    nix-env -iA nixpkgs.gping 
+    nix-env -iA nixpkgs.neofetch 
+    nix-env -iA nixpkgs.tree 
+    nix-env -iA nixpkgs.cmatrix 
+    nix-env -iA nixpkgs.nmap 
+    nix-env -iA nixpkgs.postgresql 
+    nix-env -iA nixpkgs.sqlite 
+    nix-env -iA nixpkgs.pv 
+    nix-env -iA nixpkgs.fd 
+    nix-env -iA nixpkgs.ranger 
+    nix-env -iA nixpkgs.jq 
+    nix-env -iA nixpkgs.nfs-utils 
+    nix-env -iA nixpkgs.pandoc 
+    nix-env -iA nixpkgs.zathura 
+    nix-env -iA nixpkgs.bmon 
+    nix-env -iA nixpkgs.iftop 
+    nix-env -iA nixpkgs.nload 
+    nix-env -iA nixpkgs.vpnc 
 
     echo "1st Stage - Installation is done .................!! "
 fi
 
 if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
-    nix-env -iA nixpkgs.python312Full \
-        nixpkgs.python312Packages.python \
-        nixpkgs.python312Packages.pip \
-        nixpkgs.python312Packages.pip-api \
-        nixpkgs.python312Packages.virtualenv \
-        nixpkgs.pipenv \
-        nixpkgs.python312Packages.tree-sitter \
-        nixpkgs.python312Packages.flake8 \
-        nixpkgs.python312Packages.poetry-core \
-        nixpkgs.tree-sitter \
-        nixpkgs.wl-clipboard \
-        nixpkgs.julia \
-        nixpkgs.lua51Packages.lua \
-        nixpkgs.lua51Packages.luarocks \
-        nixpkgs.lua52Packages.lua \
-        nixpkgs.lua52Packages.luarocks \
-        nixpkgs.lua52Packages.luacheck \
-        nixpkgs.vimPlugins.nvim-treesitter-parsers.regex \
-        nixpkgs.cargo \
-        nixpkgs.php83Packages.composer 
-        # nixpkgs.jdt-language-server \
+    nix-env -iA nixpkgs.python312Full 
+    nix-env -iA nixpkgs.python312Packages.python 
+    nix-env -iA nixpkgs.python312Packages.pip 
+    nix-env -iA nixpkgs.python312Packages.pynvim
+    nix-env -iA nixpkgs.python312Packages.pip-api 
+    nix-env -iA nixpkgs.python312Packages.virtualenv 
+    nix-env -iA nixpkgs.pipenv 
+    nix-env -iA nixpkgs.python312Packages.tree-sitter 
+    nix-env -iA nixpkgs.python312Packages.flake8 
+    nix-env -iA nixpkgs.python312Packages.poetry-core 
+    nix-env -iA nixpkgs.tree-sitter 
+    nix-env -iA nixpkgs.wl-clipboard 
+    nix-env -iA nixpkgs.julia 
+    nix-env -iA nixpkgs.lua51Packages.lua 
+    nix-env -iA nixpkgs.lua51Packages.luarocks 
+    #nix-env -iA nixpkgs.lua52Packages.lua 
+    #nix-env -iA nixpkgs.lua52Packages.luarocks 
+    nix-env -iA nixpkgs.lua52Packages.luacheck 
+    nix-env -iA nixpkgs.sumneko-lua-language-server
+    nix-env -iA nixpkgs.vimPlugins.nvim-treesitter-parsers.regex 
+    nix-env -iA nixpkgs.cargo 
+    nix-env -iA nixpkgs.php83Packages.composer 
+    #nix-env -iA nixpkgs.jdt-language-server 
         # nixpkgs.java-language-server \
-        # nixpkgs.jdk22 \
-        # nixpkgs.php83 \
-    nix-env -iA nixpkgs.stylua \
-        nixpkgs.eslint_d \
-        nixpkgs.prettierd \
-        nixpkgs.figlet \
-        nixpkgs.go \
-        nixpkgs.gotools \
-        nixpkgs.gopls \
-        nixpkgs.go-outline 
+    nix-env -iA nixpkgs.jdk22 
+    nix-env -iA nixpkgs.php83 
+    nix-env -iA nixpkgs.stylua 
+    nix-env -iA nixpkgs.eslint_d 
+    nix-env -iA nixpkgs.prettierd 
+    nix-env -iA nixpkgs.figlet 
+    nix-env -iA nixpkgs.go 
+    nix-env -iA nixpkgs.gotools 
+    nix-env -iA nixpkgs.gopls 
+    nix-env -iA nixpkgs.go-outline 
         #nixpkgs.gocode \
         # nixpkgs.gopkgs \
         #nixpkgs.gocode-gomod \

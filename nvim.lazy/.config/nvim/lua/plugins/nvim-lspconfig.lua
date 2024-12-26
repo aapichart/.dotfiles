@@ -60,6 +60,18 @@ local config = function()
 	-- 	},
 	-- })
 
+	lspconfig.lua_ls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		flags = lsp_flags,
+	})
+
+	lspconfig.jsonls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		flags = lsp_flags,
+	})
+
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
