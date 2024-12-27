@@ -44,16 +44,18 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
 fi
 
 if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
-    nix-env -iA nixpkgs.python312Full 
-    nix-env -iA nixpkgs.python312Packages.python 
-    nix-env -iA nixpkgs.python312Packages.pip 
-    nix-env -iA nixpkgs.python312Packages.pynvim
-    nix-env -iA nixpkgs.python312Packages.pip-api 
-    nix-env -iA nixpkgs.python312Packages.virtualenv 
-    nix-env -iA nixpkgs.pipenv 
-    nix-env -iA nixpkgs.python312Packages.tree-sitter 
-    nix-env -iA nixpkgs.python312Packages.flake8 
-    nix-env -iA nixpkgs.python312Packages.poetry-core 
+    nix-env -iA nixpkgs.python313Full 
+    nix-env -iA nixpkgs.python313Packages.python 
+    nix-env -iA nixpkgs.python313Packages.black
+    nix-env -iA nixpkgs.python313Packages.pip 
+    nix-env -iA nixpkgs.python313Packages.pynvim
+    nix-env -iA nixpkgs.python313Packages.pip-api 
+    nix-env -iA nixpkgs.python313Packages.virtualenv 
+    #nix-env -iA nixpkgs.pipenv 
+    nix-env -iA nixpkgs.python313Packages.tree-sitter 
+    nix-env -iA nixpkgs.python313Packages.flake8 
+    nix-env -iA nixpkgs.python313Packages.poetry-core 
+    nix-env -iA nixpkgs.vimPluins.LanguageClient-neovim
     nix-env -iA nixpkgs.tree-sitter 
     nix-env -iA nixpkgs.wl-clipboard 
     nix-env -iA nixpkgs.julia 
@@ -65,11 +67,11 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     nix-env -iA nixpkgs.sumneko-lua-language-server
     nix-env -iA nixpkgs.vimPlugins.nvim-treesitter-parsers.regex 
     nix-env -iA nixpkgs.cargo 
-    nix-env -iA nixpkgs.php83Packages.composer 
+    nix-env -iA nixpkgs.php82Packages.composer 
     #nix-env -iA nixpkgs.jdt-language-server 
         # nixpkgs.java-language-server \
     nix-env -iA nixpkgs.jdk22 
-    nix-env -iA nixpkgs.php83 
+    nix-env -iA nixpkgs.php82 
     nix-env -iA nixpkgs.stylua 
     nix-env -iA nixpkgs.eslint_d 
     nix-env -iA nixpkgs.prettierd 
