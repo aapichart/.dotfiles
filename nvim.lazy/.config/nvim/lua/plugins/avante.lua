@@ -43,13 +43,10 @@ return {
 		{
 			-- Make sure to set this up properly if you have lazy=true
 			"MeanderingProgrammer/render-markdown.nvim",
-			cmd = { "RenderMarkdown" },
-			dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
-			lazy = true,
 			opts = {
-				file_types = { "markdown", "Avante" },
+				file_types = { "markdown", "vimwiki", "Avante" },
 			},
-			ft = { "markdown", "Avante" },
+			ft = { "markdown", "vimwiki", "Avante" },
 		},
 	},
 }
