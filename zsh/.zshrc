@@ -17,7 +17,7 @@ load_env() {
   export $(grep -v '^#' .env | xargs)
 }
 
-load_env
+load_env &> /dev/null
 #echo $OPENAI_API_KEY
 
 # use to controll install.sh under .dotfiles folder to re-install nix environment or not
