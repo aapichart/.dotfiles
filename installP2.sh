@@ -44,6 +44,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
 fi
 
 if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+    nix-env -iA nixpkgs.uv
     nix-env -iA nixpkgs.python312Full 
     nix-env -iA nixpkgs.python312Packages.python 
     nix-env -iA nixpkgs.python312Packages.black
@@ -55,7 +56,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     nix-env -iA nixpkgs.python312Packages.tree-sitter 
     nix-env -iA nixpkgs.python312Packages.flake8 
     nix-env -iA nixpkgs.python312Packages.poetry-core 
-    nix-env -iA nixpkgs.vimPluins.LanguageClient-neovim
+    nix-env -iA nixpkgs.vimPlugins.LanguageClient-neovim
     nix-env -iA nixpkgs.tree-sitter 
     nix-env -iA nixpkgs.wl-clipboard 
     nix-env -iA nixpkgs.julia 

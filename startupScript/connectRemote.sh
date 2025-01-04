@@ -4,9 +4,12 @@ if grep -qs '/home/chart/mnt/WDocker ' /proc/mounts; then
 else 
   echo "It's not mounted."
   echo "Starting mount process..... "
+  if [[ ! -d ~/mnt/WDocker ]]; then
+    sudo mkdir -p ~/mnt/WDocker
+  fi
   for i in {1..1}; do
     rm -f /tmp/ping_result
-    ping -c 1 "10.135.70.200" | grep "1 packets received" > /tmp/ping_result
+    ping -c 1 "10.135.70.200" | grep "1 received" > /tmp/ping_result
     echo "Waiting for 10.135.70.200 to be reachable ... "
     echo "Iteration $i"
     if [[ -s /tmp/ping_result ]]; then  
