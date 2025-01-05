@@ -52,6 +52,8 @@ bindkey -v
 # Export nvm completion settings for lukechilds/zsh-nvm plugin
 # Note: This must be exported before the plugin is bundled
 export NVM_DIR=${HOME}/.nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 export NVM_COMPLETION=true
 
 # Alias, some more ls aliases
@@ -74,6 +76,7 @@ alias hms='home-manager switch'
 alias ccopy='xsel --clipboard --input'
 alias cpate='xsel --clipboard --output'
 alias gpt='tgpt'
+alias nodejs='node'
 # Global alias
 alias -g F=' | fzf'
 alias -g L=' | less'
@@ -120,6 +123,10 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$PATH:$HOME/.nix-profile/bin"
 
+# This is for nodejs setting
+#export PATH="$HOME/.nix-profile/bin/node:$PATH"
+export PATH="/usr/bin/node:$PATH"
+
 # This is for kitty setting
 export PATH="$HOME/.local/bin/:$PATH"
 
@@ -141,3 +148,7 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts/"
 eval "$(tmuxifier init -)"
 
 if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

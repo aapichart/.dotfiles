@@ -45,17 +45,12 @@ fi
 
 if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     nix-env -iA nixpkgs.uv
-    nix-env -iA nixpkgs.python312Full 
-    nix-env -iA nixpkgs.python312Packages.python 
-    nix-env -iA nixpkgs.python312Packages.black
-    nix-env -iA nixpkgs.python312Packages.pip 
     nix-env -iA nixpkgs.python312Packages.pynvim
     nix-env -iA nixpkgs.python312Packages.pip-api 
     nix-env -iA nixpkgs.python312Packages.virtualenv 
     #nix-env -iA nixpkgs.pipenv 
     nix-env -iA nixpkgs.python312Packages.tree-sitter 
     nix-env -iA nixpkgs.python312Packages.flake8 
-    nix-env -iA nixpkgs.python312Packages.poetry-core 
     nix-env -iA nixpkgs.vimPlugins.LanguageClient-neovim
     nix-env -iA nixpkgs.tree-sitter 
     nix-env -iA nixpkgs.wl-clipboard 
@@ -117,6 +112,12 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
       echo "Kitty auto Installer exist.  Prepare for installation.....!!"
       ./kitty/.config/kitty/autoInstallKitty.sh
     fi
+  fi
+  # This setup is used for python3
+  if [[ -f ~/.nix-profile/bin/uv ]]; then
+    uv python install 3.12 --default --preview
+  else
+    echo "Error: Install uv have problem ........!!!!! "
   fi
   # This setup is for vpnc
   if [[ -f /etc/vpnc ]]; then

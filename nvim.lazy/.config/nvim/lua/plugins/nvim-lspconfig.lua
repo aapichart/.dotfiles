@@ -35,31 +35,6 @@ local config = function()
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-	-- lspconfig.lua_ls({
-	-- 	on_attach = on_attach,
-	-- 	capabilities = capabilities,
-	-- 	flags = lsp_flags,
-	-- 	cmd = {
-	-- 		"lua_language_server",
-	-- 	},
-	-- 	settings = {
-	-- 		lua = {
-	-- 			runtime = {
-	-- 				version = "LuaJIT",
-	-- 			},
-	-- 			diagnostics = {
-	-- 				globals = { "vim" },
-	-- 			},
-	-- 			workspace = {
-	-- 				library = vim.api.nvim_get_runtime_file("", true),
-	-- 			},
-	-- 			telemetry = {
-	-- 				enable = false,
-	-- 			},
-	-- 		},
-	-- 	},
-	-- })
-
 	lspconfig.lua_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
@@ -71,6 +46,7 @@ local config = function()
 					return
 				end
 			end
+
 			client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
 				runtime = {
 					-- Tell the language server which version of Lua you're using
@@ -91,6 +67,25 @@ local config = function()
 				},
 			})
 		end,
+		cmd = {
+			"lua-language-server",
+		},
+		settings = {
+			lua = {
+				runtime = {
+					version = "LuaJIT",
+				},
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+				telemetry = {
+					enable = false,
+				},
+			},
+		},
 	})
 
 	-- lspconfig.lua_ls.setup({
