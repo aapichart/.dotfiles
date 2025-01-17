@@ -49,8 +49,8 @@ keymap.set("n", "<leader>oc", "<Cmd>ObsidianToggleCheckbox<CR>", opts)
 keymap.set("n", "<leader>oq", "<Cmd>ObsidianQuickSwitch<CR>", opts)
 
 -- Comments
--- vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
--- vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
+vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
+vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
 
 -- Move between buffers
 keymap.set("n", "<leader>fn", "<Cmd>bnext<CR>", opts)
