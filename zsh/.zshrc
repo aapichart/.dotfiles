@@ -4,7 +4,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #$LANG=en_US.UTF-8 $LC_ALL= $LC_CTYPE=C.UTF-8
 export OPENSSL_ROOT_DIR=/usr/include/openssl
-export TERM="screen-256color"
+export TERM="xterm-kitty"
 EDITOR='nvim'
 # export variable for nvim
 export MYVIMRC=$HOME/.config/nvim/init.lua
@@ -152,3 +152,8 @@ if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichar
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Auto spawn tmux after open terminal or kitty, if then tmux has already installed
+#if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+#  tmux attach || exec tmux new-session && exit;
+#fi

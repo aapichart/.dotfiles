@@ -9,7 +9,11 @@ return {
 		openai = {
 			-- endpoint = "https://api.openai.com/v1",
 			model = "gpt-4o-mini",
-			-- api_key = os.getenv("OPENAI_API_KEY"), -- Accessing the environment variable
+			api_key = os.getenv("OPENAI_API_KEY"), -- Accessing the environment variable
+			-- provider = "deepseek",
+			-- openai = {
+			-- 	endpoint = "https://api.deepseek.com",
+			-- 	api_key = os.getenv("DEEPSEEK_API_KEY"), -- Accessing the environment variable
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
