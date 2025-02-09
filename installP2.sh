@@ -169,6 +169,8 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   # bundle zsh plugins
   antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
 
+  # Install kitty
+  sudo ./kitty/.config/kitty/autoInstallKitty.sh
 
   # This setup is for tmuxifier
   git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier/

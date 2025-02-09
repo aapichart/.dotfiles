@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=kitty
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=kitty
+Name=kitty
+Comment[en_US]=kitty
+Comment=kitty

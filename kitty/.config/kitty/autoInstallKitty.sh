@@ -4,7 +4,7 @@ echo "Updating package list ...."
 sudo apt update
 
 # Install dependencies
-sudo apt install -y python3 python3-pip
+#sudo apt install -y python3 python3-pip
 
 # Download the latest Kitty release
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \

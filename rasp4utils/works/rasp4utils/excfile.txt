@@ -1,6 +1,0 @@
-~/backup
-/mnt
-/dev
-/sys
-.cache
-.log
