@@ -16,15 +16,15 @@ sudo ln -sf ~/.local/bin/kitty.app/bin/kitty ~/.local/bin/kitty.app/bin/kitten /
 # Place kitty.desktop file 
 cp ~/.local/bin/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 cp ~/.local/bin/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-cp ~/.local/bin/kitty.app/share/icons/ ~/.local/share/icons/
+cp -r ~/.local/bin/kitty.app/share/icons/ ~/.local/share/
 # Update the paths to the kitty and its icon in the kitty desktop files
-sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/bin/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty".desktop
-sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/bin/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty".desktop
+#sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/bin/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty".desktop
+#sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/bin/kitty.app/bin/kitty" ~/.local/share/applications/kitty".desktop
 # Make xdg-terminal-exec 
 echo "kitty.desktop" > ~/.config/xdg-terminals.list
 
 # Verify Installation
-if command -v kitty &> /dev/null then
+if command -v kitty >/dev/null 2>&1; then
   echo "Kitty installed successfully! Version: $(kitty --version)"
 else
   echo "Kitty installation failed ....!!"
