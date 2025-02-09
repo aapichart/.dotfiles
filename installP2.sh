@@ -6,6 +6,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 
     nix-env -iA nixpkgs.zsh 
+    nix-env -iA nixpkgs.sshfs 
     nix-env -iA nixpkgs.conky 
     nix-env -iA nixpkgs.terminator 
     nix-env -iA nixpkgs.graphicsmagick 

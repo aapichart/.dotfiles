@@ -5,7 +5,7 @@ else
   echo "It's not mounted."
   echo "Starting mount process..... "
   if [[ ! -d ~/mnt/WDocker ]]; then
-    sudo mkdir -p ~/mnt/WDocker
+    mkdir -p ~/mnt/WDocker
   fi
   for i in {1..1}; do
     rm -f /tmp/ping_result
