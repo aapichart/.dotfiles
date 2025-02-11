@@ -1,0 +1,14 @@
+$ touch session_fastapi
+: help *
+: h
+: h *
+: *
+$ mkdir gitServer
+$ mkdir Ambassador
+$ mkdir Tiwanon
+$ mkdir tmuxinator
+$ mkdir .config
+$ touch .tmuxinator.yml
+$ mkdir .tmuxinator
+: q
+$ mkdir topProject

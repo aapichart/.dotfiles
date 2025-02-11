@@ -77,6 +77,7 @@ alias ccopy='xsel --clipboard --input'
 alias cpate='xsel --clipboard --output'
 alias gpt='tgpt'
 alias nodejs='node'
+alias tmr='tmuxinator'
 # Global alias
 alias -g F=' | fzf'
 alias -g L=' | less'
@@ -88,6 +89,10 @@ alias -s js='nvim'
 alias -s sql='nvim'
 
 # function alias
+tmrs() {
+  tmuxinator start $1
+}
+
 gcom() {
     git commit -m $1
 }
@@ -101,11 +106,6 @@ source ~/.zsh_plugins.sh
 
 # setting for direnv 
 eval "$(direnv hook zsh)"
-
-#source command for fzf keybinding
-# source ~/.config/nvim/autoload/plugged/fzf/shell/key-bindings.zsh
-# source ~/.config/nvim/autoload/plugged/fzf/shell/completion.zsh 
-#source command for ranger merge with fzf
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
@@ -152,8 +152,3 @@ if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichar
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Auto spawn tmux after open terminal or kitty, if then tmux has already installed
-#if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-#  tmux attach || exec tmux new-session && exit;
-#fi

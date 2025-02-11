@@ -1,0 +1,34 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start mobileProject
+#
+name: mobileProject
+root: ~/Works/codes/topProject
+enable_pane_titles: true
+windows:
+  - Backend:
+      root: ~/Works/codes/topProject/backend/
+      layout: main-horizontal
+      panes:
+        - code_backend:
+            - nvim ~/Works/codes/topProject/backend/app/main.py
+        - srv_backend:
+            - direnv allow
+            - uv run app/main.py
+  - Frontend:
+      root: ~/Works/codes/topProject/frontend/excited
+      layout: even-vertical
+      panes:
+        - code_frontend:
+            - nvim ~/Works/codes/topProject/frontend/excited/app/signin.tsx
+        - srv_frontend:
+            - npx expo start
+  - Debug:
+      root: ~/Works/codes/topProject/backend
+      layout: main-horizontal
+      panes:
+        - code:
+            - lf
+        - srv:
+            - export PGPASSWORD='chartx'
+            - psql -h 10.135.70.200 -p 5500 -U chart -d topdaily

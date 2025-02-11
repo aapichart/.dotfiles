@@ -1,0 +1,16 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start uProject
+#
+name: uProject
+root: ~/Works
+enable_pane_titles: true
+windows:
+  - Utils:
+      root: ~/Works
+      layout: main-horizontal
+      panes:
+        - code:
+            - nvim
+        - srv:
+            - ssh apichart@10.135.70.200

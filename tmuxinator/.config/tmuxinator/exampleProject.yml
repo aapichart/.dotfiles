@@ -1,0 +1,34 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start exampleProject <directory for focused project>
+#
+name: dockerProject
+root: <%= @args[0] %>
+enable_pane_titles: true
+windows:
+  - Backend:
+      root: <%= @args[0] %>/backend
+      layout: main-horizontal
+      panes:
+        - code_backend:
+            - nvim <%= @args[0] %>/backend/app/main.py
+        - srv_backend:
+            - direnv allow
+            - uv run app/main.py
+  - Frontend:
+      root: <%= @args[0] %>/frontend/excited
+      layout: even-vertical
+      panes:
+        - code_frontend:
+            - nvim app/signin.tsx
+        - srv_frontend:
+            - npx expo start
+  - Debug:
+      root: <% @args[0] %>
+      layout: main-horizontal
+      panes:
+        - code:
+            - lf
+        - srv:
+            - export PGPASSWORD='chartx'
+            - psql -h 10.135.70.200 -p 5500 -U chart -d topdaily

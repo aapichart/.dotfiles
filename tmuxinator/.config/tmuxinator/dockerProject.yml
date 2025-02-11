@@ -1,0 +1,25 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start dockerProject <project name or directory name as an argument>
+#
+name: dockerProject
+root: ~/Works/dockerCompose/
+enable_pane_titles: true
+windows:
+  - Dockerfile:
+      root: ~/Works/dockerCompose/<%= @args[0] %>
+      layout: main-horizontal
+      panes:
+        - code:
+            - nvim ~/Works/dockerCompose/<%= @args[0] %>/Dockerfile
+        - srv:
+            - ssh apichart@10.135.70.200
+  - Debug:
+      root: ~/Works/dockerCompose/<%= @args[0] %>
+      layout: main-horizontal
+      panes:
+        - code:
+            - lf
+        - srv:
+            - ssh apichart@10.135.70.200
+            - ll
