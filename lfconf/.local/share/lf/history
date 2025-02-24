@@ -12,3 +12,5 @@ $ touch .tmuxinator.yml
 $ mkdir .tmuxinator
 : q
 $ mkdir topProject
+$ mkdir rustDesk
+$ mkdir rustDesk
