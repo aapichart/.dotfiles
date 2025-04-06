@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
 # install packages
     # source nix
     . $HOME/.nix-profile/etc/profile.d/nix.sh
@@ -15,7 +15,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     nix-env -iA nixpkgs.gcc 
     nix-env -iA nixpkgs.htop 
     nix-env -iA nixpkgs.yarn 
-    nix-env -iA nixpkgs.nodejs_23 
+    #nix-env -iA nixpkgs.nodejs_23 
     nix-env -iA nixpkgs.xsel 
     nix-env -iA nixpkgs.xclip 
     nix-env -iA nixpkgs.fzf 
@@ -45,7 +45,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
     echo "1st Stage - Installation is done .................!! "
 fi
 
-if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.uv
     nix-env -iA nixpkgs.python312Packages.pynvim
     nix-env -iA nixpkgs.python312Packages.pip-api 
@@ -104,45 +104,45 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   echo "2nd Stage - Installation Process are done......................!! "
 fi
 
-if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
   # Install Kitty terminal for graphic user
   # Check whether Kitty already installed or not
-  if [[ -f ~/.local/bin/kitty ]]; then
+  if [ -f ~/.local/bin/kitty ]; then
     echo "Kitty is ready to rock...!!!!"
   else
-    if [[ -f ./kitty/.config/kitty/autoInstallKitty.sh ]]; then
+    if [ -f ./kitty/.config/kitty/autoInstallKitty.sh ]; then
       echo "Kitty auto Installer exist.  Prepare for installation.....!!"
       ./kitty/.config/kitty/autoInstallKitty.sh
     fi
   fi
   # This setup is used for python3
-  if [[ -f ~/.nix-profile/bin/uv ]]; then
+  if [ -f ~/.nix-profile/bin/uv ]; then
     uv python install 3.12 --default --preview
   else
     echo "Error: Install uv have problem ........!!!!! "
   fi
   # This setup is for vpnc
-  if [[ -f /etc/vpnc ]]; then
+  if [ -f /etc/vpnc ]; then
     sudo cp ./vpnc/default.conf /etc/vpnc/default.conf
-    sudo chown chart:chart /etc/vpnc
-    sudo chown chart:chart /etc/vpnc/default.conf
+    sudo chown apichart:apichart /etc/vpnc
+    sudo chown apichart:apichart /etc/vpnc/default.conf
   else
     sudo mkdir -p /etc/vpnc/
     sudo cp ./vpnc/default.conf /etc/vpnc/default.conf
-    sudo chown chart:chart /etc/vpnc
-    sudo chown chart:chart /etc/vpnc/default.conf
+    sudo chown apichart:apichart /etc/vpnc
+    sudo chown apichart:apichart /etc/vpnc/default.conf
   fi
   echo "3rd Stage - Installation Process are done......................!! "
 fi
 
-if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
+if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
   echo "Configuration Process start .......................!! "
   # add zsh to valid login shells
   command -v zsh | sudo tee -a /etc/shells
 
     # stow any dot config modules
   stow git
-  if [[ -f "$HOME/.zshrc" ]]; then
+  if [ -f "$HOME/.zshrc" ]; then
     rm -rf $HOME/.zshrc
   fi
   stow zsh
@@ -180,7 +180,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   echo "Done cloning code for tmuxifier.....................!! "
 
   # This setup is for tpm -- It is used to auto install any plugins for tmux
-  if [[ -f ~/.tmux/plugins/tpm/ ]]; then
+  if [ -f ~/.tmux/plugins/tpm/ ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm/
   else
     mkdir -p ~/.tmux/plugins/tpm
@@ -192,7 +192,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   echo "Done cloning code for tpm.......................!!"
 
   # This setup is for catppuccin tmux theme
-  if [[ -f ~/.tmux/plugins/catppuccin/ ]]; then
+  if [ -f ~/.tmux/plugins/catppuccin/ ]; then
     git clone https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/
   else
     mkdir -p ~/.tmux/plugins/catppuccin
@@ -209,7 +209,7 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   sudo fc-cache -fv
 
   # Install PowerlineFont
-  if [[ -f fonts ]]; then 
+  if [ -f fonts ]; then 
     rm -rf fonts
   fi
   git clone https://github.com/powerline/fonts.git --depth=1
@@ -219,11 +219,11 @@ if [[ $SHELL != /bin/zsh ]] || [[ $REINSTALL_NIX == "TRUE" ]]; then
   rm -rf fonts
 
   # Set up ohmyzsh for managing theme and  command line prompt
-  if [[ -f "$HOME/.oh-my-zsh" ]]; then
+  if [ -f "$HOME/.oh-my-zsh" ]; then
     rm -rf $HOME/.oh-my-zsh
   fi
   curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --no-daemon
-  if [[ -f "$HOME/.zshrc.pre-oh-my-zsh" ]]; then
+  if [ -f "$HOME/.zshrc.pre-oh-my-zsh" ]; then
     cp $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
   fi
   echo ""
@@ -232,7 +232,7 @@ fi
 
 # Need to reboot the system
 read -p "Finish Installation Process, Please reboot the system: (y/n) " check
-if [[ "$check" = "y" ]]; then
+if [ "$check" = "y" ]; then
    reboot
 else
   echo "Finish Installation Process ( without reboot - some features may not be set )!!!!" 

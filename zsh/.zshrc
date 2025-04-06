@@ -5,7 +5,7 @@ export LC_CTYPE=en_US.UTF-8
 #$LANG=en_US.UTF-8 $LC_ALL= $LC_CTYPE=C.UTF-8
 export OPENSSL_ROOT_DIR=/usr/include/openssl
 export TERM="xterm-kitty"
-EDITOR='nvim'
+export EDITOR='nvim'
 # export variable for nvim
 export MYVIMRC=$HOME/.config/nvim/init.lua
 export XDG_CONFIG_DIRS=$HOME/.config
@@ -37,7 +37,7 @@ bindkey -s '^o' 'lfcd\n'  # zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
@@ -116,7 +116,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ ! -f ~/.p10k.zsh ] || source ~/.p10k.zsh
 
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
