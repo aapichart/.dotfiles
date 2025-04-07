@@ -1,4 +1,6 @@
-if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ] || [ $REINSTALL_NIX = "TRUE" ]; then
+#!/usr/bin/bash
+
+#if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/sh" ] || [ $REINSTALL_NIX = "TRUE" ]; then
     
     # install nix
     sudo mkdir /nix
@@ -25,5 +27,5 @@ if [ $SHELL = "/usr/bin/bash" ] || [ $SHELL = "/bin/bash" ] || [ $SHELL = "/bin/
     else
        echo "Please reboot system and run installP2.sh!!!!"
     fi
-fi
+#fi
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
 # install packages
