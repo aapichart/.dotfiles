@@ -1,2 +1,2 @@
-copy
-/home/apichart/.dotfiles.cha/nvim.startup
+move
+/home/apichart/.dotfiles/nvim.startup/.config/nvim/lua/custom/plugins/test.py

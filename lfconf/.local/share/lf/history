@@ -16,3 +16,4 @@ $ mkdir rustDesk
 $ mkdir rustDesk
 : q
 : q
+: touch test.py
