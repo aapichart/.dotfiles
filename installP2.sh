@@ -148,7 +148,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
   stow zsh
   #stow nvim
   #stow nvim.lazy
-  stow nvim.startup
+  stow nvim.kickstart
   #stow nvim.22
   stow tmux
   stow tmuxinator

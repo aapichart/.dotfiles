@@ -17,3 +17,4 @@ $ mkdir rustDesk
 : q
 : q
 : touch test.py
+$ touch test.js
