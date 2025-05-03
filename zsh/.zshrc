@@ -125,7 +125,7 @@ export PATH="$PATH:$HOME/.nix-profile/bin"
 
 # This is for nodejs setting
 #export PATH="$HOME/.nix-profile/bin/node:$PATH"
-export PATH="/usr/bin/node:/$HOME/.nvm/versions/node/v23.5.0/bin:$PATH"
+export PATH="/usr/bin/node:$HOME/.nvm/versions/node/v23.11.0/bin:$PATH"
 
 # This is for kitty setting
 export PATH="$HOME/.local/bin/:$PATH"
