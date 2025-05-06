@@ -1,2 +1,5 @@
-move
-/home/apichart/.dotfiles/nvim.startup/.config/nvim/lua/custom/plugins/test.py
+copy
+/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/tailwind-colorizer-cmp.lua
+/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vim-slime.lua
+/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vim-surround.lua
+/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vimwiki.lua
