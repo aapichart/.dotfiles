@@ -10,7 +10,7 @@ return {
 		workspaces = {
 			{
 				name = "chartSpaceOO",
-				path = "~/Works/vaults/chartSpaceOO/",
+				path = "~/works/vaults/chartSpaceOO/",
 				overrides = {
 					notes_subdir = "notes",
 				},
@@ -30,7 +30,7 @@ return {
 			template = "taskNote.md",
 		},
 		completion = {
-			nvim_cmp = true,
+			-- nvim_cmp = true,
 			min_chars = 2,
 		},
 		mappings = {
