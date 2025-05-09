@@ -1,5 +1,1 @@
-copy
-/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/tailwind-colorizer-cmp.lua
-/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vim-slime.lua
-/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vim-surround.lua
-/home/apichart/.dotfiles/nvim.lazy/.config/nvim/lua/plugins/vimwiki.lua
+move
