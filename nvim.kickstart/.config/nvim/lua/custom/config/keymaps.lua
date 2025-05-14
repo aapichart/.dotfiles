@@ -23,12 +23,17 @@ keymap.set("n", "<leader>sM", "<C-w>| <C-w>_", opts) -- Toggle Maxzimize
 keymap.set("n", "<leader>sm", "<C-w>=", opts) -- Toggle Maxzimize
 
 -- Indenting
-keymap.set("v", "<", "<gv")
-keymap.set("v", ">", ">gv")
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+-- keymap.set("v", "<", "<gv", opts)
+-- keymap.set("v", ">", ">gv", opts)
 
 -- Move code to another location by up or down in visual mode
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap.set("i", "J", "<Esc>:m .+1<CR>==gi", opts)
+keymap.set("i", "K", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Mapping key for lf, lf need floatTerm
 vim.g.lf_open_new_tab = 0
@@ -45,8 +50,10 @@ keymap.set("n", "<leader>oc", "<Cmd>ObsidianToggleCheckbox<CR>", opts)
 keymap.set("n", "<leader>oq", "<Cmd>ObsidianQuickSwitch<CR>", opts)
 
 -- Comments
-vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
-vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
+-- vim.api.nvim_set_keymap("n", "<leader>cc", "gcc", { noremap = false })
+-- vim.api.nvim_set_keymap("v", "<leader>cc", "gc", { noremap = false })
+keymap.set("n", "<leader>cc", "gcc", opts)
+keymap.set("v", "<leader>cc", "gc", opts)
 
 -- Move between buffers
 keymap.set("n", "<leader>fn", "<Cmd>bnext<CR>", opts)

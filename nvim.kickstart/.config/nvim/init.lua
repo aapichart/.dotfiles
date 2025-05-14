@@ -101,7 +101,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -332,7 +332,6 @@ require('lazy').setup({
           F12 = '<F12>',
         },
       },
-
       -- Document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
@@ -473,13 +472,14 @@ require('lazy').setup({
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'williamboman/mason.nvim',
+      {
+        'williamboman/mason.nvim',
         opts = {
           ensure_installed = {
-            "typescript-language-server",
-            "eslint-lsp",
-          }
-        }
+            'typescript-language-server',
+            'eslint-lsp',
+          },
+        },
       },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -705,6 +705,16 @@ require('lazy').setup({
           -- capabilities = {},
           settings = {
             Lua = {
+              runtime = { version = 'LuaJIT' },
+              workspace = {
+                checkThirdParty = false,
+                -- Tells lua_ls where to find all the Luua files that you have loaded
+                -- for your neovim configuration.
+                library = {
+                  '${3rd}/luv/library',
+                  unpack(vim.api.nvim_get_runtime_file('', true)),
+                },
+              },
               completion = {
                 callSnippet = 'Replace',
               },
@@ -751,46 +761,46 @@ require('lazy').setup({
     end,
   },
 
-  --  { -- Autoformat
-  --    'stevearc/conform.nvim',
-  --    event = { 'BufWritePre' },
-  --    cmd = { 'ConformInfo' },
-  --    keys = {
-  --      {
-  --        '<leader>f',
-  --        function()
-  --          require('conform').format { async = true, lsp_format = 'fallback' }
-  --        end,
-  --        mode = '',
-  --        desc = '[F]ormat buffer',
-  --      },
-  --    },
-  --    opts = {
-  --      notify_on_error = false,
-  --      format_on_save = function(bufnr)
-  --        -- Disable "format_on_save lsp_fallback" for languages that don't
-  --        -- have a well standardized coding style. You can add additional
-  --        -- languages here or re-enable it for the disabled ones.
-  --        local disable_filetypes = { c = true, cpp = true }
-  --        if disable_filetypes[vim.bo[bufnr].filetype] then
-  --          return nil
-  --        else
-  --          return {
-  --            timeout_ms = 500,
-  --            lsp_format = 'fallback',
-  --          }
-  --        end
-  --      end,
-  --      formatters_by_ft = {
-  --        lua = { 'stylua' },
-  --        -- Conform can also run multiple formatters sequentially
-  --        -- python = { "isort", "black" },
-  --        --
-  --        -- You can use 'stop_after_first' to run the first available formatter from the list
-  --        -- javascript = { "prettierd", "prettier", stop_after_first = true },
-  --      },
-  --    },
-  --  },
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    keys = {
+      {
+        '<leader>f',
+        function()
+          require('conform').format { async = true, lsp_format = 'fallback' }
+        end,
+        mode = '',
+        desc = '[F]ormat buffer',
+      },
+    },
+    opts = {
+      notify_on_error = false,
+      format_on_save = function(bufnr)
+        -- Disable "format_on_save lsp_fallback" for languages that don't
+        -- have a well standardized coding style. You can add additional
+        -- languages here or re-enable it for the disabled ones.
+        local disable_filetypes = { c = true, cpp = true }
+        if disable_filetypes[vim.bo[bufnr].filetype] then
+          return nil
+        else
+          return {
+            timeout_ms = 500,
+            lsp_format = 'fallback',
+          }
+        end
+      end,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        -- Conform can also run multiple formatters sequentially
+        -- python = { "isort", "black" },
+        --
+        -- You can use 'stop_after_first' to run the first available formatter from the list
+        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+    },
+  },
 
   { -- Autocompletion
     'saghen/blink.cmp',
