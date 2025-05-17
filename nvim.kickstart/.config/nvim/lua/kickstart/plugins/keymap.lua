@@ -46,13 +46,13 @@ return {
 
   -- Ending terminal command mode with <leader>e key
   vim.keymap.set('t', '<C-\\>', '<C-\\><C-n><C-\\>', { noremap = false }),
-  vim.keymap.set('n', '<leader>lf', '<Cmd>Lf<CR>', { desc = 'run lf app' }),
-  vim.keymap.set('v', '<', '<gv', { desc = 'undent line by Tab' }),
-  vim.keymap.set('v', '>', '>gv', { desc = 'indent line by Tab' }),
+  vim.keymap.set('n', '<leader>lf', '<Cmd>Lf<CR>', { noremap = false }),
+  vim.keymap.set('v', '<', '<gv', { noremap = false }),
+  vim.keymap.set('v', '>', '>gv', { noremap = false }),
 
   -- Move code to another location by up or down in visual mode
-  vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move highlight one line up.' }),
-  vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move highlight one line down. ' }),
+  vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = false }),
+  vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = false }),
   vim.keymap.set('i', 'J', '<Esc>:m .+1<CR>==gi', { noremap = false }),
   vim.keymap.set('i', 'K', '<Esc>:m .-2<CR>==gi', { noremap = false }),
 }
