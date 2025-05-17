@@ -6,3 +6,5 @@ $ chmod +x mainTrFrmDB2DB.py
 $ touch voucher.py
 $ chmod 770 voucher.py
 $ touch journals.py
+$ mkdir workNote
+$ touch keymap.lua
