@@ -43,7 +43,8 @@ return {
   -- disable tab key to switch buffers, using telescope buffers instead
   vim.api.nvim_set_keymap('n', '<tab>', 'gT', { noremap = false }),
   vim.api.nvim_set_keymap('n', '<s-tab>', 'gt', { noremap = false }),
-
+  -- allow bd for whichkey for close buffer which we don't want
+  vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Close Opened Buffer', noremap = false }),
   -- Ending terminal command mode with <leader>e key
   vim.keymap.set('t', '<C-\\>', '<C-\\><C-n><C-\\>', { noremap = false }),
   vim.keymap.set('n', '<leader>lf', '<Cmd>Lf<CR>', { noremap = false }),
@@ -53,6 +54,6 @@ return {
   -- Move code to another location by up or down in visual mode
   vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = false }),
   vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = false }),
-  vim.keymap.set('i', 'J', '<Esc>:m .+1<CR>==gi', { noremap = false }),
-  vim.keymap.set('i', 'K', '<Esc>:m .-2<CR>==gi', { noremap = false }),
+  -- vim.keymap.set('i', 'J', '<Esc>:m .+1<CR>==gi', { noremap = false }),
+  -- vim.keymap.set('i', 'K', '<Esc>:m .-2<CR>==gi', { noremap = false }),
 }

@@ -8,3 +8,5 @@ $ chmod 770 voucher.py
 $ touch journals.py
 $ mkdir workNote
 $ touch keymap.lua
+$ touch test.txt
+$ touch users.py
