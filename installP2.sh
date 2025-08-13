@@ -25,6 +25,8 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.gtop
     nix-env -iA nixpkgs.gping
     nix-env -iA nixpkgs.neofetch
+    nix-env -iA nixpkgs.cowsay
+    nix-env -iA nixpkgs.fortune
     nix-env -iA nixpkgs.tree
     nix-env -iA nixpkgs.cmatrix
     nix-env -iA nixpkgs.nmap

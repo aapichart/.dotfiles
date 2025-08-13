@@ -155,4 +155,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # using rclone to mount google drive, setup rclone_config_dir and mount it to ~/googleDrive
 export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
-if [ -e /home/apichart/googleDrive ]; then rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes& > /dev/null 2>&1; fi
+if ! grep -q "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi

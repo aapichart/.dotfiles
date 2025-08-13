@@ -3,14 +3,14 @@
 # > tmr start uProject
 #
 name: dairy
-root: ~/googleDrive/
+root: ~/googleDrive/vaults/chartSpaceOO/
 enable_pane_titles: true
 windows:
   - Utils:
-      root: ~/googleDrive/
-      layout: main-horizontal
+      root: ~/googleDrive/vaults/chartSpaceOO/
+      layout: main-vertical
       panes:
         - code:
-            - lf ~
+            - nvim Index.md
         - srv:
-            - htop
+            - fortune | cowsay
