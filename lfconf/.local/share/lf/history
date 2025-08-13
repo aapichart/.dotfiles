@@ -10,3 +10,29 @@ $ mkdir workNote
 $ touch keymap.lua
 $ touch test.txt
 $ touch users.py
+$ touch database.py
+$ mkdir expoFrontend
+$ touch login.tsx
+$ touch drizzle.config.ts
+$ mkdir db
+$ touch schema.ts
+$ touch migrations.js drizzle
+$ mkdir tmp
+$ mkdir (drawer)
+$ mkdir (drawer)
+: map
+: map cut
+: help cut
+: help
+: map
+: q
+$ touch webpack.config.js
+$ touch modal.tsx
+$ touch _layout.tsx
+$ touch signin.tsx.cha
+$ mkdir schemas
+$ touch index.ts
+: mkdir googleDrive
+: mkdir vimwiki
+: q
+: q

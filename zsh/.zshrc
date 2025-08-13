@@ -152,3 +152,7 @@ if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichar
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# using rclone to mount google drive, setup rclone_config_dir and mount it to ~/googleDrive
+export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
+if [ -e /home/apichart/googleDrive ]; then rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes& > /dev/null 2>&1; fi

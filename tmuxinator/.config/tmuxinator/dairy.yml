@@ -2,15 +2,15 @@
 # running this project by usin the following command
 # > tmr start uProject
 #
-name: uProject
-root: ~/works
+name: dairy
+root: ~/googleDrive/
 enable_pane_titles: true
 windows:
   - Utils:
-      root: ~/works
+      root: ~/googleDrive/
       layout: main-horizontal
       panes:
         - code:
-            - nvim
+            - lf ~
         - srv:
-            - ssh apichart@10.135.70.200
+            - htop
