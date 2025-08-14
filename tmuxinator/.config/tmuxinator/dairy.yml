@@ -14,3 +14,4 @@ windows:
             - nvim Index.md
         - srv:
             - fortune | cowsay
+            - sl
