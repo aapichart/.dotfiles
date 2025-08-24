@@ -42,3 +42,12 @@ $ touch index.ts
 : q
 : q
 : q
+$ mkdir works-ubuntu
+$ mkdir works-ubuntu
+: help
+: help
+$ mkdir frontend2.x
+$ mkdir excite
+$ mkdir backendDB
+: q
+$ mkdir energy

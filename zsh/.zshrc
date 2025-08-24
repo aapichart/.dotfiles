@@ -155,4 +155,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # using rclone to mount google drive, setup rclone_config_dir and mount it to ~/googleDrive
 export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
-if ! grep -q "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi
+if ! grep -qs "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi
