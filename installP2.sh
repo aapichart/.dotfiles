@@ -11,6 +11,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.conky
     nix-env -iA nixpkgs.terminator
     nix-env -iA nixpkgs.graphicsmagick
+    nix-env -iA nixpkgs.imagemagick
     nix-env -iA nixpkgs.lf
     nix-env -iA nixpkgs.gcc
     nix-env -iA nixpkgs.htop
