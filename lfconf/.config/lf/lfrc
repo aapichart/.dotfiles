@@ -1,4 +1,5 @@
 # Basic Settjngs
+set period 3
 set previewer ~/.config/lf/previewer
 set cleaner ~/.config/lf/cleaner
 set hidden true
