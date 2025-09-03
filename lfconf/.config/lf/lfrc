@@ -114,6 +114,9 @@ map o $terminator -e "nvim $f"
 
 # Basic Functions
 map l open 
+map Dd ${{
+  trash $fx
+}}
 map u $trashy restore -r 0
 map dr $trashy restore
 map de $trashy empty --all
