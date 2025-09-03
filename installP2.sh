@@ -13,6 +13,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.graphicsmagick
     nix-env -iA nixpkgs.imagemagick
     nix-env -iA nixpkgs.lf
+    nix-env -iA nixpkgs.trash-cli
     nix-env -iA nixpkgs.gcc
     nix-env -iA nixpkgs.htop
     nix-env -iA nixpkgs.yarn

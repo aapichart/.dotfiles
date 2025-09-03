@@ -52,3 +52,4 @@ $ mkdir backendDB
 : q
 $ mkdir energy
 : mkdir pictures
+$ touch test.md
