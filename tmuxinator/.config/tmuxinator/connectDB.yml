@@ -1,0 +1,16 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start uProject
+#
+name: connectDB
+root: ~/works-ubuntu/codes/
+enable_pane_titles: true
+windows:
+  - Utils:
+      root: ~/works-ubuntu/codes/
+      layout: main-horrizental
+      panes:
+        - code:
+            - psql -h 10.135.70.133 -p 5433 -d testDB -U apichart
+        - srv:
+            - psql -h 159.138.237.26 -p 5432 -d car_rental -U apichart
