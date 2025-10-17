@@ -1,0 +1,17 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start uProject
+#
+name: coding
+root: ~/works-ubuntu/codes/
+enable_pane_titles: true
+windows:
+  - Utils:
+      root: ~/works-ubuntu/codes/
+      layout: main-horrizental
+      panes:
+        - code:
+            - lf
+        - srv:
+            - fortune | cowsay
+            - sl

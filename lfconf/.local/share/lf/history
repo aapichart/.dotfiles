@@ -53,3 +53,20 @@ $ mkdir backendDB
 $ mkdir energy
 : mkdir pictures
 $ touch test.md
+$ mkdir paymentGW
+$ mkdir n8n
+$ mkdir paymentGW
+$ mkdir paymentGW
+$ gateway
+$ mkdir gateway
+$ touch reqToken.py
+$ touch reqQr.py
+$ touch cancelQr
+$ touch inqPayment.py
+$ touch settlePayment.py
+$ touch protocol.py
+$ mkdir avCarrent
+$ mkdir app/main.py
+$ mkdir app
+$ mkdir app
+$ touch setup.py
