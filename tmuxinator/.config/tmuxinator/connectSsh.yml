@@ -1,0 +1,18 @@
+# ~/.config/tmuxinator/mobileProject
+# running this project by usin the following command
+# > tmr start uProject
+#
+name: connectSsh
+root: ~/works-ubuntu/codes/
+enable_pane_titles: true
+windows:
+  - Utils:
+      root: ~/works-ubuntu/codes/
+      layout: main-horrizental
+      panes:
+        - code:
+            - echo "connect to Tiwanon Synology x200"
+            - ssh apichart@10.135.70.200
+        - srv:
+            - echo "connect to iron33 @RT.123"
+            - ssh apichart@10.135.70.133
