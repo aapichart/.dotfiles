@@ -70,3 +70,6 @@ $ mkdir app/main.py
 $ mkdir app
 $ mkdir app
 $ touch setup.py
+$ touch Dockerfile
+$ mkdir uvApp
+$ mkdir app

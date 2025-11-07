@@ -1,2 +1,1 @@
-copy
-/home/apichart/.dotfiles/tmuxinator/.config/tmuxinator/connectDB.yml
+move
