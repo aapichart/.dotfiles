@@ -1,4 +1,20 @@
 local config = function()
+  local configs = require 'nvim-treesitter.configs'
+
+  configs.setup {
+    ensure_installed = {
+      'tsx',
+      'typescript',
+      'javascript',
+      'html',
+      'css',
+      'json',
+    },
+    highlight = { enable = true },
+    indent = { enable = true },
+    autotag = { enable = true },
+  }
+
   require('nvim-ts-autotag').setup {
     indent = {
       enable = true,
