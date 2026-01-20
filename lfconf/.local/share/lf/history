@@ -73,3 +73,39 @@ $ touch setup.py
 $ touch Dockerfile
 $ mkdir uvApp
 $ mkdir app
+$ mkdir nginx
+$ touch nginx.conf
+$ mkdir certs
+$ touch modelSQLALChemy.py
+$ touch schemaSQLALChemy.py
+$ touch usersRep.py
+$ touch home.tsx
+$ touch SignUpForm.tsx
+$ touch sign-in.tsx
+$ touch sign-up.tsx
+$ touch LoginForm.tsx
+$ touch sign-in.tsx
+$ mkdir <drawer>
+$ mkdir <drawer>
+$ mkdir icons
+$ touch report.tsx
+$ touch DrawerSceneWrapper.tsx
+$ touch CustomDrawerContent.tsx
+$ touch babel.config.js
+$ mkdir context
+$ touch AuthContext.tsx
+: help
+: ?
+$ touch .env
+$ touch tailwind.config.js
+$ touch nativewind-env.d.ts
+$ touch babel.config.js
+$ mkdir backup package.json
+$ touch global.css
+$ touch metro.config.js
+$ touch CustomTextBox.tsx
+$ touch CustomButton.tsx
+$ mkdir afterInstallLottie
+$ touch CustTextLink.tsx
+$ mkdir afterInstalldayjs
+$ touch CustomDataTable.tsx
