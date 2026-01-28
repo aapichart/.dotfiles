@@ -120,3 +120,5 @@ $ touch CustomBlurView.tsx.cha
 $ touch CustomCalendar.tsx.cha
 $ touch CustomFlashList.tsx.cha
 $ touch avante.lua
+$ touch .gemini.env
+$ mkdir gemini

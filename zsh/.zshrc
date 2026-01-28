@@ -17,6 +17,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+
 # Function load variable from .env to create environment variables
 load_env() {
   export $(grep -v '^#' .env | xargs)
@@ -161,3 +162,7 @@ export NVM_DIR="$HOME/.nvm"
 # using rclone to mount google drive, setup rclone_config_dir and mount it to ~/googleDrive
 export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
 if ! grep -qs "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi
+
+
+# This is a gemini api-key
+export $(cat ~/.gemini.env | xargs)

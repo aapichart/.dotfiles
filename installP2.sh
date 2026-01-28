@@ -172,6 +172,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     stow terminator
     stow kitty
     stow conky
+    stow gemini
 
     # use zsh as default shell
     chsh -s $(which zsh) $USER
