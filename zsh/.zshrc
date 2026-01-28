@@ -165,4 +165,4 @@ if ! grep -qs "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/goog
 
 
 # This is a gemini api-key
-export $(cat ~/.gemini.env | xargs)
+export $(cat ~/.apikey.env | xargs)

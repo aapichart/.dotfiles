@@ -33,10 +33,32 @@ return {
     --     },
     --   },
     -- },
+    --
+    -- for example (This is gemini config)
     provider = 'gemini',
     gemini = {
-      model = 'gemini-2.5',
+      model = 'gemini-2.0-flash',
+      max_token = 4096,
+      temperature = 0,
     },
+    auto_suggestions_provider = 'gemini',
+    behaviour = {
+      auto_suggestions = false,
+      auto_set_highlight_group = true,
+      auto_set_keymaps = true,
+      auto_apply_diff_after_generation = false,
+      support_paste_from_clipboard = false,
+    },
+    build = 'make',
+    --
+    -- -- For example -(form deepseek config)
+    -- provider = 'openai',
+    -- openai = {
+    --   endpoint = 'https://openrouter.ai/api/v1',
+    --   model = 'deepseek/deepseek-r1:free',
+    --   api_key_name = 'OPENROUTER_API_KEY',
+    -- },
+    --
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
