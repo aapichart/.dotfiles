@@ -36,20 +36,22 @@ return {
     --
     -- for example (This is gemini config)
     provider = 'gemini',
-    gemini = {
-      model = 'gemini-2.0-flash',
-      max_token = 4096,
-      temperature = 0,
+    providers = {
+      gemini = {
+        model = 'gemini-2.0-flash',
+        max_token = 4096,
+        temperature = 0,
+      },
+      auto_suggestions_provider = 'gemini',
+      behaviour = {
+        auto_suggestions = false,
+        auto_set_highlight_group = true,
+        auto_set_keymaps = true,
+        auto_apply_diff_after_generation = false,
+        support_paste_from_clipboard = false,
+      },
+      build = 'make',
     },
-    auto_suggestions_provider = 'gemini',
-    behaviour = {
-      auto_suggestions = false,
-      auto_set_highlight_group = true,
-      auto_set_keymaps = true,
-      auto_apply_diff_after_generation = false,
-      support_paste_from_clipboard = false,
-    },
-    build = 'make',
     --
     -- -- For example -(form deepseek config)
     -- provider = 'openai',
