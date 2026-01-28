@@ -12,6 +12,11 @@ export XDG_CONFIG_DIRS=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
+# These are sets for Android environment on Expo App
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # Function load variable from .env to create environment variables
 load_env() {
   export $(grep -v '^#' .env | xargs)

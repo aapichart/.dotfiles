@@ -1,4 +1,5 @@
 /home/apichart/.android:*
+/home/apichart/.dotfiles/nvim.kickstart/.config/nvim/lua/custom/plugins/comment.lua:*
 /home/apichart/works-ubuntu/codes/expoFrontend/excite3/app/_layout.tsx.cha:*
 /home/apichart/works-ubuntu/codes/expoFrontend/excite3/app/index.tsx:*
 /home/apichart/works-ubuntu/codes/fnExpoTemplate/webVer/webFirst/app/(tabs)/(drawer):*

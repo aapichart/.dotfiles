@@ -109,3 +109,14 @@ $ mkdir afterInstallLottie
 $ touch CustTextLink.tsx
 $ mkdir afterInstalldayjs
 $ touch CustomDataTable.tsx
+$ touch CustomBounchyCheckBox.tsx.cha
+$ touch CustomButtomSheet.tsx.cha
+$ touch CustomGiftedChart.tsx.cha
+$ touch CustomCharts.tsx.cha
+$ touch CustomToast.tsx.cha
+$ touch CustomSkeleton.tsa.cha
+$ touch CustomPagerView.tsx.cha
+$ touch CustomBlurView.tsx.cha
+$ touch CustomCalendar.tsx.cha
+$ touch CustomFlashList.tsx.cha
+$ touch avante.lua
