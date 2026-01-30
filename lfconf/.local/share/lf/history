@@ -122,3 +122,4 @@ $ touch CustomFlashList.tsx.cha
 $ touch avante.lua
 $ touch .gemini.env
 $ mkdir gemini
+: q
