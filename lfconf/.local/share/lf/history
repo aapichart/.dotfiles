@@ -123,3 +123,12 @@ $ touch avante.lua
 $ touch .gemini.env
 $ mkdir gemini
 : q
+: q
+$ touch CustomWebView.tsx
+$ touch BrowserLink.tsx
+$ mkdir neomutt
+$ mkdir aerc
+$ mkdir .config
+$ mkdir aerc
+$ mkdir aerc
+$ mkdir .config

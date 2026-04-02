@@ -3,17 +3,38 @@ return {
   'yetone/avante.nvim',
   event = 'VeryLazy',
   lazy = false,
+  version = false, -- pull latest changes
   build = 'make',
   opts = {
     provider = 'ollama',
     providers = {
       ollama = {
-        ['local'] = true,
-        endpoint = 'http://10.133.70.14:11434/v1',
+        -- ['local'] = true,
+        endpoint = 'http://192.168.56.3/',
         -- endpoing = os.getenv 'OLLAMA_END_POINT',
-        model = 'deepseek-v3.1:671b-cloud',
+        model = 'llama3.1:latest',
+        -- model = 'deepseek-v3.1:671b-cloud',
         api_key_name = '', -- Must be present even if empty for local models
-        __inherited_from = 'openai', -- Simplifies config and prevents "missing field" errors
+        -- __inherited_from = 'openai', -- Simplifies config and prevents "missing field" errors
+        parse_curl_args = function(_, code_opts)
+          return {
+            url = 'http://192.168.56.3/chat/completions',
+            headers = {
+              ['Content-Type'] = 'application/json',
+            },
+            body = {
+              model = 'llama3.1:latest',
+              messages = require('avante.providers').openai.parse_messages(code_opts),
+              stream = true,
+              temperature = 0,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          require('avante.providers').openai.parse_response(data_stream, event_state, {
+            model = 'llama3.1:latest',
+          })
+        end,
       },
     },
   },

@@ -9,6 +9,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.sshfs
     nix-env -iA nixpkgs.tmuxinator
     nix-env -iA nixpkgs.conky
+    nix-env -iA nixpkgs.aerc
     nix-env -iA nixpkgs.terminator
     nix-env -iA nixpkgs.graphicsmagick
     nix-env -iA nixpkgs.imagemagick
