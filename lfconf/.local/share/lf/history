@@ -133,3 +133,4 @@ $ mkdir aerc
 $ mkdir aerc
 $ mkdir .config
 $ mkdir stylesets
+$ touch catppuccin-macchiato
