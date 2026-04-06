@@ -23,6 +23,7 @@ msglist_result.fg=#8aadf4
 msglist_result.bold=true
 msglist_*.selected.bold=true
 msglist_*.selected.bg=#363a4f
+msglist_marked.bg = #5f87af
 
 dirlist_*.selected.bold=true
 dirlist_*.selected.bg=#363a4f
