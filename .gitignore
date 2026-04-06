@@ -3,3 +3,4 @@ tmux/.tmux/plugins
 zsh/.env
 fonts
 apikey/.apikey.env
+aerc/.config/aerc/accounts.conf

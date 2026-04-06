@@ -132,3 +132,4 @@ $ mkdir .config
 $ mkdir aerc
 $ mkdir aerc
 $ mkdir .config
+$ mkdir stylesets
