@@ -10,6 +10,7 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.tmuxinator
     nix-env -iA nixpkgs.conky
     nix-env -iA nixpkgs.aerc
+    nix-env -iA nixpkgs.khard
     nix-env -iA nixpkgs.terminator
     nix-env -iA nixpkgs.graphicsmagick
     nix-env -iA nixpkgs.imagemagick
@@ -156,6 +157,8 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     #stow nvim
     #stow nvim.lazy
     stow nvim.kickstart
+    stow aerc
+    stow khard
     #stow nvim.22
     stow tmux
     stow tmuxinator

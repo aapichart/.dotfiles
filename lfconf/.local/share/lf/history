@@ -136,3 +136,9 @@ $ mkdir stylesets
 $ touch catppuccin-macchiato
 : help
 : ?
+$ mkdir khard
+$ mkdir .config
+$ touch khard.conf
+$ mkdir .contacts
+$ mkdir family
+$ mkdir friend
