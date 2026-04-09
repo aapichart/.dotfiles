@@ -4,3 +4,5 @@ zsh/.env
 fonts
 apikey/.apikey.env
 aerc/.config/aerc/accounts.conf
+khard/.contacts/family
+khard/.contacts/friends
