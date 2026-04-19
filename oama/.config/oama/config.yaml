@@ -1,0 +1,50 @@
+## oama version 0.14
+
+## This is a YAML configuration file, indentation matters.
+## Double ## indicates comments while single # default values.
+## Not all defaults are shown, for full list run `oama printenv`
+## and look at the `services:` section.
+
+## Possible options for keeping refresh and access tokens:
+## GPG - in a gpg encrypted file ~/.local/var/oama/<email-address>.oauth
+## KEYRING - in the keyring of a password manager with Secret Service API
+## GRING - the same as KEYRING, deprecated but kept for backward compatibility
+##
+## Choose exactly one.
+
+encryption:
+    tag: KEYRING
+
+# encryption:
+#   tag: GPG
+#   contents: your-KEY-ID
+
+## Builtin service providers
+## - google
+## - microsoft
+## Required fields: client_id, client_secret
+##
+services:
+  google:
+    client_id: application-CLIENT-ID 
+    client_secret: application-CLIENT-SECRET
+  #  auth_scope: https://mail.google.com/
+
+  # microsoft:
+  #   client_id: application-CLIENT-ID 
+  #   client_secret: application-CLIENT_SECRET
+  #   auth_scope: https://outlook.office365.com/IMAP.AccessAsUser.All
+  #     https://outlook.office365.com/SMTP.Send
+  #     offline_access
+  #   tenant: common
+
+  ## User configured providers
+  ## Required fields: client_id, client_secret, auth_endpoint, auth_scope, token_endpoint  
+  ##
+  ## For example:
+  # yahoo:
+  #   client_id: application-CLIENT-ID 
+  #   client_secret: application-CLIENT_SECRET
+  #   auth_endpoint: EDIT-ME!
+  #   auth_scope: EDIT-ME!
+  #   token_endpoint: EDIT-ME!

@@ -142,3 +142,7 @@ $ touch khard.conf
 $ mkdir .contacts
 $ mkdir family
 $ mkdir friend
+$ oama
+$ mkdir oama
+$ mkdir .config
+$ mkdir oama
