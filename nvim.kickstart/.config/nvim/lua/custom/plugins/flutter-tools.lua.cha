@@ -1,0 +1,47 @@
+return {
+  'nvim-flutter/flutter-tools.nvim',
+  lazy = false,
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'stevearc/dressing.nvim',
+    'dart-lang/dart-vim-plugin',
+  },
+  config = function()
+    require('flutter-tools').setup {
+      ui = {
+        border = 'rouded',
+      },
+      decorations = {
+        statusline = {
+          device = true,
+          app_version = true,
+        },
+      },
+      widget_guides = {
+        enabled = true,
+      },
+      closing_tags = {
+        highlight = 'Comment',
+        prefix = ' // ',
+        enabled = true,
+      },
+      lsp = {
+        color_variables = true,
+        settings = {
+          showTools = true,
+          completeFunctionCalls = true,
+        },
+      },
+      debugger = {
+        enabled = true,
+        run_via_dap = true, -- Runs the app through the DAP devbugger session
+        register_configurations = function(_)
+          local dap = require 'dap'
+
+          dap.configurations.dart = {}
+          require('flutter-tools.dap').setup_default_configurations()
+        end,
+      },
+    }
+  end,
+}

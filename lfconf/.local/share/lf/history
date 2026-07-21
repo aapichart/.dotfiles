@@ -146,3 +146,10 @@ $ oama
 $ mkdir oama
 $ mkdir .config
 $ mkdir oama
+: mkdir pythonUV1
+: mkdir
+$ touch flutter-tools.lua
+$ touch daart.lua
+$ touch test.dart
+$ touch flutter.lua
+$ mkdir pyUVWebJWT
