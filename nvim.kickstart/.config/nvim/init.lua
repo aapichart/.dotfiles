@@ -1048,6 +1048,10 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  concurrency = 3,
+  git = {
+    timeout = 500,
+  },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

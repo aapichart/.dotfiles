@@ -147,7 +147,7 @@ export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 
 # This setting path is for Flutter
-export PATH="/snap/bin:$PATH"
+export PATH="$HOME/development/flutter/bin:$PATH"
 
 # This setting is for t using for tmux
 export PATH="$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin/:$PATH"

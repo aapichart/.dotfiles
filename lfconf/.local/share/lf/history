@@ -131,25 +131,4 @@ $ mkdir aerc
 $ mkdir .config
 $ mkdir aerc
 $ mkdir aerc
-$ mkdir .config
-$ mkdir stylesets
-$ touch catppuccin-macchiato
-: help
-: ?
-$ mkdir khard
-$ mkdir .config
-$ touch khard.conf
-$ mkdir .contacts
-$ mkdir family
-$ mkdir friend
-$ oama
-$ mkdir oama
-$ mkdir .config
-$ mkdir oama
-: mkdir pythonUV1
-: mkdir
-$ touch flutter-tools.lua
-$ touch daart.lua
-$ touch test.dart
-$ touch flutter.lua
-$ mkdir pyUVWebJWT
+: q
