@@ -146,6 +146,8 @@ export PATH="$HOME/.luarocks/bin:$PATH"
 # This setting is for npm configuration
 export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 
+# This setting for Flutter
+export CHROME_EXECUTABLE=/snap/bin/chromium
 # This setting path is for Flutter
 export PATH="$HOME/development/flutter/bin:$PATH"
 
