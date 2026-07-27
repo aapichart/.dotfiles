@@ -13,8 +13,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
 # These are sets for Android environment on Expo App
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$PATH:$ANDROID_HOME/emulator/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 
@@ -148,9 +148,11 @@ export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 
 # This setting for Flutter
 export CHROME_EXECUTABLE=/snap/bin/chromium
-export ADB_SERVER_SOCKET=tcp:192.168.0.116:5037
 # This setting path is for Flutter
+export HOSTONLYIP=192.168.56.1
 export PATH="$HOME/development/flutter/bin:$PATH"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # This setting is for t using for tmux
 export PATH="$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin/:$PATH"
