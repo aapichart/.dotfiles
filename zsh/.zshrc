@@ -150,6 +150,7 @@ export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 export CHROME_EXECUTABLE=/snap/bin/chromium
 # This setting path is for Flutter
 export HOSTONLYIP=192.168.56.1
+#export ADB_SERVER_SOCKET=tcp:192.168.56.1:5037
 export PATH="$HOME/development/flutter/bin:$PATH"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"

@@ -59,9 +59,11 @@ if [ $SHELL != /bin/zsh ] || [ $REINSTALL_NIX == "TRUE" ]; then
     nix-env -iA nixpkgs.python312Packages.pynvim
     nix-env -iA nixpkgs.python312Packages.pip-api
     nix-env -iA nixpkgs.python312Packages.virtualenv
+    nix-env -iA nixpkgs.pyright
     #nix-env -iA nixpkgs.pipenv
     nix-env -iA nixpkgs.python312Packages.tree-sitter
     nix-env -iA nixpkgs.python312Packages.flake8
+    nix-env -iA nixpkgs.ruff
     nix-env -iA nixpkgs.vimPlugins.LanguageClient-neovim
     nix-env -iA nixpkgs.tree-sitter
     nix-env -iA nixpkgs.wl-clipboard

@@ -133,3 +133,6 @@ $ mkdir aerc
 $ mkdir aerc
 : q
 $ mkdir android-sdk
+$ mkdir my_project_name
+$ touch .luarc.json
+$ touch test.py

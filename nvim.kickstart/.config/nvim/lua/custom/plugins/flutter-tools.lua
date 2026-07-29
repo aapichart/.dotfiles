@@ -7,6 +7,16 @@ return {
   },
   config = function()
     require('flutter-tools').setup {
+      flutter_lookup_cmd = nil,
+      run_args = {
+        '-d',
+        '192.168.56.1:5555',
+        '--no-enable-impeller', -- Keeping this here to prevent the vboxsf shader crash!
+        '--build-dir=/home/apichart/flutter_builds',
+      },
+      dev_log = {
+        open_cmd = 'tabedit',
+      },
       ui = {
         border = 'rouded',
         notification_style = 'message',

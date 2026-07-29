@@ -636,6 +636,30 @@ require('lazy').setup({
         end,
       })
 
+      local augroup = vim.api.nvim_create_augroup('LspFormatting', { clear = true })
+      local on_attach = function(client, bufnr)
+        if client.name == 'ruff' then
+          client.server_capabilities.hoverProvider = false
+        end
+        if client.supports_method 'textDocument/formatting' then
+          vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format { bufnr = bufnr, async = false }
+            end,
+          })
+        end
+      end
+      local status, lspconfig = pcall(require, 'lspconfig')
+      if status then
+        lspconfig.ruff.setup { on_attach = on_attach }
+        lspconfig.pyright.setup { on_attach = on_attach }
+      else
+        print 'Warning: nvim-lspconfig is not installed yet!'
+      end
+
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
@@ -705,7 +729,7 @@ require('lazy').setup({
                 mccabe = { enabled = false },
                 pylsp_mypy = { enabled = false },
                 pylsp_black = { enabled = false },
-                pylsp_isort = { enabled = flase },
+                pylsp_isort = { enabled = false },
               },
             },
           },
@@ -766,7 +790,7 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config[server_name].setup(server)
           end,
         },
       }
