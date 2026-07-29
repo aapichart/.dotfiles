@@ -654,8 +654,12 @@ require('lazy').setup({
       end
       local status, lspconfig = pcall(require, 'lspconfig')
       if status then
-        lspconfig.ruff.setup { on_attach = on_attach }
-        lspconfig.pyright.setup { on_attach = on_attach }
+        vim.lsp.config('pyright', {})
+        vim.lsp.config('ruff', {})
+        vim.lsp.enable 'pyright'
+        vim.lsp.enable 'ruff'
+        -- lspconfig.ruff.setup { on_attach = on_attach }
+        -- lspconfig.pyright.setup { on_attach = on_attach }
       else
         print 'Warning: nvim-lspconfig is not installed yet!'
       end
@@ -717,23 +721,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
-        pylsp = {
-          settings = {
-            pylsp = {
-              plugins = {
-                pyflakes = { enabled = false },
-                pycodestyle = { enabled = false },
-                autopep8 = { enabled = false },
-                yapf = { enabled = false },
-                mccabe = { enabled = false },
-                pylsp_mypy = { enabled = false },
-                pylsp_black = { enabled = false },
-                pylsp_isort = { enabled = false },
-              },
-            },
-          },
-        },
 
         lua_ls = {
           -- cmd = { ... },
