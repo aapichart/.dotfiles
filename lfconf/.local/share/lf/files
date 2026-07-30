@@ -1,12 +1,2 @@
 copy
-/home/apichart/android-sdk/Sdk/.temp
-/home/apichart/android-sdk/Sdk/build-tools
-/home/apichart/android-sdk/Sdk/cmdline-tools
-/home/apichart/android-sdk/Sdk/emulator
-/home/apichart/android-sdk/Sdk/licenses
-/home/apichart/android-sdk/Sdk/platform-tools
-/home/apichart/android-sdk/Sdk/platforms
-/home/apichart/android-sdk/Sdk/skins
-/home/apichart/android-sdk/Sdk/sources
-/home/apichart/android-sdk/Sdk/system-images
-/home/apichart/android-sdk/Sdk/.knownPackages
+/home/apichart/works/angels/Flutter/flutter_linux_3.44.8-stable/flutter

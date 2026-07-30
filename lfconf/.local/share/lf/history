@@ -136,3 +136,7 @@ $ mkdir android-sdk
 $ mkdir my_project_name
 $ touch .luarc.json
 $ touch test.py
+$ touch connectNRunHost.sh
+$ touch disconnectHost.sh
+$ touch stop_host_emulator.bat
+$ mkdir development_linux

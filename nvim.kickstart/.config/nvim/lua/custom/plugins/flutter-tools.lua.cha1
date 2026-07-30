@@ -1,0 +1,23 @@
+return {
+  'akinsho/flutter-tools.nvim',
+  lazy = false,
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
+  config = function()
+    require('flutter-tools').setup {
+      flutter_path = 'flutter',
+      lsp = {
+        color = {
+          enabled = true,
+        },
+      },
+      decorations = {
+        statusline = {
+          device = true,
+          version = true,
+        },
+      },
+    }
+  end,
+}
