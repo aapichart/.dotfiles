@@ -140,3 +140,12 @@ $ touch connectNRunHost.sh
 $ touch disconnectHost.sh
 $ touch stop_host_emulator.bat
 $ mkdir development_linux
+$ mkdir 28.2.
+: help
+: ?
+: help?
+: /?
+: \help
+: unselect
+$ coc.lua
+$ touch coc.lua
