@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -32,6 +34,10 @@ export REINSTALL_NIX=FALSE
 # use nix
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
+autoload -Uz compinit && compinit
+#source "~/.nix-profile/share/antidote/antidote.zsh"
+source ~/.zsh_plugins.sh > /dev/null 2>&1
+
 # This is all setting about LF - file manager
 # Source these file for icons on lf
 source ~/.config/lf/icons
@@ -62,54 +68,6 @@ export NVM_DIR=${HOME}/.nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 export NVM_COMPLETION=true
 
-# Alias, some more ls aliases
-alias am='aerc'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ls='ls -la'
-alias f='fzf'
-alias zr='source ~/.zshrc'
-alias sv='source ~/.config/nvim/init.vim'
-alias python='python3'
-alias pip='pip3'
-alias v='nvim'
-alias rng='ranger'
-alias ga='git add .'
-alias gs='git status'
-alias lf='lfcd'
-alias tm='tmuxifier'
-alias hms='home-manager switch'
-alias ccopy='xsel --clipboard --input'
-alias cpate='xsel --clipboard --output'
-alias gpt='tgpt'
-alias nodejs='node'
-alias tmr='tmuxinator'
-# Global alias
-alias -g F=' | fzf'
-alias -g L=' | less'
-alias -g J=' | jq'
-
-# suffix alias
-alias -s py='nvim'
-alias -s js='nvim'
-alias -s sql='nvim'
-
-# function alias
-tmrs() {
-  tmuxinator start $1
-}
-
-gcom() {
-    git commit -m $1
-}
-
-cdd() {
-    cd $1 && ls
-}
-
-# source plugins
-source ~/.zsh_plugins.sh
 
 # setting for direnv 
 eval "$(direnv hook zsh)"
@@ -149,7 +107,7 @@ export PATH="$HOME/.npm:$HOME/.npm/bin:$PATH"
 # This setting for Flutter
 export CHROME_EXECUTABLE=/snap/bin/chromium
 # This setting path is for Flutter
-export HOSTONLYIP=192.168.56.1
+#export HOSTONLYIP=192.168.56.1
 # export ADB_SERVER_SOCKET=tcp:192.168.56.1:5037
 export PATH="$HOME/development_linux/flutter/bin:$HOME/works/development/scripts:$PATH"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
@@ -163,16 +121,67 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.tmux-layouts/"
 eval "$(tmuxifier init -)"
 
-if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+#if [ -e /home/apichart/.nix-profile/etc/profile.d/nix.sh ]; then . /home/apichart/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # using rclone to mount google drive, setup rclone_config_dir and mount it to ~/googleDrive
-export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
-if ! grep -qs "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi
-
+#export RCLONE_CONFIG_DIR=$XDG_CONFIG_HOME/rclone
+#if ! grep -qs "rclone" /proc/mounts; then nohup rclone mount googleDrive: ~/googleDrive --vfs-cache-mode writes --allow-non-empty &>/dev/null &; fi
 
 # This is a gemini api-key
-export $(cat ~/.apikey.env | xargs)
+#export $(cat ~/.apikey.env | xargs)
+
+# function alias
+tmrs() {
+  tmuxinator start $1
+}
+
+gcom() {
+    git commit -m $1
+}
+
+cdd() {
+    cd $1 && ls
+}
+# Interactive ripgrep search powered by fzf
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Usage: fif "; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
+# Alias, some more ls aliases
+alias am='aerc'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls='ls -la'
+alias f='fzf'
+alias zr='source ~/.zshrc'
+alias sv='source ~/.config/nvim/init.vim'
+alias python='python3'
+alias pip='pip3'
+alias v='nvim'
+alias rng='ranger'
+alias ga='git add .'
+alias gs='git status'
+alias lf='lfcd'
+alias tm='tmuxifier'
+alias hms='home-manager switch'
+alias ccopy='xsel --clipboard --input'
+alias cpate='xsel --clipboard --output'
+alias gpt='tgpt'
+alias nodejs='node'
+alias tmr='tmuxinator'
+# Global alias
+alias -g F=' | fzf'
+alias -g L=' | less'
+alias -g J=' | jq'
+
+# suffix alias
+alias -s py='nvim'
+alias -s js='nvim'
+alias -s sql='nvim'
+
